@@ -27,3 +27,16 @@ MessagesViewController.swift
 - button IBActions all invoke send
 - enum Mood added
 - didReceive added debugging stub
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Finishing basic Send and Receive with UI update to indicated to what responding
+2010-01-13
+
+MessagesViewController.swift
+- hasIncoming general function added
+- didReceive logic factored out to hasIncoming
+- didSelect & didBecomeActive added to also invoke hasIncoming
+- send includes receivedMood so sends what we are responding to
+
+Main.storyboard - MessagesViewController
+- connect outlet to statusLabel

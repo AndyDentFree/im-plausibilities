@@ -102,6 +102,7 @@
                         <outlet property="distraughtBtn" destination="VUc-Y6-iRP" id="Efl-ET-axC"/>
                         <outlet property="happyBtn" destination="G27-LM-Ur4" id="USa-8s-UjH"/>
                         <outlet property="quizzicalBtn" destination="sFt-p7-8AQ" id="eyh-Ym-Uzv"/>
+                        <outlet property="statusLabel" destination="d1e-fi-ked" id="sdK-gV-6QU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
