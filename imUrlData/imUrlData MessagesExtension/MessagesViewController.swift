@@ -7,9 +7,27 @@
 //
 
 import UIKit
+import os
 import Messages
 
+
+enum Mood : String {
+    case happy
+    case quizzical
+    case distraught
+    case angry
+}
+
 class MessagesViewController: MSMessagesAppViewController {
+    
+    @IBOutlet fileprivate weak var happyBtn: UIButton!
+    @IBOutlet fileprivate weak var quizzicalBtn: UIButton!
+    @IBOutlet fileprivate weak var distraughtBtn: UIButton!
+    @IBOutlet fileprivate weak var angryBtn: UIButton!
+    
+    var receivedMood:Mood? = nil
+    let moodKey = "mood"
+    let responseKey = "respondingTo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +58,14 @@ class MessagesViewController: MSMessagesAppViewController {
         // extension on a remote device.
         
         // Use this method to trigger UI updates in response to the message.
+        guard let url = message.url else { return }
+        guard let comps = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+        if let msgMood = comps.queryItems?.first(where: { $0.name == moodKey })?.value {
+            if let parsedMood = Mood(rawValue: msgMood) {
+                receivedMood = parsedMood
+                // TODO parse the responseKey and do fancier stuff 
+            }
+        }
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
@@ -62,6 +88,57 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
+    }
+    
+    func buttonMatching(mood:Mood) -> UIButton {
+        switch mood {
+        case .happy: return happyBtn
+        case .quizzical: return quizzicalBtn
+        case .distraught: return distraughtBtn
+        default: return angryBtn
+        }
+    }
+    
+    func send(mood:Mood, label:String) {
+        guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+        guard var url = URLComponents(string:"data:,") else {
+            fatalError("Invalid base URL")
+        }
+        url.queryItems = [
+            URLQueryItem(name:moodKey, value:mood.rawValue)
+        ]
+        
+        let layout = MSMessageTemplateLayout()
+        layout.caption = label
+        let session = conversation.selectedMessage?.session
+        let message = MSMessage(session: session ?? MSSession())
+        message.layout = layout
+        conversation.insert(message) { (error) in
+            if let error = error {
+                os_log("Error with MSConversation.insert(message)")
+                print(error)
+            }
+        }
+        dismiss()
+    }
+
+    
+    // MARK: - Buttons
+
+    @IBAction public func onHappy(_ sender: UIButton)  {
+        send(mood:.happy, label:sender.currentTitle!)
+    }
+
+    @IBAction public func onQuizzical(_ sender: UIButton)  {
+        send(mood:.quizzical, label:sender.currentTitle!)
+    }
+
+    @IBAction public func onDistraught(_ sender: UIButton)  {
+        send(mood:.distraught, label:sender.currentTitle!)
+    }
+
+    @IBAction public func onAngry(_ sender: UIButton)  {
+        send(mood:.angry, label:sender.currentTitle!)
     }
 
 }

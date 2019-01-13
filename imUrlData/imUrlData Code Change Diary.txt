@@ -1,0 +1,29 @@
+Creation
+2010-01-12
+
+Created using XCode 10.1 as an iMessage App.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Buttons
+2010-01-12
+
+MessagesViewController.swift
+- added IBActions for the four Buttons
+
+Main.storyboard
+- added four buttons with emoji labels
+- embedded in two rows using nested stackviews centred horizontally
+- positioned label centred after quick test showed not enough room for it above.
+- connected IBactions FROM MessagesViewController to buttons
+  (XCode 10 crashes if drag an outlet or action from the visual editor)
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Send and Receive
+2010-01-12
+
+MessagesViewController.swift
+- send(mood, label) added
+- button IBActions all invoke send
+- enum Mood added
+- didReceive added debugging stub
