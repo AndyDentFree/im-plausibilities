@@ -1,0 +1,18 @@
+Creation
+2010-01-16
+
+Created by duplicating the imUrlData and renaming everything.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Setup two buttons to send start/response
+2019-01-17
+MainInterface.storyboard
+- Replaced four buttons with startBtn and respondBtn
+
+MessagesViewController.swift
+- Replaced four buttons with startBtn and respondBtn
+- Mood enum removed
+- responseCount property added
+- toggleButtons added to adjust enabling and appearance
+- hasIncoming and didBecomeActive call toggleButtons
+- send send responseCount

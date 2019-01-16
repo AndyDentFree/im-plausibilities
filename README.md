@@ -13,6 +13,7 @@ In many cases, there are snippets and documentation explaining bits of code but 
 Each will have its own nested readme document.
 
 * [Sending data via a URL](./imUrlData/README.md)
+* [Responding within a message](./responIM/README.md)
 
 
 ## Other Rationales
