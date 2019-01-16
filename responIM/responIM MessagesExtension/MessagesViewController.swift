@@ -133,7 +133,7 @@ class MessagesViewController: MSMessagesAppViewController {
         let message = MSMessage(session: session ?? MSSession())
         message.layout = layout
         message.url = urlComps.url
-        conversation.insert(message) { (error) in
+        conversation.send(message) { (error) in
             if let error = error {
                 os_log("Error with MSConversation.insert(message)")
                 print(error)
