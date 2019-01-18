@@ -24,3 +24,4 @@ Created using XCode 10.1 as a Single View App then *added* an iMessage App Exten
 
 The way to go is as shown in this sample - start with a _normal_ app and **add** an iMessage App Extension to it.
 
+If you look in the git history of this sample you will see how I made the mistake of starting with a plain copy of imUrlData and tried to get modify its app into a real one. On realising, and researching, that this is impossible, I started over with a Single View App.
