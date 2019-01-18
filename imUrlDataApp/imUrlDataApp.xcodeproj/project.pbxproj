@@ -12,7 +12,36 @@
 		4201A9D521F0763B0043E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D321F0763B0043E369 /* Main.storyboard */; };
 		4201A9D721F0763C0043E369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D621F0763C0043E369 /* Assets.xcassets */; };
 		4201A9DA21F0763C0043E369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */; };
+		42199E9021F1CA5600D4377E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42199E8F21F1CA5600D4377E /* Messages.framework */; };
+		42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199E9221F1CA5600D4377E /* MessagesViewController.swift */; };
+		42199E9621F1CA5600D4377E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42199E9421F1CA5600D4377E /* MainInterface.storyboard */; };
+		42199E9821F1CA5700D4377E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42199E9721F1CA5700D4377E /* Assets.xcassets */; };
+		42199E9C21F1CA5700D4377E /* imUrlDataApp IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42199E9A21F1CA5700D4377E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4201A9C421F0763B0043E369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42199E8C21F1CA5600D4377E;
+			remoteInfo = "imUrlDataApp IM";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42199EA021F1CA5700D4377E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42199E9C21F1CA5700D4377E /* imUrlDataApp IM.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4201A9CC21F0763B0043E369 /* imUrlDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imUrlDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +51,12 @@
 		4201A9D621F0763C0043E369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4201A9D921F0763C0043E369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4201A9DB21F0763C0043E369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imUrlDataApp IM.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42199E8F21F1CA5600D4377E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		42199E9221F1CA5600D4377E /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		42199E9521F1CA5600D4377E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		42199E9721F1CA5700D4377E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42199E9921F1CA5700D4377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42199E8A21F1CA5600D4377E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42199E9021F1CA5600D4377E /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -39,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				4201A9CE21F0763B0043E369 /* imUrlDataApp */,
+				42199E9121F1CA5600D4377E /* imUrlDataApp IM */,
+				42199E8E21F1CA5600D4377E /* Frameworks */,
 				4201A9CD21F0763B0043E369 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				4201A9CC21F0763B0043E369 /* imUrlDataApp.app */,
+				42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +110,25 @@
 			path = imUrlDataApp;
 			sourceTree = "<group>";
 		};
+		42199E8E21F1CA5600D4377E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42199E8F21F1CA5600D4377E /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42199E9121F1CA5600D4377E /* imUrlDataApp IM */ = {
+			isa = PBXGroup;
+			children = (
+				42199E9221F1CA5600D4377E /* MessagesViewController.swift */,
+				42199E9421F1CA5600D4377E /* MainInterface.storyboard */,
+				42199E9721F1CA5700D4377E /* Assets.xcassets */,
+				42199E9921F1CA5700D4377E /* Info.plist */,
+			);
+			path = "imUrlDataApp IM";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +139,34 @@
 				4201A9C821F0763B0043E369 /* Sources */,
 				4201A9C921F0763B0043E369 /* Frameworks */,
 				4201A9CA21F0763B0043E369 /* Resources */,
+				42199EA021F1CA5700D4377E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				42199E9B21F1CA5700D4377E /* PBXTargetDependency */,
 			);
 			name = imUrlDataApp;
 			productName = imUrlDataApp;
 			productReference = 4201A9CC21F0763B0043E369 /* imUrlDataApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		42199E8C21F1CA5600D4377E /* imUrlDataApp IM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42199E9F21F1CA5700D4377E /* Build configuration list for PBXNativeTarget "imUrlDataApp IM" */;
+			buildPhases = (
+				42199E8921F1CA5600D4377E /* Sources */,
+				42199E8A21F1CA5600D4377E /* Frameworks */,
+				42199E8B21F1CA5600D4377E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "imUrlDataApp IM";
+			productName = "imUrlDataApp IM";
+			productReference = 42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +179,9 @@
 				ORGANIZATIONNAME = "Touchgram Pty Ltd";
 				TargetAttributes = {
 					4201A9CB21F0763B0043E369 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					42199E8C21F1CA5600D4377E = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -113,6 +200,7 @@
 			projectRoot = "";
 			targets = (
 				4201A9CB21F0763B0043E369 /* imUrlDataApp */,
+				42199E8C21F1CA5600D4377E /* imUrlDataApp IM */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +216,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42199E8B21F1CA5600D4377E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42199E9821F1CA5700D4377E /* Assets.xcassets in Resources */,
+				42199E9621F1CA5600D4377E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +237,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42199E8921F1CA5600D4377E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42199E9B21F1CA5700D4377E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42199E8C21F1CA5600D4377E /* imUrlDataApp IM */;
+			targetProxy = 42199E9A21F1CA5700D4377E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4201A9D321F0763B0043E369 /* Main.storyboard */ = {
@@ -157,6 +270,14 @@
 				4201A9D921F0763C0043E369 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		42199E9421F1CA5600D4377E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42199E9521F1CA5600D4377E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,6 +402,7 @@
 		4201A9DF21F0763C0043E369 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
@@ -299,6 +421,7 @@
 		4201A9E021F0763C0043E369 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
@@ -309,6 +432,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imUrlDataApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42199E9D21F1CA5700D4377E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 534LVXBU55;
+				INFOPLIST_FILE = "imUrlDataApp IM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.touchgram.imUrlDataApp.imUrlDataApp-IM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42199E9E21F1CA5700D4377E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 534LVXBU55;
+				INFOPLIST_FILE = "imUrlDataApp IM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.touchgram.imUrlDataApp.imUrlDataApp-IM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +494,15 @@
 			buildConfigurations = (
 				4201A9DF21F0763C0043E369 /* Debug */,
 				4201A9E021F0763C0043E369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42199E9F21F1CA5700D4377E /* Build configuration list for PBXNativeTarget "imUrlDataApp IM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42199E9D21F1CA5700D4377E /* Debug */,
+				42199E9E21F1CA5700D4377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

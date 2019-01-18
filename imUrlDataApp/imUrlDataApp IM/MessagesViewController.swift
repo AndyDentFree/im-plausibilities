@@ -1,8 +1,8 @@
 //
 //  MessagesViewController.swift
-//  imUrlDataApp MessagesExtension
+//  imUrlDataApp IM
 //
-//  Created by Andrew Dent on 12/1/19.
+//  Created by Andrew Dent on 18/1/19.
 //  Copyright © 2019 Touchgram Pty Ltd. All rights reserved.
 //
 
@@ -56,7 +56,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Use this method to configure the extension and restore previously stored state.
     }
-
+    
     override func didBecomeActive(with conversation: MSConversation) {
         guard let sel = conversation.selectedMessage else {
             os_log("didBecomeActive with no selectedMessage in conversation")
@@ -75,7 +75,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
     }
-
+   
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
         os_log("didSelect")
         print("didSelect \(message.debugDescription)\n URL \(message.url?.absoluteString ?? "no URL")")
@@ -111,7 +111,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
-    
+
     func buttonMatching(mood:Mood) -> UIButton {
         switch mood {
         case .happy: return happyBtn

@@ -18,5 +18,9 @@ Note another strong reason to have the companion app installable is to support I
 
 ## Project Structure
 
-Created using XCode 10.1 as a Single Pa1ge App.
+Created using XCode 10.1 as a Single View App then *added* an iMessage App Extension second target.
+
+**Important Note** When you create an iMessage app like imUrlData you have a .app target generated as part of the project. However, that's a very specialised host for the iMessage App Extension and can **not** be converted into a standard app.
+
+The way to go is as shown in this sample - start with a _normal_ app and **add** an iMessage App Extension to it.
 

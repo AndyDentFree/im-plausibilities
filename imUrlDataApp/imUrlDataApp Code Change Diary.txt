@@ -26,3 +26,18 @@ ViewController.swift
   adjustControls
   
   
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Extension to App
+2019-01-18
+
+Added new iMessage Extension target imUrlDataApp IM
+(same name as app plus unique suffix)
+
+MessagesViewController.swift
+- merged over all logic from imUrlData
+
+MainInterface.storyboard
+- copied from imUrlData 
+
+Asssets.xcassets
+- copied from imUrlData
