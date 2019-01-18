@@ -13,8 +13,8 @@ In many cases, there are snippets and documentation explaining bits of code but 
 Each will have its own nested readme document.
 
 * [Sending data via a URL](./imUrlData/README.md)
-* [Sending data via a URL with app](./imUrlDataApp/README.md) adds a companion app
-* [Responding within a message](./responIM/README.md)
+* [Sending data via a URL with app](./imUrlDataApp/README.md) adds a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
+* [Responding within a message](./responIM/README.md) 
 
 
 ## Other Rationales
@@ -32,3 +32,6 @@ This started as a private repo (thanks MS/GitHub for introducing these) so I cou
 
 So, if you are reading this,I got enough material to publish and you can probably read an article or two [somewhere on Medium](https://medium.com/@andydentperth)
 
+## Disclaimer
+
+These are very simple _technical exploration_ apps. Some of the coding in them is simpler and may take minor shortcuts or lack error checking. Please don't judge me harshly by them. I'm sure there are smarter Swift idioms I could have used in some cases.
