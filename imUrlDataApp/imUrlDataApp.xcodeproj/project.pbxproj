@@ -7,165 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4295D27021E957F700EF0E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4295D26F21E957F700EF0E0A /* Assets.xcassets */; };
-		4295D27721E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4295D27621E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4295D27C21E957F800EF0E0A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4295D27B21E957F800EF0E0A /* Messages.framework */; };
-		4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295D27E21E957F800EF0E0A /* MessagesViewController.swift */; };
-		4295D28221E957F800EF0E0A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28021E957F800EF0E0A /* MainInterface.storyboard */; };
-		4295D28421E957F800EF0E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28321E957F800EF0E0A /* Assets.xcassets */; };
+		4201A9D021F0763B0043E369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201A9CF21F0763B0043E369 /* AppDelegate.swift */; };
+		4201A9D221F0763B0043E369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201A9D121F0763B0043E369 /* ViewController.swift */; };
+		4201A9D521F0763B0043E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D321F0763B0043E369 /* Main.storyboard */; };
+		4201A9D721F0763C0043E369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D621F0763C0043E369 /* Assets.xcassets */; };
+		4201A9DA21F0763C0043E369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4295D27821E957F800EF0E0A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4295D26621E957F500EF0E0A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4295D27521E957F800EF0E0A;
-			remoteInfo = "imUrlDataApp MessagesExtension";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4295D28B21E957F800EF0E0A /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				4295D27721E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		4295D26C21E957F500EF0E0A /* imUrlDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imUrlDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4295D26F21E957F700EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4295D27121E957F700EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4295D27621E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imUrlDataApp MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4295D27B21E957F800EF0E0A /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		4295D27E21E957F800EF0E0A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		4295D28121E957F800EF0E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		4295D28321E957F800EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4295D28521E957F800EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4201A9CC21F0763B0043E369 /* imUrlDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imUrlDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4201A9CF21F0763B0043E369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4201A9D121F0763B0043E369 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4201A9D421F0763B0043E369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4201A9D621F0763C0043E369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4201A9D921F0763C0043E369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4201A9DB21F0763C0043E369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4295D27321E957F800EF0E0A /* Frameworks */ = {
+		4201A9C921F0763B0043E369 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4295D27C21E957F800EF0E0A /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4295D26521E957F500EF0E0A = {
+		4201A9C321F0763B0043E369 = {
 			isa = PBXGroup;
 			children = (
-				4295D26E21E957F500EF0E0A /* imUrlDataApp */,
-				4295D27D21E957F800EF0E0A /* imUrlDataApp MessagesExtension */,
-				4295D27A21E957F800EF0E0A /* Frameworks */,
-				4295D26D21E957F500EF0E0A /* Products */,
+				4201A9CE21F0763B0043E369 /* imUrlDataApp */,
+				4201A9CD21F0763B0043E369 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4295D26D21E957F500EF0E0A /* Products */ = {
+		4201A9CD21F0763B0043E369 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4295D26C21E957F500EF0E0A /* imUrlDataApp.app */,
-				4295D27621E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex */,
+				4201A9CC21F0763B0043E369 /* imUrlDataApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4295D26E21E957F500EF0E0A /* imUrlDataApp */ = {
+		4201A9CE21F0763B0043E369 /* imUrlDataApp */ = {
 			isa = PBXGroup;
 			children = (
-				4295D26F21E957F700EF0E0A /* Assets.xcassets */,
-				4295D27121E957F700EF0E0A /* Info.plist */,
+				4201A9CF21F0763B0043E369 /* AppDelegate.swift */,
+				4201A9D121F0763B0043E369 /* ViewController.swift */,
+				4201A9D321F0763B0043E369 /* Main.storyboard */,
+				4201A9D621F0763C0043E369 /* Assets.xcassets */,
+				4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */,
+				4201A9DB21F0763C0043E369 /* Info.plist */,
 			);
 			path = imUrlDataApp;
-			sourceTree = "<group>";
-		};
-		4295D27A21E957F800EF0E0A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4295D27B21E957F800EF0E0A /* Messages.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4295D27D21E957F800EF0E0A /* imUrlDataApp MessagesExtension */ = {
-			isa = PBXGroup;
-			children = (
-				4295D27E21E957F800EF0E0A /* MessagesViewController.swift */,
-				4295D28021E957F800EF0E0A /* MainInterface.storyboard */,
-				4295D28321E957F800EF0E0A /* Assets.xcassets */,
-				4295D28521E957F800EF0E0A /* Info.plist */,
-			);
-			path = "imUrlDataApp MessagesExtension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4295D26B21E957F500EF0E0A /* imUrlDataApp */ = {
+		4201A9CB21F0763B0043E369 /* imUrlDataApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4295D28C21E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imUrlDataApp" */;
+			buildConfigurationList = 4201A9DE21F0763C0043E369 /* Build configuration list for PBXNativeTarget "imUrlDataApp" */;
 			buildPhases = (
-				4295D26A21E957F500EF0E0A /* Resources */,
-				4295D28B21E957F800EF0E0A /* Embed App Extensions */,
+				4201A9C821F0763B0043E369 /* Sources */,
+				4201A9C921F0763B0043E369 /* Frameworks */,
+				4201A9CA21F0763B0043E369 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4295D27921E957F800EF0E0A /* PBXTargetDependency */,
 			);
 			name = imUrlDataApp;
 			productName = imUrlDataApp;
-			productReference = 4295D26C21E957F500EF0E0A /* imUrlDataApp.app */;
-			productType = "com.apple.product-type.application.messages";
-		};
-		4295D27521E957F800EF0E0A /* imUrlDataApp MessagesExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imUrlDataApp MessagesExtension" */;
-			buildPhases = (
-				4295D27221E957F800EF0E0A /* Sources */,
-				4295D27321E957F800EF0E0A /* Frameworks */,
-				4295D27421E957F800EF0E0A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "imUrlDataApp MessagesExtension";
-			productName = "imUrlDataApp MessagesExtension";
-			productReference = 4295D27621E957F800EF0E0A /* imUrlDataApp MessagesExtension.appex */;
-			productType = "com.apple.product-type.app-extension.messages";
+			productReference = 4201A9CC21F0763B0043E369 /* imUrlDataApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4295D26621E957F500EF0E0A /* Project object */ = {
+		4201A9C421F0763B0043E369 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Touchgram Pty Ltd";
 				TargetAttributes = {
-					4295D26B21E957F500EF0E0A = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					4295D27521E957F800EF0E0A = {
+					4201A9CB21F0763B0043E369 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "imUrlDataApp" */;
+			buildConfigurationList = 4201A9C721F0763B0043E369 /* Build configuration list for PBXProject "imUrlDataApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -173,69 +107,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 4295D26521E957F500EF0E0A;
-			productRefGroup = 4295D26D21E957F500EF0E0A /* Products */;
+			mainGroup = 4201A9C321F0763B0043E369;
+			productRefGroup = 4201A9CD21F0763B0043E369 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4295D26B21E957F500EF0E0A /* imUrlDataApp */,
-				4295D27521E957F800EF0E0A /* imUrlDataApp MessagesExtension */,
+				4201A9CB21F0763B0043E369 /* imUrlDataApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4295D26A21E957F500EF0E0A /* Resources */ = {
+		4201A9CA21F0763B0043E369 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4295D27021E957F700EF0E0A /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4295D27421E957F800EF0E0A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4295D28421E957F800EF0E0A /* Assets.xcassets in Resources */,
-				4295D28221E957F800EF0E0A /* MainInterface.storyboard in Resources */,
+				4201A9DA21F0763C0043E369 /* LaunchScreen.storyboard in Resources */,
+				4201A9D721F0763C0043E369 /* Assets.xcassets in Resources */,
+				4201A9D521F0763B0043E369 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4295D27221E957F800EF0E0A /* Sources */ = {
+		4201A9C821F0763B0043E369 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */,
+				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,
+				4201A9D021F0763B0043E369 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		4295D27921E957F800EF0E0A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4295D27521E957F800EF0E0A /* imUrlDataApp MessagesExtension */;
-			targetProxy = 4295D27821E957F800EF0E0A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		4295D28021E957F800EF0E0A /* MainInterface.storyboard */ = {
+		4201A9D321F0763B0043E369 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4295D28121E957F800EF0E0A /* Base */,
+				4201A9D421F0763B0043E369 /* Base */,
 			);
-			name = MainInterface.storyboard;
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4201A9D921F0763C0043E369 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4295D28621E957F800EF0E0A /* Debug */ = {
+		4201A9DC21F0763C0043E369 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +223,7 @@
 			};
 			name = Debug;
 		};
-		4295D28721E957F800EF0E0A /* Release */ = {
+		4201A9DD21F0763C0043E369 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,54 +278,17 @@
 			};
 			name = Release;
 		};
-		4295D28921E957F800EF0E0A /* Debug */ = {
+		4201A9DF21F0763C0043E369 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imUrlDataApp MessagesExtension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imUrlDataApp.MessagesExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4295D28A21E957F800EF0E0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imUrlDataApp MessagesExtension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imUrlDataApp.MessagesExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		4295D28D21E957F800EF0E0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = imUrlDataApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imUrlDataApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -406,14 +296,17 @@
 			};
 			name = Debug;
 		};
-		4295D28E21E957F800EF0E0A /* Release */ = {
+		4201A9E021F0763C0043E369 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = imUrlDataApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imUrlDataApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -424,34 +317,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "imUrlDataApp" */ = {
+		4201A9C721F0763B0043E369 /* Build configuration list for PBXProject "imUrlDataApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4295D28621E957F800EF0E0A /* Debug */,
-				4295D28721E957F800EF0E0A /* Release */,
+				4201A9DC21F0763C0043E369 /* Debug */,
+				4201A9DD21F0763C0043E369 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imUrlDataApp MessagesExtension" */ = {
+		4201A9DE21F0763C0043E369 /* Build configuration list for PBXNativeTarget "imUrlDataApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4295D28921E957F800EF0E0A /* Debug */,
-				4295D28A21E957F800EF0E0A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4295D28C21E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imUrlDataApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4295D28D21E957F800EF0E0A /* Debug */,
-				4295D28E21E957F800EF0E0A /* Release */,
+				4201A9DF21F0763C0043E369 /* Debug */,
+				4201A9E021F0763C0043E369 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4295D26621E957F500EF0E0A /* Project object */;
+	rootObject = 4201A9C421F0763B0043E369 /* Project object */;
 }

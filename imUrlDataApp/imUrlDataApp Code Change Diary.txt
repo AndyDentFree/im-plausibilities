@@ -1,4 +1,28 @@
 Creation
 2010-01-17
 
-Copied imUrlData and renamed everything to imUrlDataApp
+imUrlDataApp - project created as Single View App.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Basic UI, not sharing data
+2019-01-17
+
+imUrlDataApp - project created as Single View App
+
+Main.Storyboard
+- filled in blank VC with four buttons and switches plus static label, in stack views
+
+ViewController.swift
+- added outlets and actions for all controls
+- added properties to maintain state
+  toggles
+  buttons
+  lastToggled
+- added helper functions to coordinate responses to buttons
+  (avoiding complication of introducing RxSwift)
+  allOff
+  matchButtonsToToggles
+  toggle
+  adjustControls
+  
+  
