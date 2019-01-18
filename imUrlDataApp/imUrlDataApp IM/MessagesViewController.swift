@@ -29,10 +29,26 @@ class MessagesViewController: MSMessagesAppViewController {
     var receivedMood:Mood? = nil
     let moodKey = "mood"
     let responseKey = "respondingTo"
-    
+    var enabled = [Bool]()
+    lazy var buttons = [happyBtn, quizzicalBtn, distraughtBtn, angryBtn]
+
+    func enableButtons() {
+        for (i, isOn) in enabled.enumerated() {
+            // emoji not dimmed if disabled, still need to change appearance
+            // note this is a little different to main app - there we dim but they still are enabled
+            buttons[i]?.isEnabled = isOn
+            buttons[i]?.alpha = isOn ? 1.0 : 0.3
+            // WEIRD SIDE-EFFECT OF BEING IN IMESSAGE
+            // in main app, could set button.alpha OR buttons.titleLabel?.alpha
+        }
+        //view.setNeedsDisplay()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        enabled = SharedData.current.loadEnabled()
+        enableButtons()
     }
     
     // MARK: - Conversation Handling

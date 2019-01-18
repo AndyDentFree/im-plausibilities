@@ -30,7 +30,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-kW-oSV" userLabel="Row 1">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="108"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="😀"/>
@@ -45,6 +45,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="🤨"/>
+                                                <state key="disabled" title="🤨"/>
                                                 <connections>
                                                     <action selector="onQuizzical:" destination="ObA-dk-sSI" eventType="touchUpInside" id="T8W-iT-Otb"/>
                                                 </connections>

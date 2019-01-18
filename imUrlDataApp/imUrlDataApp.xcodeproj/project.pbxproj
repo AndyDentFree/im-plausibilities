@@ -17,6 +17,8 @@
 		42199E9621F1CA5600D4377E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42199E9421F1CA5600D4377E /* MainInterface.storyboard */; };
 		42199E9821F1CA5700D4377E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42199E9721F1CA5700D4377E /* Assets.xcassets */; };
 		42199E9C21F1CA5700D4377E /* imUrlDataApp IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42199EA521F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
+		42199EA621F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		42199E9521F1CA5600D4377E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		42199E9721F1CA5700D4377E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42199E9921F1CA5700D4377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42199EA121F22A1300D4377E /* imUrlDataApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = imUrlDataApp.entitlements; sourceTree = "<group>"; };
+		42199EA221F22A1700D4377E /* imUrlDataApp IM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "imUrlDataApp IM.entitlements"; sourceTree = "<group>"; };
+		42199EA421F22CA400D4377E /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		4201A9C321F0763B0043E369 = {
 			isa = PBXGroup;
 			children = (
+				42199EA321F22C8800D4377E /* Common */,
 				4201A9CE21F0763B0043E369 /* imUrlDataApp */,
 				42199E9121F1CA5600D4377E /* imUrlDataApp IM */,
 				42199E8E21F1CA5600D4377E /* Frameworks */,
@@ -100,6 +106,7 @@
 		4201A9CE21F0763B0043E369 /* imUrlDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				42199EA121F22A1300D4377E /* imUrlDataApp.entitlements */,
 				4201A9CF21F0763B0043E369 /* AppDelegate.swift */,
 				4201A9D121F0763B0043E369 /* ViewController.swift */,
 				4201A9D321F0763B0043E369 /* Main.storyboard */,
@@ -121,12 +128,21 @@
 		42199E9121F1CA5600D4377E /* imUrlDataApp IM */ = {
 			isa = PBXGroup;
 			children = (
+				42199EA221F22A1700D4377E /* imUrlDataApp IM.entitlements */,
 				42199E9221F1CA5600D4377E /* MessagesViewController.swift */,
 				42199E9421F1CA5600D4377E /* MainInterface.storyboard */,
 				42199E9721F1CA5700D4377E /* Assets.xcassets */,
 				42199E9921F1CA5700D4377E /* Info.plist */,
 			);
 			path = "imUrlDataApp IM";
+			sourceTree = "<group>";
+		};
+		42199EA321F22C8800D4377E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				42199EA421F22CA400D4377E /* SharedData.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +196,19 @@
 				TargetAttributes = {
 					4201A9CB21F0763B0043E369 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					42199E8C21F1CA5600D4377E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -232,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42199EA521F22CA400D4377E /* SharedData.swift in Sources */,
 				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,
 				4201A9D021F0763B0043E369 /* AppDelegate.swift in Sources */,
 			);
@@ -241,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42199EA621F22CA400D4377E /* SharedData.swift in Sources */,
 				42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +432,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = imUrlDataApp/imUrlDataApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = imUrlDataApp/Info.plist;
@@ -423,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = imUrlDataApp/imUrlDataApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = imUrlDataApp/Info.plist;
@@ -441,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "imUrlDataApp IM/imUrlDataApp IM.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = "imUrlDataApp IM/Info.plist";
@@ -461,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "imUrlDataApp IM/imUrlDataApp IM.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
 				INFOPLIST_FILE = "imUrlDataApp IM/Info.plist";

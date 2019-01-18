@@ -41,3 +41,27 @@ MainInterface.storyboard
 
 Asssets.xcassets
 - copied from imUrlData
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Communication Between App and iMessage Extension
+2019-01-18
+
+project
+- imUrlDataApp target - turn on App Groups in Capabilities
+- imUrlDataApp IM target - turn on App Groups in Capabilities
+- add group group.com.touchgram.imUrlDataApp to both
+
+SharedData.swift
+- added built in both targets
+
+imUrlDataApp/ViewController.swift
+- controlIndexes moved to SharedData
+- viewDidLoad - call loadEnabled  then loop to enable buttons
+- adjustControls - call saveEnabled to write each time we adjust
+
+imUrlDataApp IM/MessagesViewController.swift
+- enabled property added
+- buttons property added
+- viewDidLoad - call loadEnabled then enableButtons() 
+- enableButtons added

@@ -16,13 +16,6 @@ extension UISwitch {
 
 class ViewController: UIViewController {
     
-    enum controlIndexes:Int, CaseIterable {
-        case happy=0
-        case quizzical=1
-        case distraught=2
-        case angry=3
-    }
-
     @IBOutlet fileprivate weak var happyBtn: UIButton!
     @IBOutlet fileprivate weak var quizzicalBtn: UIButton!
     @IBOutlet fileprivate weak var distraughtBtn: UIButton!
@@ -37,11 +30,22 @@ class ViewController: UIViewController {
     var lastToggled : controlIndexes? = nil
 
     // array of flags instead of storing state in the switch so can easily save and load
-    var enabled:[Bool] = Array(repeating: true, count: controlIndexes.allCases.count)
+    var enabled = [Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        enabled = SharedData.current.loadEnabled()
+        // initial loading loop - if read at least one false
+        if enabled.contains(false) {
+            for (i, isOn) in enabled.enumerated() {
+                buttons[i]?.alpha = isOn ? 1.0 : 0.3
+                toggles[i]?.isOn = isOn
+                // bit hacky, just set lastToggled to last off
+                lastToggled = isOn ? lastToggled : controlIndexes(rawValue: i)
+            }
+
+        }
     }
 
     func matchButtonsToToggles() {
@@ -73,6 +77,7 @@ class ViewController: UIViewController {
         }
         matchButtonsToToggles()
         lastToggled = which
+        SharedData.current.save(enabled: enabled)
     }
     
     @IBAction func onToggleHappy(_ sender: UISwitch) {
