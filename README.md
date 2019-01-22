@@ -13,9 +13,9 @@ In many cases, there are snippets and documentation explaining bits of code but 
 Each will have its own nested readme document.
 
 * [Sending data via a URL](./imUrlData/README.md)
-* [Sending data via a URL with app](./imUrlDataApp/README.md) adds a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
+* [Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
 * [Responding within a message](./responIM/README.md) 
-
+* [Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
 
 ## Other Rationales
 

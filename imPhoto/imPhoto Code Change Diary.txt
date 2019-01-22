@@ -3,3 +3,30 @@ Creation
 
 Created copying imUrlData and renaming everything.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Picking a photo and Sending
+2019-01-22
+
+info.plist (both)
+- added NSPhotoLibraryUsageDescription key
+
+MainInterface.storyboard
+- removed old buttons and label
+- added pickFromRollBtn, sendBtn & backgroundImage
+
+
+MesssagesViewController.swift
+- made a UIImagePickerControllerDelegate and UINavigationControllerDelegate
+- removed old buttons and label
+- added pickFromRollBtn, sendBtn & backgroundImage
+- imagePickerController added property
+- added import AVFoundation
+- copied showImagePicker from PhotoPicker sample
+- didTransition(to:) use showImagePicker if expanded
+- viewDidLoad assign imagePickerController delegate
+- UIImagePickerControllerDelegate methods added
+  imagePickerController(didFinishPickingMediaWithInfo:)
+  imagePickerControllerDidCancel
+
+- finishAndUpdate
+  - copied from PhotoPicker
