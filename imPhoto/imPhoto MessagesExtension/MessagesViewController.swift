@@ -168,6 +168,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
                 return
         }
         
+        // WARNING this is not great practice - not robust if muliple messages sent without completing upload
         attachmentPath = URL(fileURLWithPath: "imPhoto.jpg", relativeTo: docUrl)
         if (try? imageData.write(to: attachmentPath!)) != nil {
             conversation.insertAttachment(attachmentPath!, withAlternateFilename: "imPhoto.jpg") { (error) in

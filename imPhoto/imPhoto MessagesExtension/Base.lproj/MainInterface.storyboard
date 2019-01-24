@@ -21,7 +21,7 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bfx-5J-Eip">
                                 <rect key="frame" x="0.0" y="20" width="320" height="508"/>
                             </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Details about the image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vRO-my-Gvq" userLabel="ImageDetails">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Details about the image" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vRO-my-Gvq" userLabel="ImageDetails">
                                 <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,7 +54,6 @@
                                         <rect key="frame" x="0.0" y="104" width="227" height="30"/>
                                         <state key="normal" title="Send as Attachment"/>
                                         <connections>
-                                            <action selector="onSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ony-QC-j38"/>
                                             <action selector="onSendAttachment:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ylp-tK-u0Y"/>
                                         </connections>
                                     </button>

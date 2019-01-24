@@ -67,3 +67,11 @@ MesssagesViewController.swift
 - didTransitionTo check amShowingReceivedPhoto flag so don't popup photo picker
 - onPickFromRoll clear amShowingReceivedPhoto
  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix stupid bug in UI so actually invokes onSendAttachment
+2019-01-24
+
+MainInterface.storyboard
+- delete leftover connection to onSend from sendAttachment button, 
+  due to duplicating the button when added in IB
+  
