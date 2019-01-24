@@ -29,5 +29,7 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>So you can add photos to messages</string>
+	<key>NSCameraUsageDescription</key>
+	<string>So you can add photos to messages</string>
 </dict>
 </plist>

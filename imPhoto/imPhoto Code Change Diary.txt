@@ -75,3 +75,10 @@ MainInterface.storyboard
 - delete leftover connection to onSend from sendAttachment button, 
   due to duplicating the button when added in IB
   
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add Camera Option
+2019-01-24
+
+info.plist (both)
+- added NSCameraUsageDescription key
+
