@@ -15,10 +15,16 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
     
     @IBOutlet fileprivate weak var pickFromRollBtn: UIButton!
     @IBOutlet fileprivate weak var sendBtn: UIButton!
+    @IBOutlet fileprivate weak var sendAtchBtn: UIButton!
     @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet weak var tintView: UIView!
+    @IBOutlet weak var buttonStack: UIStackView!
+    @IBOutlet weak var imageDetails: UILabel!
     
     var imagePickerController = UIImagePickerController()
     var capturedImages = [UIImage]()
+    var attachmentPath : URL? = nil
+    var amShowingReceivedPhoto = false  // flag so when we show full window know if should put up picker
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,37 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         imagePickerController.delegate = self
     }
     
+    func showReceivedImage(_ img:UIImage) {
+        amShowingReceivedPhoto = true
+        imageDetails.isHidden = false
+        imageDetails.text = img.debugDescription
+        tintView.isHidden = true
+        buttonStack.isHidden = true
+        imageView.isHidden = false
+        imageView.image = img
+        sendBtn.isEnabled = false
+        sendAtchBtn.isEnabled = false
+        pickFromRollBtn.isEnabled = false
+    }
+
+    func printDetails(_ msg:MSMessage, from:String) {
+        if msg.layout == nil {
+            print("\(from) \(msg.debugDescription)\n has no layout")
+        }
+        else {
+            if let lay = msg.layout as? MSMessageTemplateLayout {
+                if let im = lay.image {
+                    showReceivedImage(im)
+                    print("\(from) \(msg.debugDescription)\n with image in layout\n \(im.debugDescription) ")
+                } else {
+                    print("\(from) \(msg.debugDescription)\n with layout\n \(lay.debugDescription) BUT NO IMAGE")
+                }
+            } else {
+                print("\(from) \(msg.debugDescription)\n has a layout but cannot cast to MSMessageTemplateLayout")
+            }
+        }
+    }
+
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
@@ -36,13 +73,13 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         
         // Use this method to configure the extension and restore previously stored state.
     }
-
+    
     override func didBecomeActive(with conversation: MSConversation) {
         guard let sel = conversation.selectedMessage else {
             os_log("didBecomeActive with no selectedMessage in conversation")
             return
         }
-        print("didBecomeActive \(sel.debugDescription)\n URL \(sel.url?.absoluteString ?? "no URL")")
+        printDetails(sel, from:"didBecomeActive")
         // nothing to process as image is in the message layout
     }
     
@@ -58,7 +95,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
 
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
         os_log("didSelect")
-        print("didSelect \(message.debugDescription)\n URL \(message.url?.absoluteString ?? "no URL")")
+        printDetails(message, from:"didSelect")
         super.didSelect(message, conversation: conversation)
         // nothing to process as image is in the message layout
     }
@@ -68,6 +105,11 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         // extension on a remote device. ONLY if the message arrives whilst
         // this extension is active (ie: composing a new message with it)
         // nothing to process as image is in the message layout
+        guard let sel = conversation.selectedMessage else {
+            os_log("didReceive with no selectedMessage in conversation")
+            return
+        }
+        printDetails(sel, from:"didReceive")
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
@@ -90,12 +132,13 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
-        if presentationStyle == .expanded  {
+        if presentationStyle == .expanded  && !amShowingReceivedPhoto {
             // show the roll if got here by tapping button or just resizing view
             showImagePicker(sourceType: UIImagePickerController.SourceType.photoLibrary)
         }
     }
-    
+ 
+    // MARK: - Comms
     func send() {
         guard let conversation = activeConversation else { fatalError("Expected a conversation") }
         
@@ -112,8 +155,35 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
                 print(error)
             }
         }
-        // other to consider conversation.insertAttachment(<#T##URL: URL##URL#>, withAlternateFilename: <#T##String?#>, completionHandler: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
         dismiss()
+    }
+    
+    func sendAttachment() {
+        guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+        guard
+            let imageData = imageView?.image?.jpegData(compressionQuality: 0.8),
+            let docUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            else {
+                dismiss()
+                return
+        }
+        
+        attachmentPath = URL(fileURLWithPath: "imPhoto.jpg", relativeTo: docUrl)
+        if (try? imageData.write(to: attachmentPath!)) != nil {
+            conversation.insertAttachment(attachmentPath!, withAlternateFilename: "imPhoto.jpg") { (error) in
+                if let error = error {
+                    os_log("Error with insertAttachment(message)")
+                    print(error)
+                }
+            }
+        }
+        dismiss()
+    }
+
+    func sendableDisplay(enabled:Bool) {
+        imageView?.isHidden = !enabled
+        sendBtn?.isEnabled = enabled
+        sendAtchBtn?.isEnabled = enabled
     }
     
     fileprivate func finishAndUpdate() {
@@ -123,9 +193,8 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
             }
             
             if `self`.capturedImages.count > 0 {
-                `self`.imageView?.isHidden = false
-                `self`.sendBtn?.isEnabled = true
-                if self.capturedImages.count == 1 {
+                `self`.sendableDisplay(enabled: true)
+                if `self`.capturedImages.count == 1 {
                     // Camera took a single picture.
                     `self`.imageView?.image = `self`.capturedImages[0]
                 } else {
@@ -186,6 +255,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
 
     @IBAction public func onPickFromRoll(_ sender: UIButton)  {
         if presentationStyle == .compact  {
+            amShowingReceivedPhoto = false  // in case still resident, reset the flag
             requestPresentationStyle(.expanded)  // see didTransition(to:)
         } else {
             showImagePicker(sourceType: UIImagePickerController.SourceType.photoLibrary)
@@ -196,10 +266,16 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
     @IBAction public func onSend(_ sender: UIButton)  {
         send()
         imageView.image = nil
-        imageView.isHidden = true
-        sendBtn.isEnabled = false
+        sendableDisplay(enabled: false)
     }
-    
+
+    // should only be enabled when there is a backgroundImage set
+    @IBAction public func onSendAttachment(_ sender: UIButton)  {
+        sendAttachment()
+        imageView.image = nil
+        sendableDisplay(enabled: false)
+    }
+
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

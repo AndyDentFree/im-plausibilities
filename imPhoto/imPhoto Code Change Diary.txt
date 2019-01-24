@@ -30,3 +30,40 @@ MesssagesViewController.swift
 
 - finishAndUpdate
   - copied from PhotoPicker
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Sending as Attachment
+2019-01-24
+
+MainInterface.storyboard
+- added sendAttachment
+
+MesssagesViewController.swift
+- added attachmentPath property
+- added sendAtchBtn connected to xib
+- finishAndUpdate refactored setters out to sendableDisplay()
+- added sendAttachment
+- onSend use sendableDisplay to disable/hide
+- onSendAttachment added
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Displaying incoming image
+2019-01-24
+
+MainInterface.storyboard
+- added imageDetails
+
+MesssagesViewController.swift
+- added imageDetails label
+- added outlet for buttonStack and tintView
+- added amShowingReceivedPhoto property
+- showReceivedImage() added 
+- printDetails() added
+- invoked printDetails instead of inline prints from
+  didBecomeActive
+  didSelect
+  didReceive
+- didTransitionTo check amShowingReceivedPhoto flag so don't popup photo picker
+- onPickFromRoll clear amShowingReceivedPhoto
+ 

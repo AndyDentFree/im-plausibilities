@@ -21,12 +21,20 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bfx-5J-Eip">
                                 <rect key="frame" x="0.0" y="20" width="320" height="508"/>
                             </imageView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-8p-y6R" userLabel="TintBehindButtons">
-                                <rect key="frame" x="26.5" y="225" width="267" height="98"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Details about the image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vRO-my-Gvq" userLabel="ImageDetails">
+                                <rect key="frame" x="0.0" y="20" width="320" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.11224761924946935" green="1" blue="0.21060876692732378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-8p-y6R" userLabel="TintBehindButtons">
+                                <rect key="frame" x="26.5" y="199" width="267" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-Fa-c6S">
-                                <rect key="frame" x="46.5" y="233" width="227" height="82"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-Fa-c6S" userLabel="ButtonStack">
+                                <rect key="frame" x="46.5" y="207" width="227" height="134"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni5-Qq-YkD">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="30"/>
@@ -37,9 +45,17 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsY-O6-LIn">
                                         <rect key="frame" x="0.0" y="52" width="227" height="30"/>
-                                        <state key="normal" title="Send photo"/>
+                                        <state key="normal" title="Send as preview"/>
                                         <connections>
                                             <action selector="onSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="N7M-nX-rTQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H55-GM-VgH">
+                                        <rect key="frame" x="0.0" y="104" width="227" height="30"/>
+                                        <state key="normal" title="Send as Attachment"/>
+                                        <connections>
+                                            <action selector="onSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ony-QC-j38"/>
+                                            <action selector="onSendAttachment:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ylp-tK-u0Y"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -50,12 +66,15 @@
                             <constraint firstItem="bfx-5J-Eip" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="3fB-DJ-2Mz"/>
                             <constraint firstItem="bfx-5J-Eip" firstAttribute="width" secondItem="LDy-ih-0nr" secondAttribute="width" id="4gr-gS-osv"/>
                             <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="D1A-zg-lHF"/>
+                            <constraint firstItem="vRO-my-Gvq" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="Li3-fy-E29"/>
                             <constraint firstItem="WoR-8p-y6R" firstAttribute="centerY" secondItem="FM3-Fa-c6S" secondAttribute="centerY" id="Nhj-Ug-ghn"/>
                             <constraint firstItem="WoR-8p-y6R" firstAttribute="height" secondItem="FM3-Fa-c6S" secondAttribute="height" constant="16" id="TiO-89-UPP"/>
                             <constraint firstItem="WoR-8p-y6R" firstAttribute="centerX" secondItem="FM3-Fa-c6S" secondAttribute="centerX" id="VfY-Yr-CJv"/>
                             <constraint firstItem="bfx-5J-Eip" firstAttribute="height" secondItem="LDy-ih-0nr" secondAttribute="height" id="bAj-fB-jha"/>
                             <constraint firstItem="bfx-5J-Eip" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="hVp-Gb-euk"/>
+                            <constraint firstItem="vRO-my-Gvq" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" id="hWZ-Cd-kha"/>
                             <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="mwN-dh-5HV"/>
+                            <constraint firstItem="vRO-my-Gvq" firstAttribute="width" secondItem="LDy-ih-0nr" secondAttribute="width" id="nY5-jx-Yox"/>
                             <constraint firstItem="WoR-8p-y6R" firstAttribute="width" secondItem="FM3-Fa-c6S" secondAttribute="width" constant="40" id="xZm-hU-hDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
@@ -63,9 +82,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
+                        <outlet property="buttonStack" destination="FM3-Fa-c6S" id="qVT-uT-iJT"/>
+                        <outlet property="imageDetails" destination="vRO-my-Gvq" id="vKG-RA-aOB"/>
                         <outlet property="imageView" destination="bfx-5J-Eip" id="haW-bt-B7B"/>
                         <outlet property="pickFromRollBtn" destination="ni5-Qq-YkD" id="K9W-J5-5Zx"/>
+                        <outlet property="sendAtchBtn" destination="H55-GM-VgH" id="wrf-a3-b1D"/>
                         <outlet property="sendBtn" destination="XsY-O6-LIn" id="vCU-AO-l7g"/>
+                        <outlet property="tintView" destination="WoR-8p-y6R" id="Qk9-L8-yki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,6 +1,8 @@
 # im-plausibilities
 Explorations of apps for Apple's iMessage
 
+Much of this work was during development of the [Touchgram messaging platform](https://www.touchgram.com/).
+
 ## Many tiny apps rationale
 Due to some painful debugging experiences, I took the approach of doing simplest-possible testbed apps for different technologies.
 
@@ -16,6 +18,11 @@ Each will have its own nested readme document.
 * [Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
 * [Responding within a message](./responIM/README.md) 
 * [Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
+
+### Planned apps
+* A pure app version of `imPhoto` that uses `MFMessageComposeViewController`
+* Sending a photo as special data via a cloud service, so the receiving app can process it
+* Sending photos using `MSMessageLiveLayout` to continuously update in the transcript
 
 ## Other Rationales
 
