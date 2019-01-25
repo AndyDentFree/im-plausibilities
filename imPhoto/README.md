@@ -18,6 +18,7 @@ There's a bug in XCode 10.1 where just **adding the plist key** `NSCameraUsageDe
 1. You cannot use the debugger for camera testing.
 2. You need to have a separate `info.plist` for Release and Debug builds.
 
+Use the `MessagesExtension runRelease` scheme when testing, to quickly push a Release build (with camera enabled) to your device but remember you **cannot debug it in XCode**
 
 ## Icons
 There are a couple of icons from [icons8](https://icons8.com/license) used here for the UI and to compose the app icons. Whilst I have a paid license, they should not be re-used in this sample code without attribution as per this clause.

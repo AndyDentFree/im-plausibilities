@@ -40,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		423A168521FA12820086E2CC /* Info_Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_Debug.plist; sourceTree = "<group>"; };
 		4295D26C21E957F500EF0E0A /* imPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4295D26F21E957F700EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4295D27121E957F700EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +49,7 @@
 		4295D27E21E957F800EF0E0A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4295D28121E957F800EF0E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4295D28321E957F800EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4295D28521E957F800EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4295D28521E957F800EF0E0A /* Info_Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_Release.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +106,8 @@
 				4295D27E21E957F800EF0E0A /* MessagesViewController.swift */,
 				4295D28021E957F800EF0E0A /* MainInterface.storyboard */,
 				4295D28321E957F800EF0E0A /* Assets.xcassets */,
-				4295D28521E957F800EF0E0A /* Info.plist */,
+				4295D28521E957F800EF0E0A /* Info_Release.plist */,
+				423A168521FA12820086E2CC /* Info_Debug.plist */,
 			);
 			path = "imPhoto MessagesExtension";
 			sourceTree = "<group>";
@@ -357,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imPhoto MessagesExtension/Info.plist";
+				INFOPLIST_FILE = "imPhoto MessagesExtension/Info_Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imPhoto MessagesExtension/Info.plist";
+				INFOPLIST_FILE = "imPhoto MessagesExtension/Info_Release.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

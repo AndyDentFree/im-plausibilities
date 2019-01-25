@@ -76,9 +76,17 @@ MainInterface.storyboard
   due to duplicating the button when added in IB
   
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-Add Camera Option
+Add Camera Option inc hack for XCode bug
 2019-01-24
 
-info.plist (both)
+info.plist - app
 - added NSCameraUsageDescription key
 
+info.plist - extension
+- added NSCameraUsageDescription key
+- renamed info_release.plist
+- copied without camera key to info_debug.plist
+
+project
+- extension target - split setting for Debug vs Release to use the two new plists
+- added imPhoto MessagesExtension runRelease scheme to run in Release mode, so can push to device whilst testing
