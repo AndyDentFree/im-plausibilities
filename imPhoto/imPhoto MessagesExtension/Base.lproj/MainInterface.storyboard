@@ -29,29 +29,46 @@
                                 <color key="textColor" red="0.11224761924946935" green="1" blue="0.21060876692732378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-8p-y6R" userLabel="TintBehindButtons">
-                                <rect key="frame" x="26.5" y="199" width="267" height="150"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-8p-y6R" userLabel="TintBehindButtons">
+                                <rect key="frame" x="62" y="176" width="196" height="196"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-Fa-c6S" userLabel="ButtonStack">
-                                <rect key="frame" x="46.5" y="207" width="227" height="134"/>
+                                <rect key="frame" x="82" y="184" width="156" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni5-Qq-YkD">
-                                        <rect key="frame" x="0.0" y="0.0" width="227" height="30"/>
-                                        <state key="normal" title="Pick a photo from the camera roll"/>
-                                        <connections>
-                                            <action selector="onPickFromRoll:" destination="ObA-dk-sSI" eventType="touchUpInside" id="SxV-fg-cMU"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-s7-L7W" userLabel="PhotoButtonsStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-lg-Nzm" userLabel="UseCamera">
+                                                <rect key="frame" x="0.0" y="10" width="76" height="60"/>
+                                                <state key="normal" image="Camera"/>
+                                                <connections>
+                                                    <action selector="onUseCamera:" destination="ObA-dk-sSI" eventType="touchUpInside" id="tt0-80-pTM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni5-Qq-YkD" userLabel="PickFromRoll">
+                                                <rect key="frame" x="96" y="10" width="60" height="60"/>
+                                                <state key="normal" image="Photos"/>
+                                                <connections>
+                                                    <action selector="onPickFromRoll:" destination="ObA-dk-sSI" eventType="touchUpInside" id="SxV-fg-cMU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="P7P-GR-2Q5"/>
+                                        </constraints>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsY-O6-LIn">
-                                        <rect key="frame" x="0.0" y="52" width="227" height="30"/>
+                                        <rect key="frame" x="0.0" y="92" width="156" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Send as preview"/>
                                         <connections>
                                             <action selector="onSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="N7M-nX-rTQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H55-GM-VgH">
-                                        <rect key="frame" x="0.0" y="104" width="227" height="30"/>
+                                        <rect key="frame" x="0.0" y="147" width="156" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Send as Attachment"/>
                                         <connections>
                                             <action selector="onSendAttachment:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ylp-tK-u0Y"/>
@@ -88,10 +105,15 @@
                         <outlet property="sendAtchBtn" destination="H55-GM-VgH" id="wrf-a3-b1D"/>
                         <outlet property="sendBtn" destination="XsY-O6-LIn" id="vCU-AO-l7g"/>
                         <outlet property="tintView" destination="WoR-8p-y6R" id="Qk9-L8-yki"/>
+                        <outlet property="useCameraBtn" destination="B3G-lg-Nzm" id="nQR-UI-KeT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="76" height="60"/>
+        <image name="Photos" width="60" height="60"/>
+    </resources>
 </document>

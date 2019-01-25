@@ -13,6 +13,7 @@ import AVFoundation
 
 class MessagesViewController: MSMessagesAppViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBOutlet fileprivate weak var useCameraBtn: UIButton!
     @IBOutlet fileprivate weak var pickFromRollBtn: UIButton!
     @IBOutlet fileprivate weak var sendBtn: UIButton!
     @IBOutlet fileprivate weak var sendAtchBtn: UIButton!
@@ -22,6 +23,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
     @IBOutlet weak var imageDetails: UILabel!
     
     var imagePickerController = UIImagePickerController()
+    var currentPicker = UIImagePickerController.SourceType.photoLibrary
     var capturedImages = [UIImage]()
     var attachmentPath : URL? = nil
     var amShowingReceivedPhoto = false  // flag so when we show full window know if should put up picker
@@ -134,7 +136,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         // Use this method to finalize any behaviors associated with the change in presentation style.
         if presentationStyle == .expanded  && !amShowingReceivedPhoto {
             // show the roll if got here by tapping button or just resizing view
-            showImagePicker(sourceType: UIImagePickerController.SourceType.photoLibrary)
+            showImagePicker(sourceType: currentPicker)
         }
     }
  
@@ -251,16 +253,67 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
             // Done presenting.
         })
     }
-
-    // MARK: - Buttons
-
-    @IBAction public func onPickFromRoll(_ sender: UIButton)  {
+    
+    func showCurrentPicker() {
         if presentationStyle == .compact  {
             amShowingReceivedPhoto = false  // in case still resident, reset the flag
             requestPresentationStyle(.expanded)  // see didTransition(to:)
         } else {
-            showImagePicker(sourceType: UIImagePickerController.SourceType.photoLibrary)
+            showImagePicker(sourceType: currentPicker)
         }
+    }
+
+
+    // MARK: - Buttons
+    
+    @IBAction func onUseCamera(_ sender: Any) {
+        let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        
+        if authStatus == AVAuthorizationStatus.denied {
+            // Denied access to camera, alert the user.
+            // The user has previously denied access. Remind the user that we need camera access to be useful.
+            let alert = UIAlertController(title: "Unable to access the Camera",
+                                          message: "To enable access, go to Settings > Privacy > Camera and turn on Camera access for this app.",
+                                          preferredStyle: UIAlertController.Style.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(okAction)
+            
+            let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { _ in
+                // Take the user to Settings app to possibly change permission.
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                // INSTEAD of UIApplication.shared
+                self.extensionContext?.open(settingsUrl, completionHandler: { (success) in
+                    // Finished opening URL
+                })
+            })
+            alert.addAction(settingsAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        else if (authStatus == AVAuthorizationStatus.notDetermined) {
+            // The user has not yet been presented with the option to grant access to the camera hardware.
+            // Ask for permission.
+            //
+            // (Note: you can test for this case by deleting the app on the device, if already installed).
+            // (Note: we need a usage description in our Info.plist to request access.
+            //
+            AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { (granted) in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.showImagePicker(sourceType: UIImagePickerController.SourceType.camera)
+                    }
+                }
+            })
+        } else {
+            currentPicker = UIImagePickerController.SourceType.camera
+            showCurrentPicker()
+        }
+    }
+    
+    @IBAction public func onPickFromRoll(_ sender: UIButton)  {
+        currentPicker = UIImagePickerController.SourceType.photoLibrary
+        showCurrentPicker()
     }
 
     // should only be enabled when there is a backgroundImage set
@@ -283,11 +336,6 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
         guard let image = info[UIImagePickerController.InfoKey.originalImage] else { return }
         capturedImages.append(image as! UIImage)
         finishAndUpdate()
-        /*
-        if !cameraTimer.isValid {
-            // Timer is done firing so Finish up until the user stops the timer from taking photos.
-            finishAndUpdate()
-        }*/
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

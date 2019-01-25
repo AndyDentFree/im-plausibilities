@@ -76,7 +76,7 @@ MainInterface.storyboard
   due to duplicating the button when added in IB
   
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-Add Camera Option inc hack for XCode bug
+Add Camera Option -  hack for XCode bug
 2019-01-24
 
 info.plist - app
@@ -90,3 +90,24 @@ info.plist - extension
 project
 - extension target - split setting for Debug vs Release to use the two new plists
 - added imPhoto MessagesExtension runRelease scheme to run in Release mode, so can push to device whilst testing
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add Camera Option UI and use Camera
+2019-01-25
+
+MesssagesViewController.swift
+- added useCameraBtn
+- added onUseCamera
+- added currentPicker property
+- onPickFromRoll 
+  - set currentPicker
+  - factor most code out to showCurrentPicker() 
+
+
+MainInterface.storyboard
+- added two icons
+- changed PickFromRoll button to icon only
+- added UseCamera button and put two icon buttons in horizontal StackView
+- TintBehindButtons alpha and color changed to provide better contrast
+- text button font sized upped 15 to 17
+
