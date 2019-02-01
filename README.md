@@ -6,13 +6,11 @@ Much of this work was during development of the [Touchgram messaging platform](h
 ## Many tiny apps rationale
 Due to some painful debugging experiences, I took the approach of doing simplest-possible testbed apps for different technologies.
 
-This means if you are interested in a given sample, there's a better chance of it continuing to work than if you have to fix bugs in areas not of interest.
+This means if you are interested in a given sample, there's a better chance of it continuing to work than if you have to fix bugs in areas not of interest. It also means you can submit a PR to fix a single sample, so is less work to contribute ;-)
 
-For that reason, unless testing 3rd-party tech, in general this is pure Apple stuff alone.
+In many cases, Apple's documentation provides snippets and API documentation but no full sample you can build and verify works.
 
-In many cases, there are snippets and documentation explaining bits of code but no full sample you can build and verify works.
-
-Each will have its own nested readme document.
+Each sample will have its own nested readme document.
 
 * [Sending data via a URL](./imUrlData/README.md)
 * [Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
@@ -20,11 +18,18 @@ Each will have its own nested readme document.
 * [Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
 
 ### Planned apps
-* A pure app version of `imPhoto` that uses `MFMessageComposeViewController`
+Note the presence of an idea below is **not** a guarantee the idea is feasible!
+
+* A pure app version of `imPhoto` that uses `MFMessageComposeViewController` to test sending without going into iMessage
 * Sending a photo as special data via a cloud service, so the receiving app can process it
 * Sending photos using `MSMessageLiveLayout` to continuously update in the transcript
 
 ## Other Rationales
+I love the effort some people put into their sample code but it's often frustrating when they explore several things at once. _I'm testing this API **and** learning Reactive Cocoa_ because those complex samples tend to be left to wither - they are too hard to maintain when someone loses interest.
+
+Some of the sample code might be factored out into multiple classes or extensions in a real app but I find it easier to browse when all is in one file.
+
+Keeping a very similar code layout between different samples should also make it easier for you to compare and see how they differ. That's why the default view controller hasn't been renamed.
 
 ### Icons
 Even though these are relatively trivial test apps, I take the time to add a unique icon to them. 
@@ -33,11 +38,13 @@ I have found, when you have more than one test app, especially with minimal UI, 
 
 I created a Sketch file initially in the imUrlData sample which is based off Apple's icon template (as of Sketch 52.6) but extended a bit for the iMessage icon sizes which are non-square. 
 
+I wouldn't regard myself as more than a very amateur designer. Even with that disclaimer, these do not represent my best work! 
+
 ## History
 
 This started as a private repo (thanks MS/GitHub for introducing these) so I could work up some tests without public embarrassment then decide to publish.
 
-So, if you are reading this,I got enough material to publish and you can probably read an article or two [somewhere on Medium](https://medium.com/@andydentperth)
+I made it public so I could link to it from some Stack Overflow answers. In the near future there will also be articles on iMessage programming [somewhere on Medium](https://medium.com/@andydentperth)
 
 ## Disclaimer
 
