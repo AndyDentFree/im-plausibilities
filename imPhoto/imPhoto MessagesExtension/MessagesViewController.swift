@@ -279,16 +279,26 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
             
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(okAction)
-            
+            /*
+             Commented out because extensionContext.open does NOT WORK FROM INSIDE iMessage.
+             
+             The action below using a URL to launch settings only works within a real app.
+             Even if your iMessage extension is hosted inside an app, any attempt to use
+             extensionContext.open will just open your host, not the desired app.
+             
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { _ in
                 // Take the user to Settings app to possibly change permission.
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
                 // INSTEAD of UIApplication.shared
                 self.extensionContext?.open(settingsUrl, completionHandler: { (success) in
-                    // Finished opening URL
+                    if success {
+                        os_log("Successfully opened settings")
+                    } else {
+                        os_log("Failed to open Settings")
+                    }
                 })
             })
-            alert.addAction(settingsAction)
+            alert.addAction(settingsAction)*/
             
             present(alert, animated: true, completion: nil)
         }
