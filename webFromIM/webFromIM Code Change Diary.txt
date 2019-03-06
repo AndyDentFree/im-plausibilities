@@ -1,0 +1,17 @@
+Creation
+2019-03-06
+
+Created by duplicating the responIM and renaming everything.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Reduce UI to one test button
+2019-03-06
+
+MainInterface.storyboard
+- Replaced four buttons with startBtn and respondBtn
+
+MessagesViewController.swift
+- Replaced two buttons with openWeb
+- responseCount property removed
+- toggleButtons and send removed
+- send, hasIncoming and didBecomeActive reduce to stubs
