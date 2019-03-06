@@ -16,6 +16,7 @@ Each sample will have its own nested readme document.
 * [Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
 * [Responding within a message](./responIM/README.md) 
 * [Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
+* [Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
 
 ### Planned apps
 Note the presence of an idea below is **not** a guarantee the idea is feasible!
