@@ -15,3 +15,11 @@ MessagesViewController.swift
 - responseCount property removed
 - toggleButtons and send removed
 - send, hasIncoming and didBecomeActive reduce to stubs
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fixed the launching problem as discussed in readme
+2019-03-06
+
+MessagesViewController
+- onOpenWeb - use iteration up UIResponder chain to find instance which can perform the `open` call
+  after testing showed self.extensionContext.open didn't work.

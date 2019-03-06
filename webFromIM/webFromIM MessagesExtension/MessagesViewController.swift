@@ -99,18 +99,29 @@ class MessagesViewController: MSMessagesAppViewController {
 
     @IBAction public func onOpenWeb(_ sender: UIButton)  {
         guard let url = testUrl else {return}
-        guard let context = self.extensionContext else {
-            os_log("Unable to get extensionContext so cannot launch URL")
-            return
-        }
-        // https://developer.apple.com/documentation/foundation/nsextensioncontext/1416791-open
-        context.open(url, completionHandler: { (success) in
-            // Finished opening URL
+        
+        // technique that works rather than self.extensionContext.open
+        var responder = self as UIResponder?
+/*
+         if responder?.responds(to: #selector(UIApplication.openURL(_:))) == true{
+         responder?.perform(#selector(UIApplication.openURL(_:)), with: url)
+ */
+        let handler = { (success:Bool) -> () in
             if success {
                 os_log("Finished opening URL")
             } else {
                 os_log("Failed to open URL")
             }
-        })
+        }
+
+        let openSel = #selector(UIApplication.open(_:options:completionHandler:))
+        while (responder != nil){
+            if responder?.responds(to: openSel ) == true{
+                // cannot package up arguments
+                (responder as? UIApplication)?.open(url, completionHandler:handler)  // perform(openSel, with: url)
+                return
+            }
+            responder = responder!.next
+        }
     }
 }
