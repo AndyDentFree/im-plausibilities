@@ -111,3 +111,8 @@ MainInterface.storyboard
 - TintBehindButtons alpha and color changed to provide better contrast
 - text button font sized upped 15 to 17
 
+info_Debug.plist - renamed info_NoCamera.plist
+info_Release.plist - renamed info_Camera.plist
+
+info.plist for app - had to add the camera keys to avoid crash in extensions
+

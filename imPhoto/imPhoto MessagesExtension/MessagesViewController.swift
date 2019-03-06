@@ -267,6 +267,7 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
     // MARK: - Buttons
     
     @IBAction func onUseCamera(_ sender: Any) {
+        currentPicker = UIImagePickerController.SourceType.camera
         let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         
         if authStatus == AVAuthorizationStatus.denied {
@@ -301,12 +302,11 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
             AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { (granted) in
                 if granted {
                     DispatchQueue.main.async {
-                        self.showImagePicker(sourceType: UIImagePickerController.SourceType.camera)
+                        self.showCurrentPicker()
                     }
                 }
             })
         } else {
-            currentPicker = UIImagePickerController.SourceType.camera
             showCurrentPicker()
         }
     }
