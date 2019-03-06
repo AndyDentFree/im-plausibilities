@@ -279,26 +279,32 @@ class MessagesViewController: MSMessagesAppViewController, UINavigationControlle
             
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(okAction)
-            /*
-             Commented out because extensionContext.open does NOT WORK FROM INSIDE iMessage.
-             
-             The action below using a URL to launch settings only works within a real app.
-             Even if your iMessage extension is hosted inside an app, any attempt to use
-             extensionContext.open will just open your host, not the desired app.
-             
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { _ in
                 // Take the user to Settings app to possibly change permission.
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-                // INSTEAD of UIApplication.shared
-                self.extensionContext?.open(settingsUrl, completionHandler: { (success) in
-                    if success {
-                        os_log("Successfully opened settings")
-                    } else {
-                        os_log("Failed to open Settings")
+                /* normal advice for extensions is
+                 self.extensionContext?.open(settingsUrl, completionHandler: { (success) in ...
+                 extensionContext.open does NOT WORK FROM INSIDE iMessage.
+                 however we can go back up the responder chain to get the iMessage parent app
+                 */
+                let openSel = #selector(UIApplication.open(_:options:completionHandler:))
+                var responder = self as UIResponder?
+                while (responder != nil){
+                    if responder?.responds(to: openSel ) == true{
+                        // cannot package up arguments, so assume is a UIApplication and cast
+                        (responder as? UIApplication)?.open(settingsUrl, completionHandler:{(success) in
+                            if success {
+                            os_log("Successfully opened settings")
+                            } else {
+                            os_log("Failed to open Settings")
+                        }
+                    })
+                        return
                     }
-                })
+                    responder = responder!.next
+                }
             })
-            alert.addAction(settingsAction)*/
+            alert.addAction(settingsAction)
             
             present(alert, animated: true, completion: nil)
         }

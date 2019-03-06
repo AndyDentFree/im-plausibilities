@@ -116,3 +116,10 @@ info_Release.plist - renamed info_Camera.plist
 
 info.plist for app - had to add the camera keys to avoid crash in extensions
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fixed the alert when don't have permission, to launch settings
+2019-03-06
+
+MessagesViewController
+- onUseCamera - use iteration up UIResponder chain to find instance which can perform the `open` call
+  after testing showed self.extensionContext.open didn't work.
