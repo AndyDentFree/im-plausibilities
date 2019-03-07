@@ -102,7 +102,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // technique that works rather than self.extensionContext.open
         var responder = self as UIResponder?
-/*
+/* old approach using openURL which has now been deprecated
          if responder?.responds(to: #selector(UIApplication.openURL(_:))) == true{
          responder?.perform(#selector(UIApplication.openURL(_:)), with: url)
  */
@@ -117,7 +117,8 @@ class MessagesViewController: MSMessagesAppViewController {
         let openSel = #selector(UIApplication.open(_:options:completionHandler:))
         while (responder != nil){
             if responder?.responds(to: openSel ) == true{
-                // cannot package up arguments
+                // cannot package up multiple args to openSel so we explicitly call it on the iMessage application instance
+                // found by iterating up the chain
                 (responder as? UIApplication)?.open(url, completionHandler:handler)  // perform(openSel, with: url)
                 return
             }
