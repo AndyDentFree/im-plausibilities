@@ -45,6 +45,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     override func viewDidLoad() {
+        os_log("viewDidLoad")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         enabled = SharedData.current.loadEnabled()
@@ -54,7 +55,11 @@ class MessagesViewController: MSMessagesAppViewController {
     // MARK: - Conversation Handling
     func hasIncoming(message: MSMessage) {
         // Use this method to trigger UI updates in response to the message.
-        guard let url = message.url else { return }
+        guard let url = message.url else {
+            os_log("hasIncoming but no message URL")
+            return
+        }
+        os_log("hasIncoming parsing message")
         guard let comps = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
         if let msgMood = comps.queryItems?.first(where: { $0.name == moodKey })?.value {
             if let parsedMood = Mood(rawValue: msgMood) {
@@ -71,6 +76,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // NOTE that means you may have launched the extension to compose a new message OR selected previous, which also hits didSelect
         
         // Use this method to configure the extension and restore previously stored state.
+        os_log("willBecomeActive")
     }
     
     override func didBecomeActive(with conversation: MSConversation) {
@@ -90,6 +96,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // Use this method to release shared resources, save user data, invalidate timers,
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
+        os_log("didResignActive")
     }
    
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
@@ -107,6 +114,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
+        os_log("didStartSending")
         // Called when the user taps the send button.
     }
     
@@ -114,7 +122,8 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called when the user deletes the message without sending it.
     
         // Use this to clean up state related to the deleted message.
-    }
+        os_log("didCancelSending")
+}
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called before the extension transitions to a new presentation style.

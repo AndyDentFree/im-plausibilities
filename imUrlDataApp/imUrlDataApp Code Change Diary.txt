@@ -65,3 +65,12 @@ imUrlDataApp IM/MessagesViewController.swift
 - buttons property added
 - viewDidLoad - call loadEnabled then enableButtons() 
 - enableButtons added
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Logging to help diagnose state changes
+2019-03-13
+
+imUrlDataApp IM/MessagesViewController.swift
+- just add os_log calls for events so get console messages,
+  no functional changes
