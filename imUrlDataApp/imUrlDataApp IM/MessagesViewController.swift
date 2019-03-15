@@ -29,6 +29,7 @@ class MessagesViewController: MSMessagesAppViewController {
     var receivedMood:Mood? = nil
     let moodKey = "mood"
     let responseKey = "respondingTo"
+    let senderTimestampKey = "sentTS"
     var enabled = [Bool]()
     lazy var buttons = [happyBtn, quizzicalBtn, distraughtBtn, angryBtn]
 
@@ -114,8 +115,9 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
-        os_log("didStartSending")
         // Called when the user taps the send button.
+        os_log("didStartSending")
+        print("didStartSending \(message.debugDescription)\n URL \(message.url?.absoluteString ?? "no URL")")
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -123,6 +125,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this to clean up state related to the deleted message.
         os_log("didCancelSending")
+        print("didCancelSending \(message.debugDescription)\n URL \(message.url?.absoluteString ?? "no URL")")
 }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -157,6 +160,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if receivedMood != nil {
             qi.append(URLQueryItem(name:responseKey, value:receivedMood!.rawValue))
         }        
+        qi.append(URLQueryItem(name:senderTimestampKey, value:Date().description))
         urlComps.queryItems = qi
         let layout = MSMessageTemplateLayout()
         layout.caption = label

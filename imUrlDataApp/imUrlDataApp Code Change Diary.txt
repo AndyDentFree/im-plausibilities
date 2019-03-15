@@ -74,3 +74,13 @@ Adding Logging to help diagnose state changes
 imUrlDataApp IM/MessagesViewController.swift
 - just add os_log calls for events so get console messages,
   no functional changes
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Testing with URL to confirm get url back from sent message on notification
+2019-03-15
+
+imUrlDataApp IM/MessagesViewController.swift
+- senderTimestampKey added
+- send include senderTimestampKey in url
+- didStartSending and didCancelSending
+  - print url of message 
