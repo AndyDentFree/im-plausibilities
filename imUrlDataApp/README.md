@@ -1,5 +1,5 @@
 # imUrlDataApp
-See the overall rationale in the readme in the parent folder.
+See the overall rationale in the [readme in the parent folder](../README.md).
 
 Same as imUrlData but adding a usable iOS App side rather than just appearing as an extension.
 
