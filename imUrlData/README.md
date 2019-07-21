@@ -1,5 +1,5 @@
 # imUrlData
-See the overall rationale in the [readme in the parent folder](../readme.md).
+See the overall rationale in the [readme in the parent folder](../README.md).
 
 This sample explores just using the [url][1] field of MSMessage to send data.
 
