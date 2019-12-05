@@ -1,5 +1,5 @@
 # imPhoto
-See the overall rationale in the readme in the parent folder.
+See the overall rationale in the [readme in the parent folder](../README.md).
 
 Created to test using the camera and photo library within an iMessage extension.
 

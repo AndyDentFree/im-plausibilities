@@ -1,9 +1,9 @@
 # imUrlData
-See the overall rationale in the readme in the parent folder.
+See the overall rationale in the [readme in the parent folder](../README.md).
 
 This sample explores just using the [url][1] field of MSMessage to send data.
 
-**Warning** this is limited to **5,000 characters**. Sending larger data is something ou have to manage separately with a cloud service.
+**Warning** this field is limited to **5,000 characters**. Sending larger data is something you have to manage separately with a cloud service.
 
 ## Project Structure
 

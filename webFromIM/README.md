@@ -1,7 +1,7 @@
 # webFromIM
 Copied from responIM
 
-See the overall rationale in the readme in the parent folder.
+See the overall rationale in the [readme in the parent folder](../README.md).
 
 This sample explores just a UI aspect - launching a web browser from within iMessage, nothing to do with communications.
 
