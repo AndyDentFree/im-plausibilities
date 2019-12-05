@@ -114,12 +114,6 @@ class MessagesViewController: MSMessagesAppViewController {
             }
         }
 
-        /**
-         approach that worked up until XCode 11.2 with the iOS 13 SDK, even when targeting ios12.1
-         
-         From XCode 11.x onwards this fails to compile with
-         'open(_:options:completionHandler:)' is unavailable in application extensions for iOS
-         
         let openSel = #selector(UIApplication.open(_:options:completionHandler:))
         while (responder != nil){
             if responder?.responds(to: openSel ) == true{
@@ -130,7 +124,5 @@ class MessagesViewController: MSMessagesAppViewController {
             }
             responder = responder!.next
         }
-         */
-        self.extensionContext?.open(url, completionHandler: handler)
     }
 }
