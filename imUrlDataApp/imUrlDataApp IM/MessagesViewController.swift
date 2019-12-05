@@ -196,4 +196,12 @@ class MessagesViewController: MSMessagesAppViewController {
         send(mood:.angry, label:sender.currentTitle!)
     }
 
+    // WARNING due to Simulator/XCode bugs, trying to invoke this in the simulator will cause a SIGKILL as it exits the iMessage context
+    // that was the case in XCode 10 at least
+    @IBAction func onLaunchApp(_ sender: Any) {
+        guard let url: URL = URL(string: "imUrlDataApp://?arbitraryParam=nothingSpecial") else { return }
+        self.extensionContext?.open(url, completionHandler: { (success: Bool) in
+            // nothing, we invoked the main app!
+        })
+    }
 }

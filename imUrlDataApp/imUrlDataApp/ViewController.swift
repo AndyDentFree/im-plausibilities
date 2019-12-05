@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 
     func matchButtonsToToggles() {
         for (i, isOn) in enabled.enumerated() {
-            buttons[i]?.titleLabel?.alpha = isOn ? 1.0 : 0.3
+            buttons[i]?.alpha = isOn ? 1.0 : 0.3
         }
     }
     
@@ -58,16 +58,11 @@ class ViewController: UIViewController {
         return !enabled.contains(true)
     }
     
+    // change value of a switch associated with the emoji button just tapped
     func toggle(_ which:controlIndexes) {
         toggles[which.rawValue]?.toggle()
         // needs to delay after button comes up to make dim
-        if enabled[which.rawValue] {
-            // tried just plain "async" and sometimes tapping fast got out of sync
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {self.adjustControls(justSet:which)}
-        }
-        else {
-            adjustControls(justSet:which)
-        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {self.adjustControls(justSet:which)}
     }
     
     func adjustControls(justSet which:controlIndexes) {

@@ -12,11 +12,19 @@ In many cases, Apple's documentation provides snippets and API documentation but
 
 Each sample will have its own nested readme document.
 
-* [Sending data via a URL](./imUrlData/README.md)
-* [Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
-* [Responding within a message](./responIM/README.md) 
-* [Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
-* [Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
+* [imUrlData - Sending data via a URL](./imUrlData/README.md)
+* [imUrlDataApp - Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
+* [responIM - Responding within a message](./responIM/README.md) 
+* [imPhoto - Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
+* [webFromIM - Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
+
+
+### Opening other apps from inside iMessage
+For various reasons, some of these samples may need to launch another app. This became difficult with iOS 13 so these samples were revisited.
+
+* [imPhoto](./imPhoto/README.md) launch Settings to change camera permissions
+* [imUrlDataApp](./imUrlDataApp/README.md) launches the companion app, just to show it's possible.
+* [webFromIM](./webFromIM/README.md) sole reason for this demo is to launch Safari.
 
 ### Planned apps
 Note the presence of an idea below is **not** a guarantee the idea is feasible!

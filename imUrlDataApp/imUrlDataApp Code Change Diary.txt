@@ -84,3 +84,22 @@ imUrlDataApp IM/MessagesViewController.swift
 - send include senderTimestampKey in url
 - didStartSending and didCancelSending
   - print url of message 
+
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add launch of main app from iMessage & fix display bug
+2019-12-05
+
+MainInterface.storyboard
+- MessagesViewController scene - add AppButton
+
+MessagesViewController.swift
+- add onLaunchApp as IBAction for AppButton
+
+imUrlDataApp/info.plist
+- URL Types dict added with 
+  URL identifier "test.imUrlDataApp"
+  URL Schemes item 0 "imUrlDataApp"
+  
+Viewcontroller.swift
+- matchButtonsToToggles set button alpha, was setting buttonTitle alpha so sometimes got "stuck" on dim  
