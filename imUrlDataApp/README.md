@@ -21,6 +21,13 @@ Note another strong reason to have the companion app installable is to support I
 
 
 
+## Sending from the App
+
+Apple provide [MFMessageComposeViewController](https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller) so you can compose messages inside an app. This is documented as being mostly about sending text **but** you can also assign the `message` property which is an `MSMessage`. The documentation misleadingly says _To display your iMessage app, create and assign an MSMessage object to this property._ but there's no such automatic behaviour. 
+
+What _does_ seem to happen, magically behind the scene, is that the iMessage delivered is typed for the iMessage Extension App bundled with your sending app. ie: you can only use this technique when there's an extension. 
+
+
 ## Project Structure
 
 Created using XCode 10.1 as a Single View App then *added* an iMessage App Extension second target.

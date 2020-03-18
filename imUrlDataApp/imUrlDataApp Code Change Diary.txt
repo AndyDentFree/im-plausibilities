@@ -103,3 +103,18 @@ imUrlDataApp/info.plist
   
 Viewcontroller.swift
 - matchButtonsToToggles set button alpha, was setting buttonTitle alpha so sometimes got "stuck" on dim  
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add Message Sending from App
+2020-03-18
+
+App/Main.Storyboard
+- View Controller Scene - AppSendButton added
+
+ViewController.swift
+- add import MessageUI
+- add protocol MFMessageComposeViewControllerDelegate
+- appSendButton added and connected
+- onAppSendButton added to invoke displayMessageInterface
+- displayMessageInterface added
