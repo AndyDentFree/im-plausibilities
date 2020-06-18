@@ -71,3 +71,23 @@ MainInterface.storyboard
 MessagesViewController.swift
 - onOpenWeb factored out to helper func openWeb
 - onOpenInApp added
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Show launching a web page in the iMessage extension itself
+(good for help pages)
+2019-06-18
+
+MainInterface.storyboard - MessagesViewController
+- added localWebView initially hidden
+- enabled openHere button
+- set View background to standard system colour so all labels visible in dark mode
+
+MessagesViewController.swift
+- import webkit
+- webView outlet added
+- isShowingLocalURL added
+- controlsStack outlet added
+- onOpenHere stub filled out to show webView in expanded mode
+- showWebLocally added
+- toggleWeb added
+- didTransition change UI depending on isShowingLocalURL so can request an expansion to display a local web page and then collapsing back will show menu again

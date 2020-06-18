@@ -9,6 +9,7 @@
 import UIKit
 import os
 import Messages
+import WebKit
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -18,7 +19,11 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet fileprivate weak var statusLabel: UILabel!
     @IBOutlet weak var urlEntry: UITextField!
-       
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var controlsStack: UIStackView!
+    
+    var isShowingLocalURL = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -94,6 +99,17 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
+        if isShowingLocalURL {
+            if presentationStyle == .expanded {
+                showWebLocally()
+            } else {  // presume collapsed
+                isShowingLocalURL = false
+                toggleWeb(on: false)
+            }
+        } else {
+            urlEntry.isEnabled = presentationStyle == .expanded
+        }
+
     }
     
    // MARK: - Helpers
@@ -124,10 +140,26 @@ class MessagesViewController: MSMessagesAppViewController {
         self.extensionContext?.open(appUrl, completionHandler: handler)
     }
     
+    private func toggleWeb(on webVisible:Bool) {
+        webView.isHidden = !webVisible
+        controlsStack.isHidden = webVisible
+    }
+    
+    private func showWebLocally() {
+        guard let urlStr = urlEntry?.text,
+            let url = URL(string:urlStr) else {
+                statusLabel.text = "Bad URL"
+                return
+        }
+        toggleWeb(on: true)
+        let myRequest = URLRequest(url: url)
+        webView.load(myRequest)
+    }
+    
     // MARK: - Buttons
     @IBAction func onEditingChanged(_ sender: UITextField) {
         let canGo = (urlEntry?.text != nil) && URL(string:urlEntry!.text!) != nil
-        openHere.isEnabled = false //canGo
+        openHere.isEnabled = canGo
         openInApp.isEnabled = canGo
         openInSafari.isEnabled = canGo
     }
@@ -141,6 +173,13 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @IBAction func onOpenHere(_ sender: UIButton) {
+        isShowingLocalURL = true
+        // request a transition
+        if presentationStyle == .expanded {
+            showWebLocally()
+        } else {
+            requestPresentationStyle(.expanded)
+        }
     }
     
 }

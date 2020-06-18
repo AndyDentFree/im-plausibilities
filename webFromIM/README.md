@@ -3,7 +3,11 @@ Copied from responIM
 
 See the overall rationale in the [readme in the parent folder](../README.md).
 
-This sample explores just a UI aspect - launching a web browser from within iMessage, nothing to do with communications.
+This sample explores just a UI aspect - launching a web browser from within iMessage, nothing to do with messaging.
+
+It also shows using a web view locally in iMessage as you might do for help pages.
+
+Note that the web URL entry field is only enabled in expanded mode (because compact mode doesn't leave room for the keyboard). Yeah this is the easy way out - a nicer UI would be that tapping on that field would auto-expand.
 
 ## Launching a URL - iOS 13 Onwards
 The approach below was broken deliberately by a new restriction in iOS 13. 
@@ -14,7 +18,7 @@ Compiling the app gets an error in XCode-11:
 
 The official workaround, from Apple Developer Support, is to use the parent app to handle the URL. You can still use `self.extensionContext.open` to open the parent app from your extension. That parent app can handle parameters passed on opening, to forward a URL elsewhere or show it in a local WKWebView.
 
-### Launching a URL - Original
+### Launching a URL - Original works in iOS 12
 The obvious thing to try is `self.extensionContext.open` which is [documented](https://developer.apple.com/documentation/foundation/nsextensioncontext/1416791-open) as _Asks the system to open a URL on behalf of the currently running app extension._
 
 That doesn't work. However, you can iterate back up the responder chain to find a suitable handler for the open method (actually the iMessage instance) and invoke `open` with that object.
