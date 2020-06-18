@@ -12,11 +12,13 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    @IBOutlet fileprivate weak var openWeb: UIButton!
+    @IBOutlet fileprivate weak var openInSafari: UIButton!
+    @IBOutlet weak var openInApp: UIButton!
+    @IBOutlet weak var openHere: UIButton!
+    
     @IBOutlet fileprivate weak var statusLabel: UILabel!
-    
-    let testUrl = URL(string: "https://github.com/AndyDentFree/im-plausibilities")
-    
+    @IBOutlet weak var urlEntry: UITextField!
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -93,19 +95,16 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
- 
     
-    // MARK: - Buttons
-
-    @IBAction public func onOpenWeb(_ sender: UIButton)  {
-        guard let url = testUrl else {return}
+   // MARK: - Helpers
+    private func openWeb(inApp: Bool) {
+        // this guard is doubly-protected by onEditingChanged
+        guard let urlStr = urlEntry?.text,
+            let url = URL(string:urlStr) else {
+                statusLabel.text = "Bad URL"
+                return
+        }
         
-        // technique that works rather than self.extensionContext.open
-        var responder = self as UIResponder?
-/* old approach using openURL which has now been deprecated
-         if responder?.responds(to: #selector(UIApplication.openURL(_:))) == true{
-         responder?.perform(#selector(UIApplication.openURL(_:)), with: url)
- */
         let handler = { (success:Bool) -> () in
             if success {
                 os_log("Finished opening URL")
@@ -114,15 +113,34 @@ class MessagesViewController: MSMessagesAppViewController {
             }
         }
 
-        let openSel = #selector(UIApplication.open(_:options:completionHandler:))
-        while (responder != nil){
-            if responder?.responds(to: openSel ) == true{
-                // cannot package up multiple args to openSel so we explicitly call it on the iMessage application instance
-                // found by iterating up the chain
-                (responder as? UIApplication)?.open(url, completionHandler:handler)  // perform(openSel, with: url)
-                return
-            }
-            responder = responder!.next
+        let encodedUrl = url.dataRepresentation.base64EncodedString()
+        let inAppFlag = inApp ? "&openInApp=true" : ""
+        let appUrlStr = "webFromIM://?url=\(encodedUrl)\(inAppFlag)"
+        guard let appUrl: URL = URL(string: appUrlStr) else {
+            os_log("Unable to launch app URL")
+            return
         }
+        // can only open our app, not generalised URLs
+        self.extensionContext?.open(appUrl, completionHandler: handler)
     }
+    
+    // MARK: - Buttons
+    @IBAction func onEditingChanged(_ sender: UITextField) {
+        let canGo = (urlEntry?.text != nil) && URL(string:urlEntry!.text!) != nil
+        openHere.isEnabled = false //canGo
+        openInApp.isEnabled = canGo
+        openInSafari.isEnabled = canGo
+    }
+    
+    @IBAction public func onOpenWeb(_ sender: UIButton)  {
+        openWeb(inApp:false)
+    }
+    
+    @IBAction func onOpenInApp(_ sender: UIButton) {
+        openWeb(inApp:true)
+    }
+    
+    @IBAction func onOpenHere(_ sender: UIButton) {
+    }
+    
 }
