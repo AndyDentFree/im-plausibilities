@@ -1,11 +1,11 @@
 Creation
-2010-01-12
+2019-01-12
 
 Created using XCode 10.1 as an iMessage App.
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 Adding Buttons
-2010-01-12
+2019-01-12
 
 MessagesViewController.swift
 - added IBActions for the four Buttons
@@ -20,7 +20,7 @@ Main.storyboard
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 Send and Receive
-2010-01-12
+2019-01-12
 
 MessagesViewController.swift
 - send(mood, label) added
@@ -30,7 +30,7 @@ MessagesViewController.swift
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 Finishing basic Send and Receive with UI update to indicated to what responding
-2010-01-13
+2019-01-13
 
 MessagesViewController.swift
 - hasIncoming general function added
