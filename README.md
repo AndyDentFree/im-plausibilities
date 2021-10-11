@@ -14,6 +14,7 @@ Each sample will have its own nested readme document.
 
 * [imUrlData - Sending data via a URL](./imUrlData/README.md)
 * [imUrlDataApp - Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
+* [imUrlDataAppSUI - re-implemented with SwiftUI 3](./imUrlDataAppSUI/README.md) exercise in SwiftUI confirming can be used inside an iMessage extension
 * [responIM - Responding within a message](./responIM/README.md) 
 * [imPhoto - Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
 * [webFromIM - Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.

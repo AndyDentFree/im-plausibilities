@@ -1,0 +1,120 @@
+Creation
+2019-10-11
+
+imUrlDataAppSUI - project created as Single View App with SwiftUI
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Basic UI, not sharing data
+2019-01-17
+
+imUrlDataAppSUI - project created as Single View App
+
+Main.Storyboard
+- filled in blank VC with four buttons and switches plus static label, in stack views
+
+ViewController.swift
+- added outlets and actions for all controls
+- added properties to maintain state
+  toggles
+  buttons
+  lastToggled
+- added helper functions to coordinate responses to buttons
+  (avoiding complication of introducing RxSwift)
+  allOff
+  matchButtonsToToggles
+  toggle
+  adjustControls
+  
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Extension to App
+2019-01-18
+
+Added new iMessage Extension target imUrlDataApp IM
+(same name as app plus unique suffix)
+
+MessagesViewController.swift
+- merged over all logic from imUrlData
+
+MainInterface.storyboard
+- copied from imUrlData 
+
+Asssets.xcassets
+- copied from imUrlData
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Communication Between App and iMessage Extension
+2019-01-18
+
+project
+- imUrlDataApp target - turn on App Groups in Capabilities
+- imUrlDataApp IM target - turn on App Groups in Capabilities
+- add group group.com.touchgram.imUrlDataApp to both
+
+SharedData.swift
+- added built in both targets
+
+imUrlDataApp/ViewController.swift
+- controlIndexes moved to SharedData
+- viewDidLoad - call loadEnabled  then loop to enable buttons
+- adjustControls - call saveEnabled to write each time we adjust
+
+imUrlDataApp IM/MessagesViewController.swift
+- enabled property added
+- buttons property added
+- viewDidLoad - call loadEnabled then enableButtons() 
+- enableButtons added
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Logging to help diagnose state changes
+2019-03-13
+
+imUrlDataApp IM/MessagesViewController.swift
+- just add os_log calls for events so get console messages,
+  no functional changes
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Testing with URL to confirm get url back from sent message on notification
+2019-03-15
+
+imUrlDataApp IM/MessagesViewController.swift
+- senderTimestampKey added
+- send include senderTimestampKey in url
+- didStartSending and didCancelSending
+  - print url of message 
+
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add launch of main app from iMessage & fix display bug
+2019-12-05
+
+MainInterface.storyboard
+- MessagesViewController scene - add AppButton
+
+MessagesViewController.swift
+- add onLaunchApp as IBAction for AppButton
+
+imUrlDataApp/info.plist
+- URL Types dict added with 
+  URL identifier "test.imUrlDataApp"
+  URL Schemes item 0 "imUrlDataApp"
+  
+Viewcontroller.swift
+- matchButtonsToToggles set button alpha, was setting buttonTitle alpha so sometimes got "stuck" on dim  
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add Message Sending from App
+2020-03-18
+
+App/Main.Storyboard
+- View Controller Scene - AppSendButton added
+
+ViewController.swift
+- add import MessageUI
+- add protocol MFMessageComposeViewControllerDelegate
+- appSendButton added and connected
+- onAppSendButton added to invoke displayMessageInterface
+- displayMessageInterface added
