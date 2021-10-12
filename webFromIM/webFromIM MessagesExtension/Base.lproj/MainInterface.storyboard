@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,44 +16,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open a website in browser..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
-                                <rect key="frame" x="52.5" y="264" width="215.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-kW-oSV" userLabel="Row 1">
-                                <rect key="frame" x="121" y="284.5" width="78" height="33"/>
+                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckj-JF-ejc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-kW-oSV" userLabel="VertStack">
+                                <rect key="frame" x="12" y="0.0" width="296" height="205.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4" userLabel="Start Btn">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="33"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open a website in browser..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
+                                        <rect key="frame" x="40.5" y="0.0" width="215.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Open web"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="https://github.com/AndyDentFree/im-plausibilities" borderStyle="bezel" placeholder="Enter a valid URL" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-gV-Zty" userLabel="urlEntry">
+                                        <rect key="frame" x="0.0" y="28.5" width="296" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ozH-6q-4zq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
                                         <connections>
-                                            <action selector="onOpenWeb:" destination="ObA-dk-sSI" eventType="touchUpInside" id="NS9-Tg-hGA"/>
+                                            <action selector="onEditingChanged:" destination="ObA-dk-sSI" eventType="editingChanged" id="HjL-NK-XQq"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4" userLabel="Start Btn">
+                                        <rect key="frame" x="94" y="96.5" width="108" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Open in Safari"/>
+                                        <connections>
+                                            <action selector="onOpenWeb:" destination="ObA-dk-sSI" eventType="touchUpInside" id="6i2-un-BVE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQM-zO-UxZ">
+                                        <rect key="frame" x="105.5" y="137.5" width="85" height="30"/>
+                                        <state key="normal" title="Open in App"/>
+                                        <connections>
+                                            <action selector="onOpenInApp:" destination="ObA-dk-sSI" eventType="touchUpInside" id="rRf-xH-cXT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-4E-Mda">
+                                        <rect key="frame" x="68.5" y="175.5" width="159" height="30"/>
+                                        <state key="normal" title="Open Here in iMessage"/>
+                                        <connections>
+                                            <action selector="onOpenHere:" destination="ObA-dk-sSI" eventType="touchUpInside" id="XS5-Sa-5hl"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9bD-kW-oSV" firstAttribute="top" secondItem="d1e-fi-ked" secondAttribute="bottom" id="0Mx-a8-n8S"/>
                             <constraint firstItem="9bD-kW-oSV" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="1va-ab-Ayt"/>
-                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="Qrz-qZ-C12"/>
-                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="lHo-gz-3kQ"/>
+                            <constraint firstItem="Xf2-gV-Zty" firstAttribute="width" secondItem="LDy-ih-0nr" secondAttribute="width" constant="-24" id="2Il-p1-Nzg"/>
+                            <constraint firstItem="9bD-kW-oSV" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" id="EZg-zJ-zKA"/>
+                            <constraint firstItem="Ckj-JF-ejc" firstAttribute="height" secondItem="LDy-ih-0nr" secondAttribute="height" id="EgH-Sn-RT1"/>
+                            <constraint firstItem="Ckj-JF-ejc" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" id="G67-SM-zhs"/>
+                            <constraint firstItem="Ckj-JF-ejc" firstAttribute="width" secondItem="LDy-ih-0nr" secondAttribute="width" id="gVq-XA-4fq"/>
+                            <constraint firstItem="Ckj-JF-ejc" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" id="qgD-cl-AFc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="openWeb" destination="G27-LM-Ur4" id="oW8-0v-2HD"/>
+                        <outlet property="controlsStack" destination="9bD-kW-oSV" id="FS7-cU-1CU"/>
+                        <outlet property="openHere" destination="gG9-4E-Mda" id="SON-nF-4jN"/>
+                        <outlet property="openInApp" destination="LQM-zO-UxZ" id="bcR-Su-MWb"/>
+                        <outlet property="openInSafari" destination="G27-LM-Ur4" id="8YK-V8-NZ0"/>
                         <outlet property="statusLabel" destination="d1e-fi-ked" id="sdK-gV-6QU"/>
+                        <outlet property="urlEntry" destination="Xf2-gV-Zty" id="LCc-P8-edQ"/>
+                        <outlet property="webView" destination="Ckj-JF-ejc" id="9fe-pg-76U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133" y="130"/>
         </scene>
     </scenes>
 </document>
