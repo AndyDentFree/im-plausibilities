@@ -11,3 +11,4 @@ imUrlDataAppSUI - project created as Single View App
 
 ContentView.swift
 - filled in blank View with four buttons and switches plus static label, in stack views
+- added state variables with toggles so icon opacity is dependent
