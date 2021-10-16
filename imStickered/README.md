@@ -13,7 +13,7 @@ Using the [iOS StickerKit Instructions][SKI] but got a bit lost.
 
 For _just_ using StickerKit, you still need to follow part of the instructions.
 
-In the app portal, you need to generate a **Snap Kit App Token** for both _Staging_ and _Production_ which should **not** be checked into public repos like this one!
+In the app portal, you need to generate a **Snap Kit API Token** for both _Staging_ and _Production_ which should **not** be checked into public repos like this one!
 
 Note if you're looking on GitHub, the term _SnapKit_ has been overloaded as there was an iOS layout framework named that previously. It's fallen rather by the wayside (especially since SwiftUI came out) but the name loss is forever.
 
