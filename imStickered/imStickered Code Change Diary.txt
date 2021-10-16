@@ -4,3 +4,6 @@ Creation
 Created by duplicating the webFromIM and renaming everything.
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Integrating plain StickerKit without auth
+2021-10-14
+

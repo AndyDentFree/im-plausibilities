@@ -14,6 +14,8 @@
 		4219261C249B31B300991E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4219261A249B31B300991E3E /* LaunchScreen.storyboard */; };
 		42192621249B440100991E3E /* imStickered MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42192626249B5A0400991E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42192625249B5A0400991E3E /* WebKit.framework */; };
+		42480DF4271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */; };
+		42480DF5271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */; };
 		4295D27C21E957F800EF0E0A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4295D27B21E957F800EF0E0A /* Messages.framework */; };
 		4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295D27E21E957F800EF0E0A /* MessagesViewController.swift */; };
 		4295D28221E957F800EF0E0A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28021E957F800EF0E0A /* MainInterface.storyboard */; };
@@ -53,6 +55,7 @@
 		4219261B249B31B300991E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4219261D249B31B300991E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42192625249B5A0400991E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapAuthDoNotSharePublicly.swift; sourceTree = "<group>"; };
 		4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imStickered MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4295D27B21E957F800EF0E0A /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		4295D27E21E957F800EF0E0A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -94,9 +97,18 @@
 			path = imStickeredapp;
 			sourceTree = "<group>";
 		};
+		42480DF2271856480089E309 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		4295D26521E957F500EF0E0A = {
 			isa = PBXGroup;
 			children = (
+				42480DF2271856480089E309 /* Common */,
 				4219260E249B31AF00991E3E /* imStickeredapp */,
 				4295D27D21E957F800EF0E0A /* imStickered MessagesExtension */,
 				4295D27A21E957F800EF0E0A /* Frameworks */,
@@ -237,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42192614249B31AF00991E3E /* ViewController.swift in Sources */,
+				42480DF5271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
 				42192610249B31AF00991E3E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42480DF4271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
 				4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
