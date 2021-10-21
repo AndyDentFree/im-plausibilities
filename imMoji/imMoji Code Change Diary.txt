@@ -1,0 +1,93 @@
+Creation
+2019-03-06
+
+Created by duplicating the responIM and renaming everything.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Reduce UI to one test button
+2019-03-06
+
+MainInterface.storyboard
+- Replaced four buttons with startBtn and respondBtn
+
+MessagesViewController.swift
+- Replaced two buttons with openWeb
+- responseCount property removed
+- toggleButtons and send removed
+- send, hasIncoming and didBecomeActive reduce to stubs
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fixed the (initial) launching problem as discussed in readme
+2019-03-06
+
+MessagesViewController
+- onOpenWeb - use iteration up UIResponder chain to find instance which can perform the `open` call
+  after testing showed self.extensionContext.open didn't work.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Workaround the launching problem introduced in iOS13 - Fixes #1
+2019-06-18
+
+webFromIM.xcproject
+- webFromIMApp - add new target to build full app as Single View App
+  - test.touchgram.webFromIM same bundle ID used as webFromIM original host app
+    (see readme)
+  - Signing - manually trim the new bundle ID back to test.touchgram.webFromIM
+  - Build Phases - embed the webFromIM MessagesExtension.appex    
+  - BuildRules - add WebKit framework
+  - finally renamed back to webFromIM
+  - General - set Deployment target iOS 12.1
+- webFromIM target deleted  
+
+WebFromIMApp/Assets.xcassets 
+- copied the AppIcon from the webFromIM target
+
+webFromIMApp/Info.plist
+- removed the Scene Manifest, to build for iOS 12.1 onwards
+
+Main.storyboard
+- add two labels at top
+- add web view to take up main body
+
+ViewController.swift
+- added webView outlet linked to Main.storyboard Web View
+- added static var urlToShowFromMessage
+- made WKUIDelegate
+- showURL func added
+- viewDidLoad 
+  - assign webView delegate and load if there's a urlToShowFromMessage
+
+AppDelegate.swift
+- application(, open, options) added to handle incoming URLs
+- removed the generated scene-related methods (ios13 only)
+- added a window property for iOS 12.1 onwards
+- hackish static urlDisplayer added so if ViewController already live, we can force a refresh
+
+MainInterface.storyboard
+- Open in App button added, connected to onOpenInApp
+- Open Here button added, connected to onOpenHere
+- urlEntry field entered, connected to onEditingChanged so buttons deleted if URL is bad
+
+MessagesViewController.swift
+- onOpenWeb factored out to helper func openWeb
+- onOpenInApp added
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Show launching a web page in the iMessage extension itself
+(good for help pages)
+2019-06-18
+
+MainInterface.storyboard - MessagesViewController
+- added localWebView initially hidden
+- enabled openHere button
+- set View background to standard system colour so all labels visible in dark mode
+
+MessagesViewController.swift
+- import webkit
+- webView outlet added
+- isShowingLocalURL added
+- controlsStack outlet added
+- onOpenHere stub filled out to show webView in expanded mode
+- showWebLocally added
+- toggleWeb added
+- didTransition change UI depending on isShowingLocalURL so can request an expansion to display a local web page and then collapsing back will show menu again

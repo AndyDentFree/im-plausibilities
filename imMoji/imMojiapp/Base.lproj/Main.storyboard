@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="webFromIMapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="webFromIM App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL5-Az-CjE">
+                                <rect key="frame" x="12" y="56" width="390" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDp-VH-9bN">
+                                <rect key="frame" x="12" y="105" width="390" height="61"/>
+                                <string key="text">This app just exists to show a web view below or forward URLs to launch other apps. See the matching iMessage extension for more controls.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02p-lo-aWl">
+                                <rect key="frame" x="12" y="178" width="390" height="676"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="02p-lo-aWl" firstAttribute="top" secondItem="rDp-VH-9bN" secondAttribute="bottom" constant="12" id="3y4-e4-dNe"/>
+                            <constraint firstItem="vL5-Az-CjE" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-24" id="5Sf-MJ-FwS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="02p-lo-aWl" secondAttribute="bottom" constant="8" id="DJA-n2-JlT"/>
+                            <constraint firstItem="vL5-Az-CjE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="DT7-Mf-RIt"/>
+                            <constraint firstItem="rDp-VH-9bN" firstAttribute="top" secondItem="vL5-Az-CjE" secondAttribute="bottom" constant="8" id="DtS-eu-00i"/>
+                            <constraint firstItem="02p-lo-aWl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ED7-2I-WTI"/>
+                            <constraint firstItem="rDp-VH-9bN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hz0-pC-n0G"/>
+                            <constraint firstItem="vL5-Az-CjE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LT2-Yo-du0"/>
+                            <constraint firstItem="02p-lo-aWl" firstAttribute="width" secondItem="vL5-Az-CjE" secondAttribute="width" id="Wsq-fI-09a"/>
+                            <constraint firstItem="rDp-VH-9bN" firstAttribute="width" secondItem="vL5-Az-CjE" secondAttribute="width" id="rxo-ru-EWg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="02p-lo-aWl" id="iym-mq-ks6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

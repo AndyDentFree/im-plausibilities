@@ -12,16 +12,12 @@
 		42192617249B31AF00991E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42192615249B31AF00991E3E /* Main.storyboard */; };
 		42192619249B31B300991E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42192618249B31B300991E3E /* Assets.xcassets */; };
 		4219261C249B31B300991E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4219261A249B31B300991E3E /* LaunchScreen.storyboard */; };
-		42192621249B440100991E3E /* imStickered MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42192621249B440100991E3E /* webFromIM MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4295D27621E957F800EF0E0A /* webFromIM MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42192626249B5A0400991E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42192625249B5A0400991E3E /* WebKit.framework */; };
-		42480DF4271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */; };
-		42480DF5271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */; };
 		4295D27C21E957F800EF0E0A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4295D27B21E957F800EF0E0A /* Messages.framework */; };
 		4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295D27E21E957F800EF0E0A /* MessagesViewController.swift */; };
 		4295D28221E957F800EF0E0A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28021E957F800EF0E0A /* MainInterface.storyboard */; };
 		4295D28421E957F800EF0E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28321E957F800EF0E0A /* Assets.xcassets */; };
-		42F8FC5A2720A99900E53CAF /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC592720A99900E53CAF /* StickerManager.swift */; };
-		42F8FC5B2720A99900E53CAF /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC592720A99900E53CAF /* StickerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +26,7 @@
 			containerPortal = 4295D26621E957F500EF0E0A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4295D27521E957F800EF0E0A;
-			remoteInfo = "imStickered MessagesExtension";
+			remoteInfo = "webFromIM MessagesExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -41,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				42192621249B440100991E3E /* imStickered MessagesExtension.appex in Embed App Extensions */,
+				42192621249B440100991E3E /* webFromIM MessagesExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4219260D249B31AF00991E3E /* imStickered.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imStickered.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4219260D249B31AF00991E3E /* webFromIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webFromIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4219260F249B31AF00991E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42192613249B31AF00991E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42192616249B31AF00991E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,14 +53,12 @@
 		4219261B249B31B300991E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4219261D249B31B300991E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42192625249B5A0400991E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapAuthDoNotSharePublicly.swift; sourceTree = "<group>"; };
-		4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imStickered MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4295D27621E957F800EF0E0A /* webFromIM MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "webFromIM MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4295D27B21E957F800EF0E0A /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		4295D27E21E957F800EF0E0A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4295D28121E957F800EF0E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4295D28321E957F800EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4295D28521E957F800EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42F8FC592720A99900E53CAF /* StickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +81,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4219260E249B31AF00991E3E /* imStickeredapp */ = {
+		4219260E249B31AF00991E3E /* webFromIMapp */ = {
 			isa = PBXGroup;
 			children = (
 				4219260F249B31AF00991E3E /* AppDelegate.swift */,
@@ -97,24 +91,14 @@
 				4219261A249B31B300991E3E /* LaunchScreen.storyboard */,
 				4219261D249B31B300991E3E /* Info.plist */,
 			);
-			path = imStickeredapp;
-			sourceTree = "<group>";
-		};
-		42480DF2271856480089E309 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */,
-				42F8FC592720A99900E53CAF /* StickerManager.swift */,
-			);
-			path = Common;
+			path = webFromIMapp;
 			sourceTree = "<group>";
 		};
 		4295D26521E957F500EF0E0A = {
 			isa = PBXGroup;
 			children = (
-				42480DF2271856480089E309 /* Common */,
-				4219260E249B31AF00991E3E /* imStickeredapp */,
-				4295D27D21E957F800EF0E0A /* imStickered MessagesExtension */,
+				4219260E249B31AF00991E3E /* webFromIMapp */,
+				4295D27D21E957F800EF0E0A /* webFromIM MessagesExtension */,
 				4295D27A21E957F800EF0E0A /* Frameworks */,
 				4295D26D21E957F500EF0E0A /* Products */,
 			);
@@ -123,8 +107,8 @@
 		4295D26D21E957F500EF0E0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */,
-				4219260D249B31AF00991E3E /* imStickered.app */,
+				4295D27621E957F800EF0E0A /* webFromIM MessagesExtension.appex */,
+				4219260D249B31AF00991E3E /* webFromIM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +122,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4295D27D21E957F800EF0E0A /* imStickered MessagesExtension */ = {
+		4295D27D21E957F800EF0E0A /* webFromIM MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
 				4295D27E21E957F800EF0E0A /* MessagesViewController.swift */,
@@ -146,15 +130,15 @@
 				4295D28321E957F800EF0E0A /* Assets.xcassets */,
 				4295D28521E957F800EF0E0A /* Info.plist */,
 			);
-			path = "imStickered MessagesExtension";
+			path = "webFromIM MessagesExtension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4219260C249B31AF00991E3E /* imStickered */ = {
+		4219260C249B31AF00991E3E /* webFromIM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42192620249B31B300991E3E /* Build configuration list for PBXNativeTarget "imStickered" */;
+			buildConfigurationList = 42192620249B31B300991E3E /* Build configuration list for PBXNativeTarget "webFromIM" */;
 			buildPhases = (
 				42192609249B31AF00991E3E /* Sources */,
 				4219260A249B31AF00991E3E /* Frameworks */,
@@ -166,14 +150,14 @@
 			dependencies = (
 				42192623249B440100991E3E /* PBXTargetDependency */,
 			);
-			name = imStickered;
-			productName = imStickeredapp;
-			productReference = 4219260D249B31AF00991E3E /* imStickered.app */;
+			name = webFromIM;
+			productName = webFromIMapp;
+			productReference = 4219260D249B31AF00991E3E /* webFromIM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4295D27521E957F800EF0E0A /* imStickered MessagesExtension */ = {
+		4295D27521E957F800EF0E0A /* webFromIM MessagesExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imStickered MessagesExtension" */;
+			buildConfigurationList = 4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "webFromIM MessagesExtension" */;
 			buildPhases = (
 				4295D27221E957F800EF0E0A /* Sources */,
 				4295D27321E957F800EF0E0A /* Frameworks */,
@@ -183,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = "imStickered MessagesExtension";
-			productName = "imStickered MessagesExtension";
-			productReference = 4295D27621E957F800EF0E0A /* imStickered MessagesExtension.appex */;
+			name = "webFromIM MessagesExtension";
+			productName = "webFromIM MessagesExtension";
+			productReference = 4295D27621E957F800EF0E0A /* webFromIM MessagesExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "imStickered" */;
+			buildConfigurationList = 4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "webFromIM" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,8 +203,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4295D27521E957F800EF0E0A /* imStickered MessagesExtension */,
-				4219260C249B31AF00991E3E /* imStickered */,
+				4295D27521E957F800EF0E0A /* webFromIM MessagesExtension */,
+				4219260C249B31AF00991E3E /* webFromIM */,
 			);
 		};
 /* End PBXProject section */
@@ -253,9 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42192614249B31AF00991E3E /* ViewController.swift in Sources */,
-				42480DF5271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
 				42192610249B31AF00991E3E /* AppDelegate.swift in Sources */,
-				42F8FC5B2720A99900E53CAF /* StickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F8FC5A2720A99900E53CAF /* StickerManager.swift in Sources */,
-				42480DF4271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
 				4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +254,7 @@
 /* Begin PBXTargetDependency section */
 		42192623249B440100991E3E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4295D27521E957F800EF0E0A /* imStickered MessagesExtension */;
+			target = 4295D27521E957F800EF0E0A /* webFromIM MessagesExtension */;
 			targetProxy = 42192622249B440100991E3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -313,14 +293,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = imStickeredapp/Info.plist;
+				INFOPLIST_FILE = webFromIMapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imStickered;
-				PRODUCT_NAME = imStickered;
+				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.webFromIM;
+				PRODUCT_NAME = webFromIM;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -332,14 +312,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = imStickeredapp/Info.plist;
+				INFOPLIST_FILE = webFromIMapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imStickered;
-				PRODUCT_NAME = imStickered;
+				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.webFromIM;
+				PRODUCT_NAME = webFromIM;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,13 +447,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imStickered MessagesExtension/Info.plist";
+				INFOPLIST_FILE = "webFromIM MessagesExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imStickered.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.webFromIM.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -487,13 +467,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 534LVXBU55;
-				INFOPLIST_FILE = "imStickered MessagesExtension/Info.plist";
+				INFOPLIST_FILE = "webFromIM MessagesExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.imStickered.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = test.touchgram.webFromIM.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -504,7 +484,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42192620249B31B300991E3E /* Build configuration list for PBXNativeTarget "imStickered" */ = {
+		42192620249B31B300991E3E /* Build configuration list for PBXNativeTarget "webFromIM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4219261E249B31B300991E3E /* Debug */,
@@ -513,7 +493,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "imStickered" */ = {
+		4295D26921E957F500EF0E0A /* Build configuration list for PBXProject "webFromIM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4295D28621E957F800EF0E0A /* Debug */,
@@ -522,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "imStickered MessagesExtension" */ = {
+		4295D28821E957F800EF0E0A /* Build configuration list for PBXNativeTarget "webFromIM MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4295D28921E957F800EF0E0A /* Debug */,

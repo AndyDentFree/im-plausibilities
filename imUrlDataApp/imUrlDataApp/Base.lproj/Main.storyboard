@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +35,7 @@
                                                     <action selector="onToggleHappy:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Ct-YH-aWx"/>
                                                 </connections>
                                             </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-JJ-AyZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-JJ-AyZ">
                                                 <rect key="frame" x="72" y="0.0" width="86" height="108"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="😀"/>
@@ -54,7 +54,7 @@
                                                     <action selector="onToggleQuizzical:" destination="BYZ-38-t0r" eventType="valueChanged" id="l9G-tg-jgM"/>
                                                 </connections>
                                             </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aR-DK-r2O">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aR-DK-r2O">
                                                 <rect key="frame" x="72" y="0.0" width="86" height="108"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="🤨"/>
@@ -73,7 +73,7 @@
                                                     <action selector="onToggleDistraught:" destination="BYZ-38-t0r" eventType="valueChanged" id="3sR-IH-bUr"/>
                                                 </connections>
                                             </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PR-h6-1o8">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PR-h6-1o8">
                                                 <rect key="frame" x="72" y="0.0" width="86" height="108"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="😫"/>
@@ -92,7 +92,7 @@
                                                     <action selector="onToggleAngry:" destination="BYZ-38-t0r" eventType="valueChanged" id="rdl-8b-Yhb"/>
                                                 </connections>
                                             </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nj-dp-DRG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nj-dp-DRG">
                                                 <rect key="frame" x="72" y="0.0" width="86" height="108"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                 <state key="normal" title="😡"/>
@@ -102,7 +102,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-wh-sXT" userLabel="AppSendButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-wh-sXT" userLabel="AppSendButton">
                                         <rect key="frame" x="81" y="452.5" width="169" height="30"/>
                                         <state key="normal" title="Send Message from App"/>
                                         <connections>
@@ -119,13 +119,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wid-ur-OhH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-44" id="Iop-dq-TY9"/>
                             <constraint firstItem="wid-ur-OhH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WzU-WY-dES"/>
                             <constraint firstItem="wid-ur-OhH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zHU-9m-8hP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="angryBtn" destination="4Nj-dp-DRG" id="h8S-2N-PJz"/>

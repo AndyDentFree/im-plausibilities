@@ -4,6 +4,18 @@ Creation
 Created by duplicating the webFromIM and renaming everything.
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-Integrating plain StickerKit without auth
-2021-10-14
+Integrating plain StickerKit without auth into app - works with hardcoded 
+2021-10-20
 
+
+Main.storyboard
+- remove webview
+- add Test button
+
+ViewController.swift
+- remove webView and showURL code
+- add outlet results
+- add onTest action to trigger test with hardcoded query, observed in console
+
+StickerManager
+- added to wrap testing initially using the code from Postman

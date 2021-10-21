@@ -9,29 +9,20 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate {
+class ViewController: UIViewController {
 
     static var urlToShowFromMessage:URL? = nil
+    let mgr = StickerManager()
     
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var results: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // setup the webview and load any incoming
-        webView.uiDelegate = self
-        // bit of a hack to ensure the app delegate can force a refresh of us
-        AppDelegate.urlDisplayer = { self.showURL() }
-        showURL()
     }
     
-    private func showURL() {
-        if ViewController.urlToShowFromMessage != nil {
-            let myURL = ViewController.urlToShowFromMessage
-            let myRequest = URLRequest(url: myURL!)
-            webView.load(myRequest)
-        } else {
-            webView.loadHTMLString("<html><body><h1>no URL specified, launch from iMessage</h1></body></html>", baseURL: nil)
-        }
+    @IBAction func onTest(_ sender: Any) {
+        mgr.testit()
     }
 
 }
