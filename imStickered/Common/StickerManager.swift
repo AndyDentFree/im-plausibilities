@@ -19,11 +19,12 @@ import FoundationNetworking
 struct StickerManager {
     let token = SnapAuthKeys.SnapKitAPIToken_Staging
 
-    func testit() {
+    func testit(searchTerm: String, numResults: Int = 3) {
 
         var semaphore = DispatchSemaphore (value: 0)
 
-        let parameters = "{\"query\":\"query SearchStickerSample {\\r\\n  sticker {\\r\\n    searchStickers(\\r\\n      req:{\\r\\n        searchStickersParams:{searchText: \\\"duck\\\", numberResults: 5},\\r\\n        stickerUserContext:{countryCode: US, localTimeZoneUTCOffsetMinutes: 2,locale: EN_US}\\r\\n      }){\\r\\n      stickerResults {\\r\\n        items {\\r\\n          itemType\\r\\n          id\\r\\n          pngURL\\r\\n          thumbnailURL\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{}}"
+        /// yes this is messy but attempting to use raw strings and multi-line raw strings got a JSON error don't have time to debug.
+        let parameters = "{\"query\":\"query SearchStickerSample {\\r\\n  sticker {\\r\\n    searchStickers(\\r\\n      req:{\\r\\n        searchStickersParams:{searchText: \\\"\(searchTerm)\\\", numberResults: \(numResults)},\\r\\n        stickerUserContext:{countryCode: US, localTimeZoneUTCOffsetMinutes: 2,locale: EN_US}\\r\\n      }){\\r\\n      stickerResults {\\r\\n        items {\\r\\n          itemType\\r\\n          id\\r\\n          pngURL\\r\\n          thumbnailURL\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{}}"
         let postData = parameters.data(using: .utf8)
 
         var request = URLRequest(url: URL(string: "https://graph.snapchat.com/graphql")!,timeoutInterval: Double.infinity)

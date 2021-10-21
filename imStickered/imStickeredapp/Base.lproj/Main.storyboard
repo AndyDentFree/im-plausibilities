@@ -37,8 +37,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piO-SP-7sY">
-                                <rect key="frame" x="169" y="145" width="77" height="31"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search term here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-yb-zyA" userLabel="Search term">
+                                <rect key="frame" x="20" y="143.5" width="250" height="34"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piO-SP-7sY">
+                                <rect key="frame" x="278" y="142" width="77" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Test"/>
                                 <connections>
@@ -52,15 +59,19 @@
                             <constraint firstItem="vL5-Az-CjE" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-24" id="5Sf-MJ-FwS"/>
                             <constraint firstItem="piO-SP-7sY" firstAttribute="top" secondItem="rDp-VH-9bN" secondAttribute="bottom" constant="23.5" id="5Ur-JM-80K"/>
                             <constraint firstItem="vL5-Az-CjE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="DT7-Mf-RIt"/>
-                            <constraint firstItem="piO-SP-7sY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ddl-iF-dYh"/>
                             <constraint firstItem="rDp-VH-9bN" firstAttribute="top" secondItem="vL5-Az-CjE" secondAttribute="bottom" constant="8" id="DtS-eu-00i"/>
                             <constraint firstItem="rDp-VH-9bN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hz0-pC-n0G"/>
                             <constraint firstItem="vL5-Az-CjE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LT2-Yo-du0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="piO-SP-7sY" secondAttribute="trailing" constant="16" id="epg-c5-nlh"/>
+                            <constraint firstItem="piO-SP-7sY" firstAttribute="leading" secondItem="3Ri-yb-zyA" secondAttribute="trailing" constant="8" symbolic="YES" id="kJ8-F9-Qx6"/>
+                            <constraint firstItem="3Ri-yb-zyA" firstAttribute="centerY" secondItem="piO-SP-7sY" secondAttribute="centerY" id="pZs-Kk-Cfi"/>
                             <constraint firstItem="rDp-VH-9bN" firstAttribute="width" secondItem="vL5-Az-CjE" secondAttribute="width" id="rxo-ru-EWg"/>
+                            <constraint firstItem="3Ri-yb-zyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wEg-ez-eLp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="results" destination="eAR-XI-uHe" id="cPh-uR-hub"/>
+                        <outlet property="searchEntry" destination="3Ri-yb-zyA" id="Fnk-9j-BKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,8 +83,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -4,7 +4,7 @@ Creation
 Created by duplicating the webFromIM and renaming everything.
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-Integrating plain StickerKit without auth into app - works with hardcoded 
+Integrating plain StickerKit without auth into app - works with hardcoded query
 2021-10-20
 
 
@@ -19,3 +19,20 @@ ViewController.swift
 
 StickerManager
 - added to wrap testing initially using the code from Postman
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Parameterising query
+2021-10-21
+
+Main.storyboard
+- add Search Term field
+
+ViewController.swift
+- add outlet searchEntry
+- onTest pass searchEntry content to testit
+
+StickerManager
+- testit 
+  - take a non-empty search term & use in hardcoded search
+  - take count of items to get back and use in search
+  

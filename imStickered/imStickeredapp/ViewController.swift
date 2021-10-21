@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let mgr = StickerManager()
     
     @IBOutlet weak var results: UITextView!
+    @IBOutlet weak var searchEntry: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTest(_ sender: Any) {
-        mgr.testit()
+        guard let searchFor = searchEntry.text, !searchFor.isEmpty else {return}
+        mgr.testit(searchTerm: searchFor)
     }
 
 }
