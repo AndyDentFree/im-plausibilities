@@ -35,4 +35,35 @@ StickerManager
 - testit 
   - take a non-empty search term & use in hardcoded search
   - take count of items to get back and use in search
-  
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Cleanup & infrastructure to load thumbnails in test app window
+2021-10-30 
+
+Main.storyboard
+- add Thumbnails collection above results
+- Results text field moved down taking half page
+- add LoadingSpinner
+
+ViewController.swift
+- add outlets thumbnailsView and loadingSpinner
+- made UICollectionViewDelegate and UICollectionViewDataSource with stubs
+- onTest 
+  - pass searchEntry content to testit
+  - renamed onSearch
+  - show loadingSpinner and start it running
+- updateResults
+  - stop loadingSpinner
+    
+StickerManager
+- lastSearchTerm added
+- testit 
+  - renamed search
+  - set lastSearchTerm
+
+StickerDescriptor
+StickerResults
+- added simple structs for basic JSON parsing
+
+ThumbCell
+- added    

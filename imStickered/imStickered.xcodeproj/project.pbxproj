@@ -22,6 +22,12 @@
 		4295D28421E957F800EF0E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4295D28321E957F800EF0E0A /* Assets.xcassets */; };
 		42F8FC5A2720A99900E53CAF /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC592720A99900E53CAF /* StickerManager.swift */; };
 		42F8FC5B2720A99900E53CAF /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC592720A99900E53CAF /* StickerManager.swift */; };
+		42F8FC622721FEE000E53CAF /* ThumbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC612721FEE000E53CAF /* ThumbCell.swift */; };
+		42F8FC632721FEE000E53CAF /* ThumbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC612721FEE000E53CAF /* ThumbCell.swift */; };
+		42F8FC652722017400E53CAF /* StickerDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC642722017400E53CAF /* StickerDescriptor.swift */; };
+		42F8FC662722017400E53CAF /* StickerDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC642722017400E53CAF /* StickerDescriptor.swift */; };
+		42F8FC682722028300E53CAF /* StickerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC672722028300E53CAF /* StickerResults.swift */; };
+		42F8FC692722028300E53CAF /* StickerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F8FC672722028300E53CAF /* StickerResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,9 @@
 		4295D28321E957F800EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4295D28521E957F800EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F8FC592720A99900E53CAF /* StickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
+		42F8FC612721FEE000E53CAF /* ThumbCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbCell.swift; sourceTree = "<group>"; };
+		42F8FC642722017400E53CAF /* StickerDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerDescriptor.swift; sourceTree = "<group>"; };
+		42F8FC672722028300E53CAF /* StickerResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,9 @@
 			children = (
 				42480DF3271856680089E309 /* SnapAuthDoNotSharePublicly.swift */,
 				42F8FC592720A99900E53CAF /* StickerManager.swift */,
+				42F8FC612721FEE000E53CAF /* ThumbCell.swift */,
+				42F8FC642722017400E53CAF /* StickerDescriptor.swift */,
+				42F8FC672722028300E53CAF /* StickerResults.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -118,7 +130,9 @@
 				4295D27A21E957F800EF0E0A /* Frameworks */,
 				4295D26D21E957F500EF0E0A /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		4295D26D21E957F500EF0E0A /* Products */ = {
 			isa = PBXGroup;
@@ -252,9 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F8FC692722028300E53CAF /* StickerResults.swift in Sources */,
+				42F8FC662722017400E53CAF /* StickerDescriptor.swift in Sources */,
 				42192614249B31AF00991E3E /* ViewController.swift in Sources */,
 				42480DF5271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
 				42192610249B31AF00991E3E /* AppDelegate.swift in Sources */,
+				42F8FC632721FEE000E53CAF /* ThumbCell.swift in Sources */,
 				42F8FC5B2720A99900E53CAF /* StickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +282,9 @@
 			files = (
 				42F8FC5A2720A99900E53CAF /* StickerManager.swift in Sources */,
 				42480DF4271856680089E309 /* SnapAuthDoNotSharePublicly.swift in Sources */,
+				42F8FC622721FEE000E53CAF /* ThumbCell.swift in Sources */,
+				42F8FC652722017400E53CAF /* StickerDescriptor.swift in Sources */,
+				42F8FC682722028300E53CAF /* StickerResults.swift in Sources */,
 				4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
