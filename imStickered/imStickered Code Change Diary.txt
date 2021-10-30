@@ -87,3 +87,20 @@ Main.storyboard
 StickerManager
 - download(url) and loadData added to manage downloads with cached reuse immediately
 - image(at added as top-level getting thumb or detail images
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Make transcript hidable with simple button to toggle its height
+2021-10-31
+
+Main.storyboard
+- results changed constraint to fixed height (so can adjust)
+- ResultsHider button added, other sizes adjusted so is just below thumbnails
+
+ViewController.swift
+- transcriptHider outlet added
+- transcriptHidden & originalResultsHeight vars added to track state
+- viewDidLoad save originalResultsHeight
+- resultsHeight outlet added bound to constraint
+- updateResults - show transcriptHider
+- onSearch - hide transcriptHider
+- onHideTranscript linked to resultsHider button

@@ -15,11 +15,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, CollectionView
     //CollectionViewNeatlyExtension
     var spaceBetween: UIEdgeInsets = UIEdgeInsets(top: 20.0, left: 12.0, bottom: 20.0, right: 12.0)
     var fixedItemsPerRow: CGFloat = 1.0
+    var transcriptHidden = false
+    var originalResultsHeight: CGFloat = 0.0
 
     @IBOutlet weak var results: UITextView!
     @IBOutlet weak var searchEntry: UITextField!
     @IBOutlet weak var thumbnailsView: UICollectionView!
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var transcriptHider: UIButton!
+    @IBOutlet weak var resultsHeight: NSLayoutConstraint!
     
     // helper for callback from downloading, to dump the string returned
     func updateResults(_ msg: String) {
@@ -27,6 +31,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, CollectionView
           self.results.text = msg
           //TODO be smarter - show spinner until have all thumbnails
           self.loadingSpinner.stopAnimating()
+            self.transcriptHider.isHidden = false  // hide until have search complete
           self.thumbnailsView.reloadData()  // will trigger pulls of thumbnail images
         }
     }
@@ -36,14 +41,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, CollectionView
         fixedItemsPerRow = thumbnailsView.frame.width > 300 ? 4 : 3
         thumbnailsView.delegate = self
         thumbnailsView.dataSource = self
+        originalResultsHeight = resultsHeight.constant  //  stashed for toggling
     }
     
     @IBAction func onSearch(_ sender: Any) {
         guard let searchFor = searchEntry.text, !searchFor.isEmpty else {return}
         //TODO have way to enter wantingMaxItems
         loadingSpinner.isHidden = false
+        transcriptHider.isHidden = true
         loadingSpinner.startAnimating()
         mgr.search(for: searchFor, wantingMaxItems: 20, logger: {self.updateResults($0)})
+    }
+    
+    @IBAction func onHideTranscript(_ sender: Any) {
+        transcriptHidden = !transcriptHidden
+        let newT = (transcriptHidden ? "Show" : "Hide") + " Search Transcript"
+        transcriptHider.setTitle(newT, for: .normal)
+        resultsHeight.constant = transcriptHidden ? 0.0 : originalResultsHeight
     }
 }
 
