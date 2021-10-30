@@ -67,3 +67,23 @@ StickerResults
 
 ThumbCell
 - added    
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Download & show thumbnails in test app window
+2021-10-30 
+
+CollectionViewNeatlyExtension.swift
+- added
+
+ViewController.swift
+- updateResults
+  - reload thumbnailsView
+- extension for UICollectionViewDelegateFlowLayout added using CollectionViewNeatlyExtension
+
+Main.storyboard
+- thumbnails set Estimate Size to none (so doesn't do different size when scrolling)  
+
+StickerManager
+- download(url) and loadData added to manage downloads with cached reuse immediately
+- image(at added as top-level getting thumb or detail images

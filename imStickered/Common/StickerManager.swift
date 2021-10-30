@@ -16,6 +16,7 @@ import Foundation
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
+
 class StickerManager {
     let token = SnapAuthKeys.SnapKitAPIToken_Staging
     // pull the array from the nested parsing struct
@@ -65,5 +66,77 @@ class StickerManager {
     stickers = jsonStickers.data.sticker.searchStickers.stickerResults.items
     print(stickers.count == 0 ? "No stickers for '\(lastSearchTerm)'" : stickers[0])
   }
-    
+  
+  //MARK downloading
+  
+  func download(url: URL, toFile file: URL, completion: @escaping (Error?) -> Void) {
+      // Download the remote URL to a file
+      let task = URLSession.shared.downloadTask(with: url) {
+          (tempURL, response, error) in
+          // Early exit on error
+          guard let tempURL = tempURL else {
+              completion(error)
+              return
+          }
+
+          do {
+              // Remove any existing document at file
+              if FileManager.default.fileExists(atPath: file.path) {
+                  try FileManager.default.removeItem(at: file)
+              }
+
+              // Copy the tempURL to file
+              try FileManager.default.copyItem(
+                  at: tempURL,
+                  to: file
+              )
+
+              completion(nil)
+          }
+
+          // Handle potential file system errors
+          catch let fileError {
+              completion(fileError)
+          }
+      }
+
+      // Start the download
+      task.resume()
+  }
+  /// Note that files are just dumped in the temp area where will be wiped as phone runs tight on space
+  func loadData(url: URL, completion: @escaping (Data?, Error?) -> Void) -> Data? {
+      // Compute a path to the URL in the cache
+      let fileCachePath = FileManager.default.temporaryDirectory
+          .appendingPathComponent(
+              url.lastPathComponent,
+              isDirectory: false
+          )
+      
+      // If the image exists in the cache,
+      // load the image from the cache and exit
+      if let data = try? Data(contentsOf: fileCachePath) {
+          // don't invoke as that's probably an async completer completion(data, nil)
+          // and we are likely invoked by something that is already on main thread, populating a view
+          print("got file \(fileCachePath)")
+          return data
+      }
+      
+    print("downloading \(url) to \(fileCachePath)")
+
+      // If the image does not exist in the cache,
+      // download the image to the cache
+      download(url: url, toFile: fileCachePath) { (error) in
+          let data = try? Data(contentsOf: fileCachePath)
+          completion(data, error)
+      }
+    return nil
+  }
+  
+  /// return immediate Data from cached file or trigger asynch download
+  func image(at ip: IndexPath, asThumb: Bool = true, completion: @escaping (Data?, Error?) -> Void) -> Data? {
+    guard ip.row < stickers.count else {return nil}
+    let imgURL = asThumb ? stickers[ip.row].thumbnailURL : stickers[ip.row].pngURL
+    guard let url = URL(string: imgURL) else {return nil}
+    return loadData(url: url, completion: completion)
+  }
 }
