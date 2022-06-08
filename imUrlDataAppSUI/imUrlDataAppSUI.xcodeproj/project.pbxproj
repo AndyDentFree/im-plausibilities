@@ -7,13 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42D77E6B2850EBC400B3985F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D77E6A2850EBC400B3985F /* Messages.framework */; };
+		42D77E6E2850EBC400B3985F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D77E6D2850EBC400B3985F /* MessagesViewController.swift */; };
+		42D77E712850EBC400B3985F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E6F2850EBC400B3985F /* MainInterface.storyboard */; };
+		42D77E732850EBC500B3985F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E722850EBC500B3985F /* Assets.xcassets */; };
+		42D77E772850EBC500B3985F /* imUrlDataAppSUI IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42E231C02714963F0041B8CA /* imUrlDataAppSUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */; };
 		42E231C22714963F0041B8CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231C12714963F0041B8CA /* ContentView.swift */; };
 		42E231C4271496410041B8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E231C3271496410041B8CA /* Assets.xcassets */; };
 		42E231C7271496410041B8CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E231C6271496410041B8CA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		42D77E752850EBC500B3985F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42E231B42714963F0041B8CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D77E672850EBC400B3985F;
+			remoteInfo = "imUrlDataAppSUI IM";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42D77E782850EBC600B3985F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42D77E772850EBC500B3985F /* imUrlDataAppSUI IM.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imUrlDataAppSUI IM.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D77E6A2850EBC400B3985F /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		42D77E6D2850EBC400B3985F /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		42D77E702850EBC400B3985F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		42D77E722850EBC500B3985F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42D77E742850EBC500B3985F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42E231BC2714963F0041B8CA /* imUrlDataAppSUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imUrlDataAppSUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imUrlDataAppSUIApp.swift; sourceTree = "<group>"; };
 		42E231C12714963F0041B8CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +57,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		42D77E652850EBC400B3985F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D77E6B2850EBC400B3985F /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42E231B92714963F0041B8CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,10 +75,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42D77E692850EBC400B3985F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42D77E6A2850EBC400B3985F /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42D77E6C2850EBC400B3985F /* imUrlDataAppSUI IM */ = {
+			isa = PBXGroup;
+			children = (
+				42D77E6D2850EBC400B3985F /* MessagesViewController.swift */,
+				42D77E6F2850EBC400B3985F /* MainInterface.storyboard */,
+				42D77E722850EBC500B3985F /* Assets.xcassets */,
+				42D77E742850EBC500B3985F /* Info.plist */,
+			);
+			path = "imUrlDataAppSUI IM";
+			sourceTree = "<group>";
+		};
 		42E231B32714963F0041B8CA = {
 			isa = PBXGroup;
 			children = (
 				42E231BE2714963F0041B8CA /* imUrlDataAppSUI */,
+				42D77E6C2850EBC400B3985F /* imUrlDataAppSUI IM */,
+				42D77E692850EBC400B3985F /* Frameworks */,
 				42E231BD2714963F0041B8CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				42E231BC2714963F0041B8CA /* imUrlDataAppSUI.app */,
+				42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +135,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		42D77E672850EBC400B3985F /* imUrlDataAppSUI IM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D77E7B2850EBC600B3985F /* Build configuration list for PBXNativeTarget "imUrlDataAppSUI IM" */;
+			buildPhases = (
+				42D77E642850EBC400B3985F /* Sources */,
+				42D77E652850EBC400B3985F /* Frameworks */,
+				42D77E662850EBC400B3985F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "imUrlDataAppSUI IM";
+			productName = "imUrlDataAppSUI IM";
+			productReference = 42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		42E231BB2714963F0041B8CA /* imUrlDataAppSUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42E231CA271496410041B8CA /* Build configuration list for PBXNativeTarget "imUrlDataAppSUI" */;
@@ -77,10 +159,12 @@
 				42E231B82714963F0041B8CA /* Sources */,
 				42E231B92714963F0041B8CA /* Frameworks */,
 				42E231BA2714963F0041B8CA /* Resources */,
+				42D77E782850EBC600B3985F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				42D77E762850EBC500B3985F /* PBXTargetDependency */,
 			);
 			name = imUrlDataAppSUI;
 			productName = imUrlDataAppSUI;
@@ -94,9 +178,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					42D77E672850EBC400B3985F = {
+						CreatedOnToolsVersion = 13.4;
+					};
 					42E231BB2714963F0041B8CA = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -116,11 +203,21 @@
 			projectRoot = "";
 			targets = (
 				42E231BB2714963F0041B8CA /* imUrlDataAppSUI */,
+				42D77E672850EBC400B3985F /* imUrlDataAppSUI IM */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		42D77E662850EBC400B3985F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D77E732850EBC500B3985F /* Assets.xcassets in Resources */,
+				42D77E712850EBC400B3985F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42E231BA2714963F0041B8CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +230,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		42D77E642850EBC400B3985F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D77E6E2850EBC400B3985F /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42E231B82714963F0041B8CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,7 +249,80 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		42D77E762850EBC500B3985F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D77E672850EBC400B3985F /* imUrlDataAppSUI IM */;
+			targetProxy = 42D77E752850EBC500B3985F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42D77E6F2850EBC400B3985F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42D77E702850EBC400B3985F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		42D77E792850EBC600B3985F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7MXY472HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "imUrlDataAppSUI IM/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "imUrlDataAppSUI IM";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.aussie.imUrlDataAppSUI.imUrlDataAppSUI-IM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42D77E7A2850EBC600B3985F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7MXY472HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "imUrlDataAppSUI IM/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "imUrlDataAppSUI IM";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.aussie.imUrlDataAppSUI.imUrlDataAppSUI-IM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		42E231C8271496410041B8CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -264,6 +442,7 @@
 		42E231CB271496410041B8CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,6 +473,7 @@
 		42E231CC271496410041B8CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +504,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		42D77E7B2850EBC600B3985F /* Build configuration list for PBXNativeTarget "imUrlDataAppSUI IM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D77E792850EBC600B3985F /* Debug */,
+				42D77E7A2850EBC600B3985F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42E231B72714963F0041B8CA /* Build configuration list for PBXProject "imUrlDataAppSUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

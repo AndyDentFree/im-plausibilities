@@ -12,3 +12,11 @@ imUrlDataAppSUI - project created as Single View App
 ContentView.swift
 - filled in blank View with four buttons and switches plus static label, in stack views
 - added state variables with toggles so icon opacity is dependent
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Messenger extension Target
+2022-06-08
+
+imUrlDataAppSUI IM project target added as iMessage extension
+(comes in with Storyboard)
+
