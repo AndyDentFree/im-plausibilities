@@ -12,6 +12,8 @@
 		42D77E712850EBC400B3985F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E6F2850EBC400B3985F /* MainInterface.storyboard */; };
 		42D77E732850EBC500B3985F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E722850EBC500B3985F /* Assets.xcassets */; };
 		42D77E772850EBC500B3985F /* imUrlDataAppSUI IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42D77E7D28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D77E7C28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift */; };
+		42D77E7E28522B7000B3985F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231C12714963F0041B8CA /* ContentView.swift */; };
 		42E231C02714963F0041B8CA /* imUrlDataAppSUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */; };
 		42E231C22714963F0041B8CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231C12714963F0041B8CA /* ContentView.swift */; };
 		42E231C4271496410041B8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E231C3271496410041B8CA /* Assets.xcassets */; };
@@ -49,6 +51,7 @@
 		42D77E702850EBC400B3985F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		42D77E722850EBC500B3985F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D77E742850EBC500B3985F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D77E7C28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmbedSwiftUI.swift"; sourceTree = "<group>"; };
 		42E231BC2714963F0041B8CA /* imUrlDataAppSUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imUrlDataAppSUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imUrlDataAppSUIApp.swift; sourceTree = "<group>"; };
 		42E231C12714963F0041B8CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		42D77E6C2850EBC400B3985F /* imUrlDataAppSUI IM */ = {
 			isa = PBXGroup;
 			children = (
+				42D77E7C28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift */,
 				42D77E6D2850EBC400B3985F /* MessagesViewController.swift */,
 				42D77E6F2850EBC400B3985F /* MainInterface.storyboard */,
 				42D77E722850EBC500B3985F /* Assets.xcassets */,
@@ -235,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D77E6E2850EBC400B3985F /* MessagesViewController.swift in Sources */,
+				42D77E7D28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift in Sources */,
+				42D77E7E28522B7000B3985F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
