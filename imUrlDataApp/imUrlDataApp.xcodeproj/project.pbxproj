@@ -19,6 +19,7 @@
 		42199E9C21F1CA5700D4377E /* imUrlDataApp IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42199EA521F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
 		42199EA621F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
+		4276811F289D2D8B008FDF6C /* MessageComposerInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276811E289D2D8B008FDF6C /* MessageComposerInApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		42199EA121F22A1300D4377E /* imUrlDataApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = imUrlDataApp.entitlements; sourceTree = "<group>"; };
 		42199EA221F22A1700D4377E /* imUrlDataApp IM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "imUrlDataApp IM.entitlements"; sourceTree = "<group>"; };
 		42199EA421F22CA400D4377E /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		4276811E289D2D8B008FDF6C /* MessageComposerInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposerInApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				4201A9D621F0763C0043E369 /* Assets.xcassets */,
 				4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */,
 				4201A9DB21F0763C0043E369 /* Info.plist */,
+				4276811E289D2D8B008FDF6C /* MessageComposerInApp.swift */,
 			);
 			path = imUrlDataApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				42199EA521F22CA400D4377E /* SharedData.swift in Sources */,
 				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,
+				4276811F289D2D8B008FDF6C /* MessageComposerInApp.swift in Sources */,
 				4201A9D021F0763B0043E369 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
