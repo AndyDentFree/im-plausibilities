@@ -26,10 +26,11 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate weak var angrySwitch: UISwitch!
     @IBOutlet fileprivate weak var appSendButton: UIButton!
     
-    lazy var toggles = [happySwitch, quizzicalSwitch, distraughtSwitch, angrySwitch]
+    lazy var toggles = [happySwitch, quizzicalSwitch, distraughtSwitch, angrySwitch] // maintains same order as Mood
     lazy var buttons = [happyBtn, quizzicalBtn, distraughtBtn, angryBtn]
     var lastToggled : controlIndexes? = nil
     var messager = MessageComposingHelper()
+    var lastTappedMood = Mood.happy
 
     // array of flags instead of storing state in the switch so can easily save and load
     var enabled = [Bool]()
@@ -40,23 +41,56 @@ class ViewController: UIViewController {
         enabled = SharedData.current.loadEnabled()
         // initial loading loop - if read at least one false
         if enabled.contains(false) {
+            var firstOn: Mood? = nil
             for (i, isOn) in enabled.enumerated() {
+                if isOn && firstOn == nil {
+                    firstOn = Mood[i]
+                }
                 buttons[i]?.alpha = isOn ? 1.0 : 0.3
+                buttons[i]?.isEnabled = isOn
                 toggles[i]?.isOn = isOn
                 // bit hacky, just set lastToggled to last off
                 lastToggled = isOn ? lastToggled : controlIndexes(rawValue: i)
             }
+            lastTappedMood = firstOn ?? .happy
         }
         if !messager.canSendText() {
             appSendButton.isEnabled = false
             appSendButton.titleLabel?.text = "Not allowed to send texts"
         }
+        tap(mood: lastTappedMood)  // just to get it highlighted
     }
 
     func matchButtonsToToggles() {
         for (i, isOn) in enabled.enumerated() {
             buttons[i]?.alpha = isOn ? 1.0 : 0.3
+            buttons[i]?.isEnabled = isOn
         }
+    }
+    
+    
+    func buttonFor(mood: Mood) -> UIButton {
+        switch mood {
+        case .happy:
+            return happyBtn
+        case .quizzical:
+            return quizzicalBtn
+        case .distraught:
+            return distraughtBtn
+        case .angry:
+            return angryBtn
+        }
+    }
+    
+    func tap(mood: Mood) {
+        buttonFor(mood: lastTappedMood).layer.borderWidth = 0
+        buttonFor(mood: mood).layer.borderWidth = 4
+        if #available(iOS 13.0, *) {
+            buttonFor(mood: mood).layer.borderColor = CGColor(red: 099, green: 0.6, blue: 0.05, alpha: 1.0)
+        } else {
+            // Fallback on earlier versions
+        }
+        lastTappedMood = mood
     }
     
     func allOff() -> Bool {
@@ -98,25 +132,25 @@ class ViewController: UIViewController {
     
     
     @IBAction func onHappy(_ sender: Any) {
-        toggle(.happy)
+        tap(mood: .happy)
     }
     
     @IBAction func onQuizzical(_ sender: Any) {
-        toggle(.quizzical)
+        tap(mood: .quizzical)
     }
     
     @IBAction func onDistraught(_ sender: Any) {
-        toggle(.distraught)
+        tap(mood: .distraught)
     }
     
     @IBAction func onAngry(_ sender: Any) {
-        toggle(.angry)
+        tap(mood: .angry)
     }
     
     
     /// see Readme and  https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller
     @IBAction func onAppSendButton(_ sender: Any) {
-        messager.displayMessageInterface(onVC: self)
+        messager.displayMessageInterface(onVC: self, mood: lastTappedMood)
     }
 
 }

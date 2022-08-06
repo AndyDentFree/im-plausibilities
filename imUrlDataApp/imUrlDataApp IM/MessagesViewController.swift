@@ -10,14 +10,6 @@ import UIKit
 import os
 import Messages
 
-
-enum Mood : String {
-    case happy
-    case quizzical
-    case distraught
-    case angry
-}
-
 class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet fileprivate weak var happyBtn: UIButton!
@@ -27,7 +19,6 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBOutlet fileprivate weak var statusLabel: UILabel!
     
     var receivedMood:Mood? = nil
-    let moodKey = "mood"
     let responseKey = "respondingTo"
     let senderTimestampKey = "sentTS"
     var enabled = [Bool]()
@@ -62,7 +53,7 @@ class MessagesViewController: MSMessagesAppViewController {
         }
         os_log("hasIncoming parsing message")
         guard let comps = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
-        if let msgMood = comps.queryItems?.first(where: { $0.name == moodKey })?.value {
+        if let msgMood = comps.queryItems?.first(where: { $0.name == Mood.moodKey })?.value {
             if let parsedMood = Mood(rawValue: msgMood) {
                 receivedMood = parsedMood
                 statusLabel.text = "Respond to '\(msgMood)'"
@@ -155,7 +146,7 @@ class MessagesViewController: MSMessagesAppViewController {
             fatalError("Invalid base URL")
         }
         var qi = [
-            URLQueryItem(name:moodKey, value:mood.rawValue)
+            URLQueryItem(name: Mood.moodKey, value:mood.rawValue)
         ]
         if receivedMood != nil {
             qi.append(URLQueryItem(name:responseKey, value:receivedMood!.rawValue))

@@ -11,11 +11,12 @@ import MessageUI
 import Messages
 
 class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
+
     func canSendText() -> Bool {
         MFMessageComposeViewController.canSendText()
     }
     
-    func displayMessageInterface(onVC vc: UIViewController) {
+    func displayMessageInterface(onVC vc: UIViewController, mood:Mood) {
         let composeVC = MFMessageComposeViewController()
         composeVC.messageComposeDelegate = self
         
@@ -36,7 +37,7 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
             guard var urlComps = URLComponents(string:"data:,") else {
                 fatalError("Invalid base URL")
             }
-            urlComps.queryItems = [URLQueryItem(name:"mood", value:"happy")]
+            urlComps.queryItems = [URLQueryItem(name: Mood.moodKey, value:mood.rawValue)]
             message.url = urlComps.url
             composeVC.message = message
         }

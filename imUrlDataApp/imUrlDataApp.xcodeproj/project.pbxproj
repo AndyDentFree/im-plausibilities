@@ -12,6 +12,8 @@
 		4201A9D521F0763B0043E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D321F0763B0043E369 /* Main.storyboard */; };
 		4201A9D721F0763C0043E369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D621F0763C0043E369 /* Assets.xcassets */; };
 		4201A9DA21F0763C0043E369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */; };
+		42089152289E15FB0036C790 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089151289E15FB0036C790 /* Mood.swift */; };
+		42089153289E15FB0036C790 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089151289E15FB0036C790 /* Mood.swift */; };
 		42199E9021F1CA5600D4377E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42199E8F21F1CA5600D4377E /* Messages.framework */; };
 		42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199E9221F1CA5600D4377E /* MessagesViewController.swift */; };
 		42199E9621F1CA5600D4377E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42199E9421F1CA5600D4377E /* MainInterface.storyboard */; };
@@ -54,6 +56,7 @@
 		4201A9D621F0763C0043E369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4201A9D921F0763C0043E369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4201A9DB21F0763C0043E369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42089151289E15FB0036C790 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imUrlDataApp IM.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42199E8F21F1CA5600D4377E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		42199E9221F1CA5600D4377E /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				42199EA421F22CA400D4377E /* SharedData.swift */,
+				42089151289E15FB0036C790 /* Mood.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -261,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42089152289E15FB0036C790 /* Mood.swift in Sources */,
 				42199EA521F22CA400D4377E /* SharedData.swift in Sources */,
 				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,
 				4276811F289D2D8B008FDF6C /* MessageComposerInApp.swift in Sources */,
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42199EA621F22CA400D4377E /* SharedData.swift in Sources */,
+				42089153289E15FB0036C790 /* Mood.swift in Sources */,
 				42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
