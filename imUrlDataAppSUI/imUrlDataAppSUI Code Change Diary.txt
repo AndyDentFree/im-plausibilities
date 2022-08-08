@@ -32,3 +32,15 @@ ContentView.swift
 
 MessagesViewController.swift
 - viewDidLoad - embed an instance of ContentView
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix app sender and include refactoring from imUrlDataApp (still broken)
+2022-08-07
+
+MessagesViewController.swift
+- Mood enum moved out to its own file
+- local let moodKey moved to Mood enum
+- Mood subscript added
+
+MessagePickerHost.swift
+- added but unfinished, mostly taking over MessageComposingHelper role plus the embedding.

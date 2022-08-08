@@ -10,7 +10,7 @@ extension UIViewController {
     /// - Parameters:
     ///   - swiftUIView: The SwiftUI `View` to add as a child.
     ///   - view: The `UIView` instance to which the view should be added.
-    @available(iOS 14, *)  // setting 14 as a bettr bare minimum
+    @available(iOS 15, *)  // setting 15 as a bettr bare minimum and that's what Touchgram v1.4.0 uses
     func addSubSwiftUIView<Content>(_ swiftUIView: Content, to view: UIView) where Content : View {
         let hostingController = UIHostingController(rootView: swiftUIView)
 

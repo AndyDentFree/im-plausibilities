@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42089156289F841F0036C790 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089154289F841F0036C790 /* SharedData.swift */; };
+		42089157289F841F0036C790 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089154289F841F0036C790 /* SharedData.swift */; };
+		42089158289F841F0036C790 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089155289F841F0036C790 /* Mood.swift */; };
+		42089159289F841F0036C790 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42089155289F841F0036C790 /* Mood.swift */; };
+		4208915B289F97E90036C790 /* MessageComposingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208915A289F97E90036C790 /* MessageComposingHelper.swift */; };
+		4208915D28A01BE40036C790 /* MessagePickerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208915C28A01BE40036C790 /* MessagePickerHost.swift */; };
 		42D77E6B2850EBC400B3985F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D77E6A2850EBC400B3985F /* Messages.framework */; };
 		42D77E6E2850EBC400B3985F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D77E6D2850EBC400B3985F /* MessagesViewController.swift */; };
 		42D77E712850EBC400B3985F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E6F2850EBC400B3985F /* MainInterface.storyboard */; };
 		42D77E732850EBC500B3985F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D77E722850EBC500B3985F /* Assets.xcassets */; };
 		42D77E772850EBC500B3985F /* imUrlDataAppSUI IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42D77E7D28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D77E7C28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift */; };
-		42D77E7E28522B7000B3985F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231C12714963F0041B8CA /* ContentView.swift */; };
 		42E231C02714963F0041B8CA /* imUrlDataAppSUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */; };
 		42E231C22714963F0041B8CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E231C12714963F0041B8CA /* ContentView.swift */; };
 		42E231C4271496410041B8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E231C3271496410041B8CA /* Assets.xcassets */; };
@@ -45,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42089154289F841F0036C790 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedData.swift; path = Common/SharedData.swift; sourceTree = "<group>"; };
+		42089155289F841F0036C790 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mood.swift; path = Common/Mood.swift; sourceTree = "<group>"; };
+		4208915A289F97E90036C790 /* MessageComposingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposingHelper.swift; sourceTree = "<group>"; };
+		4208915C28A01BE40036C790 /* MessagePickerHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePickerHost.swift; sourceTree = "<group>"; };
 		42D77E682850EBC400B3985F /* imUrlDataAppSUI IM.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "imUrlDataAppSUI IM.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D77E6A2850EBC400B3985F /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		42D77E6D2850EBC400B3985F /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42768103289C5A8E008FDF6C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				42089155289F841F0036C790 /* Mood.swift */,
+				42089154289F841F0036C790 /* SharedData.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		42D77E692850EBC400B3985F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +119,7 @@
 		42E231B32714963F0041B8CA = {
 			isa = PBXGroup;
 			children = (
+				42768103289C5A8E008FDF6C /* Common */,
 				42E231BE2714963F0041B8CA /* imUrlDataAppSUI */,
 				42D77E6C2850EBC400B3985F /* imUrlDataAppSUI IM */,
 				42D77E692850EBC400B3985F /* Frameworks */,
@@ -120,10 +139,12 @@
 		42E231BE2714963F0041B8CA /* imUrlDataAppSUI */ = {
 			isa = PBXGroup;
 			children = (
+				4208915A289F97E90036C790 /* MessageComposingHelper.swift */,
 				42E231BF2714963F0041B8CA /* imUrlDataAppSUIApp.swift */,
 				42E231C12714963F0041B8CA /* ContentView.swift */,
 				42E231C3271496410041B8CA /* Assets.xcassets */,
 				42E231C5271496410041B8CA /* Preview Content */,
+				4208915C28A01BE40036C790 /* MessagePickerHost.swift */,
 			);
 			path = imUrlDataAppSUI;
 			sourceTree = "<group>";
@@ -238,9 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42089159289F841F0036C790 /* Mood.swift in Sources */,
+				42089157289F841F0036C790 /* SharedData.swift in Sources */,
 				42D77E6E2850EBC400B3985F /* MessagesViewController.swift in Sources */,
 				42D77E7D28521D1900B3985F /* UIViewController+EmbedSwiftUI.swift in Sources */,
-				42D77E7E28522B7000B3985F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4208915B289F97E90036C790 /* MessageComposingHelper.swift in Sources */,
+				4208915D28A01BE40036C790 /* MessagePickerHost.swift in Sources */,
+				42089158289F841F0036C790 /* Mood.swift in Sources */,
+				42089156289F841F0036C790 /* SharedData.swift in Sources */,
 				42E231C22714963F0041B8CA /* ContentView.swift in Sources */,
 				42E231C02714963F0041B8CA /* imUrlDataAppSUIApp.swift in Sources */,
 			);
@@ -286,7 +312,7 @@
 				INFOPLIST_FILE = "imUrlDataAppSUI IM/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "imUrlDataAppSUI IM";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,7 +339,7 @@
 				INFOPLIST_FILE = "imUrlDataAppSUI IM/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "imUrlDataAppSUI IM";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,7 +519,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
