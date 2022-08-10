@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="imHostingVCWithSUI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
+                                <rect key="frame" x="109.5" y="264" width="101" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-Fa-c6S">
+                                <rect key="frame" x="40" y="166" width="240" height="216"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-kW-oSV" userLabel="Row 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😀"/>
+                                                <connections>
+                                                    <action selector="onHappy:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ex8-ef-zS2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFt-p7-8AQ">
+                                                <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="KI5-Ge-MLg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="🤨"/>
+                                                <connections>
+                                                    <action selector="onQuizzical:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Py0-Xf-blp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="G27-LM-Ur4" firstAttribute="width" secondItem="sFt-p7-8AQ" secondAttribute="width" id="PIO-zZ-odt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6r-rd-6em" userLabel="Row 2">
+                                        <rect key="frame" x="0.0" y="108" width="240" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-Y6-iRP">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😫"/>
+                                                <connections>
+                                                    <action selector="onDistraught:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Lsd-rq-HhU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRq-qV-Mzm">
+                                                <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😡"/>
+                                                <connections>
+                                                    <action selector="onAngry:" destination="ObA-dk-sSI" eventType="touchUpInside" id="maX-Fg-68d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wRq-qV-Mzm" firstAttribute="width" secondItem="VUc-Y6-iRP" secondAttribute="width" id="WyX-Os-Y5f"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VUc-Y6-iRP" firstAttribute="width" secondItem="G27-LM-Ur4" secondAttribute="width" id="qzd-vf-roj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="D1A-zg-lHF"/>
+                            <constraint firstItem="9bD-kW-oSV" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="JOp-K0-Lee"/>
+                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="Qrz-qZ-C12"/>
+                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="lHo-gz-3kQ"/>
+                            <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="mwN-dh-5HV"/>
+                            <constraint firstItem="q6r-rd-6em" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="uHa-uF-mMp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="angryBtn" destination="wRq-qV-Mzm" id="XXP-mj-Y1T"/>
+                        <outlet property="distraughtBtn" destination="VUc-Y6-iRP" id="Efl-ET-axC"/>
+                        <outlet property="happyBtn" destination="G27-LM-Ur4" id="USa-8s-UjH"/>
+                        <outlet property="quizzicalBtn" destination="sFt-p7-8AQ" id="eyh-Ym-Uzv"/>
+                        <outlet property="statusLabel" destination="d1e-fi-ked" id="sdK-gV-6QU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
