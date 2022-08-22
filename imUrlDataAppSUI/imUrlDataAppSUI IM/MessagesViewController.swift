@@ -1,6 +1,6 @@
 //
 //  MessagesViewController.swift
-//  imUrlDataApp IM
+//  imUrlDataAppSUI IM
 //
 //  Created by Andrew Dent on 18/1/19.
 //  Copyright © 2019 Touchgram Pty Ltd. All rights reserved.
@@ -9,6 +9,7 @@
 import UIKit
 import os
 import Messages
+
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -190,7 +191,7 @@ class MessagesViewController: MSMessagesAppViewController {
     // WARNING due to Simulator/XCode bugs, trying to invoke this in the simulator will cause a SIGKILL as it exits the iMessage context
     // that was the case in XCode 10 at least
     @IBAction func onLaunchApp(_ sender: Any) {
-        guard let url: URL = URL(string: "imUrlDataApp://?arbitraryParam=nothingSpecial") else { return }
+        guard let url: URL = URL(string: "imUrlDataAppSUI://?arbitraryParam=nothingSpecial") else { return }
         self.extensionContext?.open(url, completionHandler: { (success: Bool) in
             // nothing, we invoked the main app!
         })

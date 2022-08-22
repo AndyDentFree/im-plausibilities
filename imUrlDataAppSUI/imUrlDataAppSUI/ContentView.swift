@@ -14,10 +14,15 @@ struct ContentView: View {
     @State var quizzicalAllowed = true
     @State var distraughtAllowed = true
     @State var angryAllowed = true
+    @State var showingMessageSender = false
     var happyOpacity: Double {happyAllowed ? 1.0 : 0.3}
     var quizzicalOpacity: Double {quizzicalAllowed ? 1.0 : 0.3}
     var distraughtOpacity: Double {distraughtAllowed ? 1.0 : 0.3}
     var angryOpacity: Double {angryAllowed ? 1.0 : 0.3}
+
+    var messager = MessageComposingHelper()
+    var lastTappedMood = Mood.happy
+
     var body: some View {
         VStack(alignment: .center) {
             Text("Choose moods allowed to send")
@@ -40,7 +45,10 @@ struct ContentView: View {
                 }
             }
             .font(Font.system(size: 80.0))
-            Button("Send Message from App", action: {})
+            Button("Send Message from App", action: {showingMessageSender = true})
+        }
+        .sheet(isPresented: $showingMessageSender) {
+            
         }
     }
 }

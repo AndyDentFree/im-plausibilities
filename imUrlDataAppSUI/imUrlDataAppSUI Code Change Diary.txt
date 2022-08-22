@@ -12,3 +12,35 @@ imUrlDataAppSUI - project created as Single View App
 ContentView.swift
 - filled in blank View with four buttons and switches plus static label, in stack views
 - added state variables with toggles so icon opacity is dependent
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Messenger extension Target showing SwiftUI
+2022-06-08..09
+
+imUrlDataAppSUI IM project target added as iMessage extension
+(comes in with Storyboard)
+
+Maininterface.storyboard
+- Messages View Controller
+  - changed label text to be a big warning that SwiftUI is not hosted
+  
+UIViewController+EmbedSwiftUI.swift
+- added to embed SwiftUI views
+
+ContentView.swift
+- add to imUrlDataSAppSUI IM project as well, just for now
+
+MessagesViewController.swift
+- viewDidLoad - embed an instance of ContentView
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix app sender and include refactoring from imUrlDataApp (still broken)
+2022-08-07
+
+MessagesViewController.swift
+- Mood enum moved out to its own file
+- local let moodKey moved to Mood enum
+- Mood subscript added
+
+MessagePickerHost.swift
+- added but unfinished, mostly taking over MessageComposingHelper role plus the embedding.

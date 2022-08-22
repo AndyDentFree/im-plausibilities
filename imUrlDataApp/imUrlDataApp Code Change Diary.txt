@@ -118,3 +118,40 @@ ViewController.swift
 - appSendButton added and connected
 - onAppSendButton added to invoke displayMessageInterface
 - displayMessageInterface added
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Refactor Message Sending from App for easy reuse in other sample
+2022-08-05
+
+ViewController.swift
+- var messager added
+- displayMessageInterface and messageComposeViewController moved to MessageComposerInApp
+- viewDidLoad use messager to set state if !canSendText
+- onAppSendButton call messager to display
+
+MessageComposerInApp.swift
+- added as NSObject, MFMessageComposeViewControllerDelegate
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix app sender to send last-tapped emoji (was always "happy")
+2022-08-06
+
+MessagesViewController.swift
+- Mood enum moved out to its own file
+- local let moodKey moved to Mood enum
+- subscript added
+
+MessageComposingHelper
+- displayMessageInterface take a mood param instead of using hardcoded strings
+
+ViewController
+- onAppSendButton pass mood to displayMessageInterface
+- buttonFor(mood) helper added
+- tap(mood) added
+- viewDidLoad 
+  - call tap(mood) to get highlighted
+  - set button isEnabled state (now we're not using them to toggle back on, should only be tappable when enabled)
+- onHappy…Angry - call tap(mood:) instead of toggle, so tapping emoji sets the one to send
+- matchButtonsToToggles - set isEnabled state
