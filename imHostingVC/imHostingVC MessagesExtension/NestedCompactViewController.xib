@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NestedDummyViewController" customModule="imHostingVC_MessagesExtension" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="400" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-cx-zfp">
+                    <rect key="frame" x="87" y="299" width="240" height="308"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-Io-9QU">
+                            <rect key="frame" x="32.5" y="0.0" width="175.5" height="37"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-gD-X9f" userLabel="Row 1">
+                            <rect key="frame" x="0.0" y="45" width="240" height="108"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-gf-fZk">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                    <state key="normal" title="😀"/>
+                                    <connections>
+                                        <action selector="onPick:" destination="-1" eventType="touchUpInside" id="cfK-sr-DLq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-j0-OFr">
+                                    <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="2KP-Cw-62T"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                    <state key="normal" title="🤨"/>
+                                    <connections>
+                                        <action selector="onPick:" destination="-1" eventType="touchUpInside" id="YZh-Nl-wiL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="YoU-gf-fZk" firstAttribute="width" secondItem="Kca-j0-OFr" secondAttribute="width" id="gsv-BT-sLS"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-Ay-biZ" userLabel="Row 2">
+                            <rect key="frame" x="0.0" y="161" width="240" height="108"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-ud-jdg">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                    <state key="normal" title="😫"/>
+                                    <connections>
+                                        <action selector="onPick:" destination="-1" eventType="touchUpInside" id="P8a-6H-veL"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-4z-szT">
+                                    <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                    <state key="normal" title="😡"/>
+                                    <connections>
+                                        <action selector="onPick:" destination="-1" eventType="touchUpInside" id="uHk-bP-CWh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="BZR-4z-szT" firstAttribute="width" secondItem="IlM-ud-jdg" secondAttribute="width" id="NgP-jk-ZGN"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-Qm-owx">
+                            <rect key="frame" x="86" y="277" width="68.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="&lt; Back"/>
+                            <connections>
+                                <action selector="onBack:" destination="-1" eventType="touchUpInside" id="tcd-em-jUe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="hD0-xw-nmz"/>
+                    <constraints>
+                        <constraint firstItem="Y2S-Ay-biZ" firstAttribute="width" secondItem="g5L-gD-X9f" secondAttribute="width" id="7Pe-tt-fu3"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cBh-cx-zfp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VVT-zY-KWd"/>
+                <constraint firstItem="g5L-gD-X9f" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" priority="800" constant="-40" id="Xcy-I1-B8w"/>
+                <constraint firstItem="cBh-cx-zfp" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ucB-Dm-phU"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,31 @@
+Creation
+2022-08-11
+
+Created copying imUrlData and renaming everything.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add nested simple screens showing hostVC call to navigate down
+2022-08-10..15
+
+UIViewController+Hosting.swift
+MessagesTopNavigation.swift
+NavCommandDelegate
+- copied from Touchgram and edited cases for our functionality
+
+MainInterface.storyboard
+- emptied MessagesViewController scene, will host MenuViewController
+
+MessagesViewController
+- pulled out all UI code to MenuViewController
+- willBecomeActive invoke presentViewController so get initial MenuVC
+- willTransition(to invoke presentViewController
+- hasIncoming set receivedItem & don't update statusLabel
+
+NestedCompactViewController.xib and .swift
+NestedExpandedViewController.xib and .swift
+- added with emoji selectors and Back button 
+
+MenuViewController.xib and .swift
+- added, will be created as first hosted controller
+
+

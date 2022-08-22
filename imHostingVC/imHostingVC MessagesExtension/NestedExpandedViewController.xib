@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NestedExpandedViewController" customModule="imHostingVC_MessagesExtension" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="600" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K8Z-f6-tid">
+                    <rect key="frame" x="52" y="-5.5" width="216" height="569"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C96-mE-UWm" userLabel="Send a snack">
+                            <rect key="frame" x="23" y="0.0" width="170" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmV-Wk-qcC">
+                            <rect key="frame" x="73.5" y="40" width="69" height="99"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="🍔"/>
+                            <connections>
+                                <action selector="onPick:" destination="-1" eventType="touchUpInside" id="hnl-fF-aEk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-Oe-CXY">
+                            <rect key="frame" x="73.5" y="139" width="69" height="99"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="🌭"/>
+                            <connections>
+                                <action selector="onPick:" destination="-1" eventType="touchUpInside" id="eSS-wI-hNR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxe-aC-4iU">
+                            <rect key="frame" x="73.5" y="238" width="69" height="98.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="🌮"/>
+                            <connections>
+                                <action selector="onPick:" destination="-1" eventType="touchUpInside" id="Kth-fF-Miv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46H-Wp-QJO">
+                            <rect key="frame" x="73.5" y="336.5" width="69" height="99"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="🌯"/>
+                            <connections>
+                                <action selector="onPick:" destination="-1" eventType="touchUpInside" id="svm-N0-0nl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAJ-gZ-eKF">
+                            <rect key="frame" x="73.5" y="435.5" width="69" height="99"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="🍟"/>
+                            <connections>
+                                <action selector="onPick:" destination="-1" eventType="touchUpInside" id="NAa-70-UiU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="H5Z-93-1ly">
+                            <rect key="frame" x="74" y="534.5" width="68.5" height="34.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="&lt; Back"/>
+                            <connections>
+                                <action selector="onBack:" destination="-1" eventType="touchUpInside" id="N8s-IJ-nR5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="K8Z-f6-tid" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-5" id="65r-lG-RuC"/>
+                <constraint firstItem="K8Z-f6-tid" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" constant="-24" id="JBW-qC-oSq"/>
+                <constraint firstItem="K8Z-f6-tid" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VDP-wI-7ru"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
