@@ -136,10 +136,10 @@ class MessagesViewController: MSMessagesAppViewController, HostingVC {
 
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called before the extension transitions to a new presentation style.
-        os_log("MessagesVC.willTransition to %C", presentationStyle.asChar())
+        os_log("MessagesVC.willTransition to mode %C, removing current child VCs", presentationStyle.asChar())
+        removeAllChildViewControllers()
 
         super.willTransition(to:presentationStyle)
-        presentViewController(for: activeConversation, with: presentationStyle)
     }
 
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -147,6 +147,7 @@ class MessagesViewController: MSMessagesAppViewController, HostingVC {
         os_log("MessagesVC.didTransition to %C", presentationStyle.asChar())
         super.didTransition(to: presentationStyle)
         // Use this method to finalize any behaviors associated with the change in presentation style.
+        presentViewController(for: activeConversation, with: presentationStyle)
     }
 
     // Handles sending because knows activeConversation
@@ -184,6 +185,7 @@ class MessagesViewController: MSMessagesAppViewController, HostingVC {
     // as sometimes MessagesViewController.activeConversation is nil, changed to allow nil to be passed in
     func presentViewController(for conversation: MSConversation?, with presentationStyle: MSMessagesAppPresentationStyle){
         os_log("MessagesVC.presentViewController with style %C", presentationStyle.asChar())
+        removeAllChildViewControllers()
         hostVC(makeVC(with: presentationStyle))
     }
 

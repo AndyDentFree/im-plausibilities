@@ -5,7 +5,7 @@ Created copying imUrlData and renaming everything.
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 Add nested simple screens showing hostVC call to navigate down
-2022-08-10..15
+2022-08-10..21
 
 UIViewController+Hosting.swift
 MessagesTopNavigation.swift
@@ -29,3 +29,15 @@ MenuViewController.xib and .swift
 - added, will be created as first hosted controller
 
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fixing state transitions & align with Apple Sample
+2022-08-22
+
+UIViewController+Hosting
+- added removeAllChildViewControllers to protocol & default extension
+- hostVC removed inline code doing same as removeAllChildViewControllers
+
+MessagesViewController
+- willTransition - call removeAllChildViewControllers
+- didTransition - call presentViewController here instead of willTransition
+- presentViewController - explicitly removeAllChildViewControllers which was done in hostVC

@@ -28,7 +28,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Moods">
                                 <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="baseForegroundColor" systemColor="systemBrownColor"/>
+                                <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
                                 <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                             </buttonConfiguration>
                             <connections>
@@ -67,8 +67,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

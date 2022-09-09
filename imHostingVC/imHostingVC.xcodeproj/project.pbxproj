@@ -75,6 +75,7 @@
 		4295D28121E957F800EF0E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4295D28321E957F800EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4295D28521E957F800EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8BC2773497F9F1DCE2A60BD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				4295D27D21E957F800EF0E0A /* imHostingVC MessagesExtension */,
 				4295D27A21E957F800EF0E0A /* Frameworks */,
 				4295D26D21E957F500EF0E0A /* Products */,
+				C8BC2773497F9F1DCE2A60BD /* README.md */,
 			);
 			sourceTree = "<group>";
 		};

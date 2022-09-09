@@ -21,8 +21,8 @@
                 <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="600" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K8Z-f6-tid">
                     <rect key="frame" x="52" y="-5.5" width="216" height="569"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C96-mE-UWm" userLabel="Send a snack">
-                            <rect key="frame" x="23" y="0.0" width="170" height="40"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a Snack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C96-mE-UWm" userLabel="Send a snack">
+                            <rect key="frame" x="20" y="0.0" width="176" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                             <nil key="textColor"/>

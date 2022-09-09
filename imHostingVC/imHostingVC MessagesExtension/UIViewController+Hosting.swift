@@ -8,17 +8,11 @@ import UIKit
 
 protocol HostingVC where Self: UIViewController {
     func hostVC(_ vc:UIViewController)
+    func removeAllChildViewControllers()
 }
 
 extension HostingVC {
     func hostVC(_ vc:UIViewController) {
-
-        for child in children {
-            child.willMove(toParent: nil)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
-        }
-
         addChild(vc)
 
         vc.view.frame = view.bounds
@@ -31,5 +25,13 @@ extension HostingVC {
         vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         vc.didMove(toParent: self)
+    }
+
+    func removeAllChildViewControllers() {
+        for child in children {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
     }
 }

@@ -19,10 +19,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="400" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-cx-zfp">
+                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="400" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-cx-zfp">
                     <rect key="frame" x="87" y="299" width="240" height="308"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-Io-9QU">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-Io-9QU">
                             <rect key="frame" x="32.5" y="0.0" width="175.5" height="37"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                             <nil key="textColor"/>
@@ -31,7 +31,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-gD-X9f" userLabel="Row 1">
                             <rect key="frame" x="0.0" y="45" width="240" height="108"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-gf-fZk">
+                                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-gf-fZk">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                     <state key="normal" title="😀"/>
@@ -39,7 +39,7 @@
                                         <action selector="onPick:" destination="-1" eventType="touchUpInside" id="cfK-sr-DLq"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-j0-OFr">
+                                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-j0-OFr">
                                     <rect key="frame" x="120" y="0.0" width="120" height="108"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="120" id="2KP-Cw-62T"/>
@@ -58,7 +58,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-Ay-biZ" userLabel="Row 2">
                             <rect key="frame" x="0.0" y="161" width="240" height="108"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-ud-jdg">
+                                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-ud-jdg">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                     <state key="normal" title="😫"/>
@@ -66,7 +66,7 @@
                                         <action selector="onPick:" destination="-1" eventType="touchUpInside" id="P8a-6H-veL"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-4z-szT">
+                                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-4z-szT">
                                     <rect key="frame" x="120" y="0.0" width="120" height="108"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                     <state key="normal" title="😡"/>
@@ -88,7 +88,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="hD0-xw-nmz"/>
                     <constraints>
                         <constraint firstItem="Y2S-Ay-biZ" firstAttribute="width" secondItem="g5L-gD-X9f" secondAttribute="width" id="7Pe-tt-fu3"/>
                     </constraints>
@@ -99,6 +98,7 @@
             <constraints>
                 <constraint firstItem="cBh-cx-zfp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VVT-zY-KWd"/>
                 <constraint firstItem="g5L-gD-X9f" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" priority="800" constant="-40" id="Xcy-I1-B8w"/>
+                <constraint firstItem="cBh-cx-zfp" firstAttribute="height" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="height" id="hgx-fv-4Oc"/>
                 <constraint firstItem="cBh-cx-zfp" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ucB-Dm-phU"/>
             </constraints>
             <point key="canvasLocation" x="139" y="135"/>

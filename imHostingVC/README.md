@@ -27,10 +27,46 @@ MOODS
 - Menu - Mood OK stays compact
 - Mood toggle expanded/compact OK
 - weird bug encountered that activeConversation nil but may be test side-effect
-- **BUG** compact menu to Mood not showing new VC - see MessagesViewController from icecreambuilder childViewControllers removal logic
+- **BUG** compact menu to Mood not showing new VC - see MessagesViewController from [icecreambuilder][2] childViewControllers removal logic
+
+### State Transitions
+(Using PlantUML via PlantText)
+
+@startuml
+``` plantuml
+title iMessage App extension State Model
+
+[*] --> CM
+CM --> [*]
+EM --> [*]
+CM --> FfC : Forces\nExpansion
+EM --> FfE
+FfE --> EM : Back
+FfC --> CM : Back or\lcollapse
+CM -r-> EM : expand 
+EM -l-> CM : collapse
+CM --> Mood
+EM --> Mood
+Mood --> EM : Back
+Mood --> CM : Back
 
 
+state "Menu (Compact)" as CM
+state "Menu (Expanded)" as EM
+state "Food" as FfE : from Expanded menu
+state "Food" as FfC : from Compact menu
+state Mood : can be either\nExpanded\nor Compact
+```
+@enduml
 
+## Comparing to Apple's Icecream Builder
+The [icecreambuilder][2] sample is Apple's only sample showing how to build an iMessage app extension (from iOS 10 … 16 at least).
+
+It has a minimal owning app with no user functionality.
+
+Stuff in `MessagesViewController` different from the Touchgram architecture which I need to justify or change:
+- `removeAllChildViewControllers` is invoked from both `willTransition` and `presentViewController`
+- `instantiateIceCreamsController` and similar factories used to instantiate VCs from the storyboard
 
 [1]: https://developer.apple.com/documentation/messages/msmessage/1649739-url
 [2]: https://developer.apple.com/documentation/messages/icecreambuilder_building_an_imessage_extension
