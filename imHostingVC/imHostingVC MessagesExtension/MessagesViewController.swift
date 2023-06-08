@@ -17,6 +17,8 @@ extension MSMessagesAppPresentationStyle {
             return UInt8(ascii:"C")
         case .expanded:
             return UInt8(ascii:"E")
+        case .transcript:
+            return UInt8(ascii:"T")
         default:
             return UInt8(ascii:"X")
         }

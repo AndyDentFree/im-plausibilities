@@ -41,3 +41,12 @@ MessagesViewController
 - willTransition - call removeAllChildViewControllers
 - didTransition - call presentViewController here instead of willTransition
 - presentViewController - explicitly removeAllChildViewControllers which was done in hostVC
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Logging if in Transcript mode (part of iOS17 testing)
+2023-06-09
+
+MessagesViewController.swift
+- MSMessagesAppPresentationStyle extension
+  - add case for .transcript 
