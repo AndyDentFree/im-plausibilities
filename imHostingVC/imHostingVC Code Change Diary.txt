@@ -50,3 +50,12 @@ Logging if in Transcript mode (part of iOS17 testing)
 MessagesViewController.swift
 - MSMessagesAppPresentationStyle extension
   - add case for .transcript 
+  
+  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix confusing naming
+2023-06-09
+
+info.plist 
+change CFBundleDisplayName from imHostingVCWithSUI to imHostingVC fixing copy-paste error from project creation that caused a lot of confusion when both installed.
+
