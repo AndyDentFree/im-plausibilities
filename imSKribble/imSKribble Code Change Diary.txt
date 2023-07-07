@@ -1,0 +1,22 @@
+Creation
+2023-06-13
+
+Cloned from imdataUrl renaming all files and classes
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding Drawing Logic sending
+2023-07-06
+
+MessagesViewController.swift
+- old IBActions & outlets deleted
+- mood* props deleted
+- sent/receivedTouches added
+- send(Mood) rewritten to send points
+- makeScene added
+- IBAction onClear added to invoke makeScene
+
+Main.storyboard
+- Clear and Send buttons added at bottom with SKScene filling most of view
+ScribbleGameScene.swift
+ScribbleHelpers.swift
+- added
