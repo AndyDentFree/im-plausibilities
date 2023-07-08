@@ -18,9 +18,8 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBOutlet weak var skView: SKView!
     
     var receivedTouches = [CGPoint]()
-    var sentTouches = [CGPoint]()
     let pointsKey = "points"
-    lazy var scene: SKScene = SKScene()
+    var scene: ScribbleGameScene? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +40,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if let pointsString = comps.queryItems?.first(where: { $0.name == pointsKey })?.value,
            let pointsData = Data(base64Encoded: pointsString) {
             receivedTouches = points(from: pointsData)
+            scene?.draw(&receivedTouches, asLocal: false)
         }
     }
     
@@ -122,12 +122,15 @@ class MessagesViewController: MSMessagesAppViewController {
         let session = conversation.selectedMessage?.session
         let message = MSMessage(session: session ?? MSSession())
         message.layout = layout
-        message.url = urlComps.url
-        conversation.insert(message) { (error) in
-            if let error = error {
-                os_log("Error with MSConversation.insert(message)")
-                print(error)
-            }
+        if let toSend = urlComps.url {
+            message.url = toSend
+            print("send attempted with URL \(toSend.absoluteString)\n")
+            conversation.insert(message) { (error) in
+                if let error = error {
+                    os_log("Error with MSConversation.insert(message)")
+                    print(error)
+                }
+            }            
         }
         dismiss()
     }
@@ -145,5 +148,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @IBAction func onSend(_ sender: Any) {
+        guard let sendablePoints = scene?._pointsDrawn else {return}
+        send(points: sendablePoints)
     }
 }

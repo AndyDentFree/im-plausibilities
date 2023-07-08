@@ -20,3 +20,22 @@ Main.storyboard
 ScribbleGameScene.swift
 ScribbleHelpers.swift
 - added
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Finish receive logic so works pre iOS17
+2023-07-08
+
+Main.storyboard
+- Clear button tint red
+- added constraints to guarantee button bar visible 
+
+MessagesViewController.swift
+- scene type changed to ScribbleGameScene?
+- onSend - fix empty method
+- hasIncoming draw received points
+- send log the sent string
+
+imSkribble.xcodeproj
+- changed deployment down from 15.1 to 12.1 so can test on multiple old devices
+(ignoring warnings about button styles require 15.0, still runs)
