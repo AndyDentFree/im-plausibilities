@@ -20,7 +20,7 @@ Each sample will have its own nested readme document.
 
 ### Live messaging
 * [responIM - Responding within a message](./responIM/README.md) 
-* [imSkribble - Simple sketches going back and forth](./imSkribble/README.md) shows **iOS17** side-effect with gestures.
+* [imSkribble - Simple sketches going back and forth](./imSKribble/README.md) shows **iOS17** side-effect with gestures.
 
 ### Other APIs and complications
 * [imPhoto - Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media

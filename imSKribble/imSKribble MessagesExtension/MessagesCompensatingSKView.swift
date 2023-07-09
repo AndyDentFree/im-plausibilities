@@ -13,7 +13,7 @@ import SpriteKit
 class MessagesCompensatingSKView: SKView {
 
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return !(gestureRecognizer is UIPanGestureRecognizer)
+        !(gestureRecognizer is UIPanGestureRecognizer)
     }
 
 }

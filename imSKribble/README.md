@@ -21,7 +21,17 @@ See also [MSMessageLiveLayout][2] for an alternative for live messaging inside a
 
 
 ## The iOS17 Messages app change
+The change (on instructions from DTS) is very simple. Replace the use of `SKView` with a trivial subclass that prevents Pan gestures.
 
+See `MessagesCompensatingSKView.swift`:
+
+```
+class MessagesCompensatingSKView: SKView {
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        !(gestureRecognizer is UIPanGestureRecognizer)
+    }
+}
+```
 
 ## Other notes
 The deployment target is 12.1 because I have a bunch of old devices for testing. This causes some warnings about missing button features but has no runtime side-effects.
