@@ -52,3 +52,15 @@ MessagesViewController.swift
   - use conversation.send instead of insert, so is immediate
   - don't invoke dismiss so message composer stays active
 - onClear - clear the stashed points
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Fix iOS17 bug where gestures with vertical component resize the 
+2023-07-09
+
+MessagesCompensatingSKView.swift
+- added
+
+Main.storyboard
+- Messages View Controller
+  - change SKView to subclass MessagesCompensatingSKView
+  

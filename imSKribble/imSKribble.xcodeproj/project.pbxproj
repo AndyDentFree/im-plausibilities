@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42341A7A2A39E06B007DB52E /* ScribbleGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341A792A39E06B007DB52E /* ScribbleGameScene.swift */; };
 		42341A7C2A39E109007DB52E /* ScribbleHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341A7B2A39E109007DB52E /* ScribbleHelpers.swift */; };
+		424648E92A5AC35000F6BB48 /* MessagesCompensatingSKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424648E82A5AC35000F6BB48 /* MessagesCompensatingSKView.swift */; };
 		4295D27021E957F700EF0E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4295D26F21E957F700EF0E0A /* Assets.xcassets */; };
 		4295D27721E957F800EF0E0A /* imSKribble MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4295D27621E957F800EF0E0A /* imSKribble MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4295D27C21E957F800EF0E0A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4295D27B21E957F800EF0E0A /* Messages.framework */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		42341A792A39E06B007DB52E /* ScribbleGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScribbleGameScene.swift; sourceTree = "<group>"; };
 		42341A7B2A39E109007DB52E /* ScribbleHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScribbleHelpers.swift; sourceTree = "<group>"; };
+		424648E82A5AC35000F6BB48 /* MessagesCompensatingSKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCompensatingSKView.swift; sourceTree = "<group>"; };
 		4295D26C21E957F500EF0E0A /* imSKribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imSKribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4295D26F21E957F700EF0E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4295D27121E957F700EF0E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4295D28021E957F800EF0E0A /* MainInterface.storyboard */,
 				4295D28321E957F800EF0E0A /* Assets.xcassets */,
 				4295D28521E957F800EF0E0A /* Info.plist */,
+				424648E82A5AC35000F6BB48 /* MessagesCompensatingSKView.swift */,
 			);
 			path = "imSKribble MessagesExtension";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424648E92A5AC35000F6BB48 /* MessagesCompensatingSKView.swift in Sources */,
 				42341A7C2A39E109007DB52E /* ScribbleHelpers.swift in Sources */,
 				4295D27F21E957F800EF0E0A /* MessagesViewController.swift in Sources */,
 				42341A7A2A39E06B007DB52E /* ScribbleGameScene.swift in Sources */,
