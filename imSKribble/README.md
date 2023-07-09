@@ -14,6 +14,17 @@ The explicit **Send** and **Clear** buttons send the points last drawn or clear 
 
 To keep things simpler, only one set of points are retained for sending.
 
+Note that this is not completely _live_ drawing back and forth. The drawing side was got working enough to encounter the iOS17 bug. If you have imSkribble open on one phone and send a message from the other it should trigger a `didReceive` and you have back-and-forth comms for some time.
+
+See also [MSMessageLiveLayout][2] for an alternative for live messaging inside a bubble in the transcript.
+
+
+
+## The iOS17 Messages app change
+
+
+## Other notes
+The deployment target is 12.1 because I have a bunch of old devices for testing. This causes some warnings about missing button features but has no runtime side-effects.
 
 
 ## Project Structure
@@ -21,3 +32,4 @@ To keep things simpler, only one set of points are retained for sending.
 Copied imDataUrl and renamed everything.
 
 [1]: https://github.com/AndyDentFree/SpriteKittenly/tree/master/SKScribbles
+[2]: https://developer.apple.com/documentation/messages/msmessagelivelayout

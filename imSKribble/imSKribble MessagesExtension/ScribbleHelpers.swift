@@ -17,7 +17,7 @@ extension CGPoint {
 extension MessagesViewController {
     
     func data(from points: [CGPoint]) -> Data? {
-        let convertedPoints = points.flatMap { [$0.x, $0.y] }.map { UInt32($0) }
+        let convertedPoints = points.flatMap { [$0.x, $0.y] }.map { UInt32(max($0, 0.0)) }
         guard convertedPoints.count > 0 else {return nil}
         return convertedPoints.withUnsafeBytes { Data($0) }
     }

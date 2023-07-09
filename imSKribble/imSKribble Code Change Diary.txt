@@ -39,3 +39,16 @@ MessagesViewController.swift
 imSkribble.xcodeproj
 - changed deployment down from 15.1 to 12.1 so can test on multiple old devices
 (ignoring warnings about button styles require 15.0, still runs)
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add live responses 
+2023-07-09
+
+ScribbleHelpers
+- data(from) - add max() to cope with negative points, clipping at edge of screen
+
+MessagesViewController.swift
+- send
+  - use conversation.send instead of insert, so is immediate
+  - don't invoke dismiss so message composer stays active
+- onClear - clear the stashed points

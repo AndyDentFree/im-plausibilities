@@ -10,12 +10,19 @@ This means if you are interested in a given sample, there's a better chance of i
 
 In many cases, Apple's documentation provides snippets and API documentation but no full sample you can build and verify works.
 
+## Samples
 Each sample will have its own nested readme document.
 
+### URL focus
 * [imUrlData - Sending data via a URL](./imUrlData/README.md)
 * [imUrlDataApp - Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
 * [imUrlDataAppSUI - re-implemented with SwiftUI 3](./imUrlDataAppSUI/README.md) exercise in SwiftUI confirming can be used inside an iMessage extension
+
+### Live messaging
 * [responIM - Responding within a message](./responIM/README.md) 
+* [imSkribble - Simple sketches going back and forth](./imSkribble/README.md) shows **iOS17** side-effect with gestures.
+
+### Other APIs and complications
 * [imPhoto - Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
 * [webFromIM - Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
 
@@ -28,11 +35,13 @@ For various reasons, some of these samples may need to launch another app. This 
 * [webFromIM](./webFromIM/README.md) sole reason for this demo is to launch Safari.
 
 ### Planned apps
-Note the presence of an idea below is **not** a guarantee the idea is feasible!
+Note the presence of an idea below is **not** a guarantee the idea is feasible or that I have time to attend to it!
 
 * A pure app version of `imPhoto` that uses `MFMessageComposeViewController` to test sending without going into iMessage
 * Sending a photo as special data via a cloud service, so the receiving app can process it
 * Sending photos using `MSMessageLiveLayout` to continuously update in the transcript
+
+Also, any nested folders in this repo which are not linked above may be incomplete samples. Please add an issue if you think something should be mentioned here, I may have just forgotten it. Also add issues for anything that is unclear in the docs or source!
 
 ## Other Rationales
 I love the effort some people put into their sample code but it's often frustrating when they explore several things at once. _I'm testing this API **and** learning Reactive Cocoa_ because those complex samples tend to be left to wither - they are too hard to maintain when someone loses interest.
