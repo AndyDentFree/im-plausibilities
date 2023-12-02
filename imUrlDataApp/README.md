@@ -1,7 +1,7 @@
 # imUrlDataApp
 See the overall rationale in the [readme in the parent folder](../README.md).
 
-Same as imUrlData but adding a usable iOS App side rather than just appearing as an extension.
+Same as imUrlData but adding a usable iOS App side rather than just appearing as an extension and **sending custom messages from the App**.
 
 
 ## Shared Features
@@ -26,6 +26,8 @@ Note another strong reason to have the companion app installable is to support I
 Apple provide [MFMessageComposeViewController](https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller) so you can compose messages inside an app. This is documented as being mostly about sending text **but** you can also assign the `message` property which is an `MSMessage`. The documentation misleadingly says _To display your iMessage app, create and assign an MSMessage object to this property._ but there's no such automatic behaviour. 
 
 What _does_ seem to happen, magically behind the scene, is that the iMessage delivered is typed for the iMessage Extension App bundled with your sending app. ie: **you can only use this technique when there's an extension.** 
+
+That makes absolute sense when you think about it - the app may be used to _send_ custom messages, but custom messages can _only be received in an extension._
 
 
 ## Project Structure

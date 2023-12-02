@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="imPiggie_IM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGe-PT-Px1" userLabel="AppButton">
+                                <rect key="frame" x="256" y="166" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="A2U-dJ-Aia"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="-&gt; App"/>
+                                <connections>
+                                    <action selector="onLaunchApp:" destination="ObA-dk-sSI" eventType="touchUpInside" id="RYf-L1-E6q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
+                                <rect key="frame" x="109.5" y="264" width="101" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-Fa-c6S">
+                                <rect key="frame" x="40" y="166" width="240" height="216"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-kW-oSV" userLabel="Row 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G27-LM-Ur4">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😀"/>
+                                                <connections>
+                                                    <action selector="onHappy:" destination="ObA-dk-sSI" eventType="touchUpInside" id="pJX-xO-mJa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFt-p7-8AQ">
+                                                <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="KI5-Ge-MLg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="🤨"/>
+                                                <state key="disabled" title="🤨"/>
+                                                <connections>
+                                                    <action selector="onQuizzical:" destination="ObA-dk-sSI" eventType="touchUpInside" id="T8W-iT-Otb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="G27-LM-Ur4" firstAttribute="width" secondItem="sFt-p7-8AQ" secondAttribute="width" id="PIO-zZ-odt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6r-rd-6em" userLabel="Row 2">
+                                        <rect key="frame" x="0.0" y="108" width="240" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-Y6-iRP">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😫"/>
+                                                <connections>
+                                                    <action selector="onDistraught:" destination="ObA-dk-sSI" eventType="touchUpInside" id="GUL-Ad-vy5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRq-qV-Mzm">
+                                                <rect key="frame" x="120" y="0.0" width="120" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="😡"/>
+                                                <connections>
+                                                    <action selector="onAngry:" destination="ObA-dk-sSI" eventType="touchUpInside" id="4AY-ep-DXN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wRq-qV-Mzm" firstAttribute="width" secondItem="VUc-Y6-iRP" secondAttribute="width" id="WyX-Os-Y5f"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VUc-Y6-iRP" firstAttribute="width" secondItem="G27-LM-Ur4" secondAttribute="width" id="qzd-vf-roj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="D1A-zg-lHF"/>
+                            <constraint firstItem="9bD-kW-oSV" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="JOp-K0-Lee"/>
+                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="Qrz-qZ-C12"/>
+                            <constraint firstItem="XGe-PT-Px1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LDy-ih-0nr" secondAttribute="leading" priority="800" symbolic="YES" id="VbQ-jj-kNc"/>
+                            <constraint firstItem="XGe-PT-Px1" firstAttribute="top" secondItem="FM3-Fa-c6S" secondAttribute="top" id="dIg-km-kjY"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="XGe-PT-Px1" secondAttribute="trailing" constant="4" id="gVb-CZ-oVd"/>
+                            <constraint firstItem="d1e-fi-ked" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="lHo-gz-3kQ"/>
+                            <constraint firstItem="FM3-Fa-c6S" firstAttribute="centerY" secondItem="LDy-ih-0nr" secondAttribute="centerY" id="mwN-dh-5HV"/>
+                            <constraint firstItem="q6r-rd-6em" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="uHa-uF-mMp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="angryBtn" destination="wRq-qV-Mzm" id="HGc-Uv-Y5B"/>
+                        <outlet property="distraughtBtn" destination="VUc-Y6-iRP" id="RUR-sV-ZFr"/>
+                        <outlet property="happyBtn" destination="G27-LM-Ur4" id="wG9-Fq-CJu"/>
+                        <outlet property="quizzicalBtn" destination="sFt-p7-8AQ" id="zYX-ED-WWV"/>
+                        <outlet property="statusLabel" destination="d1e-fi-ked" id="J2Z-1f-6GY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

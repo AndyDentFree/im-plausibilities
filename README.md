@@ -3,19 +3,12 @@ Explorations of apps for Apple's iMessage
 
 Much of this work was during development of the [Touchgram messaging platform](https://www.touchgram.com/).
 
-## Many tiny apps rationale
-Due to some painful debugging experiences, I took the approach of doing simplest-possible testbed apps for different technologies.
-
-This means if you are interested in a given sample, there's a better chance of it continuing to work than if you have to fix bugs in areas not of interest. It also means you can submit a PR to fix a single sample, so is less work to contribute ;-)
-
-In many cases, Apple's documentation provides snippets and API documentation but no full sample you can build and verify works.
-
 ## Samples
 Each sample will have its own nested readme document.
 
 ### URL focus
 * [imUrlData - Sending data via a URL](./imUrlData/README.md)
-* [imUrlDataApp - Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app and **shared state** between the app and iMessage extension so the app changes settings affecting the UI in iMessage
+* [imUrlDataApp - Sending data via a URL with app](./imUrlDataApp/README.md) extends `imUrlData` adding a companion app **that can send messages** and _shared state_ between the app and iMessage extension so the app changes settings affecting the UI in iMessage
 * [imUrlDataAppSUI - re-implemented with SwiftUI 3](./imUrlDataAppSUI/README.md) exercise in SwiftUI confirming can be used inside an iMessage extension
 
 ### Live messaging
@@ -25,6 +18,7 @@ Each sample will have its own nested readme document.
 ### Other APIs and complications
 * [imPhoto - Using the camera](./imPhoto/README.md) and just sending in the message layout as normal media
 * [webFromIM - Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
+* [imPiggie](./imPiggie/README.md) copy of `imUrlDataApp` with the PostHog event processing package added, to prove events can be logged from inside an extension.
 
 
 ### Opening other apps from inside iMessage
@@ -42,6 +36,13 @@ Note the presence of an idea below is **not** a guarantee the idea is feasible o
 * Sending photos using `MSMessageLiveLayout` to continuously update in the transcript
 
 Also, any nested folders in this repo which are not linked above may be incomplete samples. Please add an issue if you think something should be mentioned here, I may have just forgotten it. Also add issues for anything that is unclear in the docs or source!
+
+## Many tiny apps rationale
+Due to some painful debugging experiences, I took the approach of doing simplest-possible testbed apps for different technologies.
+
+This means if you are interested in a given sample, there's a better chance of it continuing to work than if you have to fix bugs in areas not of interest. It also means you can submit a PR to fix a single sample, so is less work to contribute ;-)
+
+In many cases, Apple's documentation provides snippets and API documentation but no full sample you can build and verify works.
 
 ## Other Rationales
 I love the effort some people put into their sample code but it's often frustrating when they explore several things at once. _I'm testing this API **and** learning Reactive Cocoa_ because those complex samples tend to be left to wither - they are too hard to maintain when someone loses interest.
