@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,10 @@
 		42199EA521F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
 		42199EA621F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
 		4276811F289D2D8B008FDF6C /* MessageComposingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276811E289D2D8B008FDF6C /* MessageComposingHelper.swift */; };
+		42D078732B1C40FE00FACC09 /* PostHog in Frameworks */ = {isa = PBXBuildFile; productRef = 42D078722B1C40FE00FACC09 /* PostHog */; };
+		42D078752B1C425F00FACC09 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078742B1C425F00FACC09 /* Secrets.swift */; };
+		42D078762B1C425F00FACC09 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078742B1C425F00FACC09 /* Secrets.swift */; };
+		42D078782B1C433000FACC09 /* PostHogPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078772B1C433000FACC09 /* PostHogPen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,8 @@
 		42199EA221F22A1700D4377E /* imPiggie IM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "imPiggie IM.entitlements"; sourceTree = "<group>"; };
 		42199EA421F22CA400D4377E /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		4276811E289D2D8B008FDF6C /* MessageComposingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposingHelper.swift; sourceTree = "<group>"; };
+		42D078742B1C425F00FACC09 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		42D078772B1C433000FACC09 /* PostHogPen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHogPen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D078732B1C40FE00FACC09 /* PostHog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,14 +118,14 @@
 		4201A9CE21F0763B0043E369 /* imPiggie */ = {
 			isa = PBXGroup;
 			children = (
-				42199EA121F22A1300D4377E /* imPiggie.entitlements */,
 				4201A9CF21F0763B0043E369 /* AppDelegate.swift */,
-				4201A9D121F0763B0043E369 /* ViewController.swift */,
-				4201A9D321F0763B0043E369 /* Main.storyboard */,
 				4201A9D621F0763C0043E369 /* Assets.xcassets */,
-				4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */,
+				42199EA121F22A1300D4377E /* imPiggie.entitlements */,
 				4201A9DB21F0763C0043E369 /* Info.plist */,
+				4201A9D821F0763C0043E369 /* LaunchScreen.storyboard */,
+				4201A9D321F0763B0043E369 /* Main.storyboard */,
 				4276811E289D2D8B008FDF6C /* MessageComposingHelper.swift */,
+				4201A9D121F0763B0043E369 /* ViewController.swift */,
 			);
 			path = imPiggie;
 			sourceTree = "<group>";
@@ -134,11 +141,11 @@
 		42199E9121F1CA5600D4377E /* imPiggie IM */ = {
 			isa = PBXGroup;
 			children = (
-				42199EA221F22A1700D4377E /* imPiggie IM.entitlements */,
-				42199E9221F1CA5600D4377E /* MessagesViewController.swift */,
-				42199E9421F1CA5600D4377E /* MainInterface.storyboard */,
 				42199E9721F1CA5700D4377E /* Assets.xcassets */,
+				42199EA221F22A1700D4377E /* imPiggie IM.entitlements */,
 				42199E9921F1CA5700D4377E /* Info.plist */,
+				42199E9421F1CA5600D4377E /* MainInterface.storyboard */,
+				42199E9221F1CA5600D4377E /* MessagesViewController.swift */,
 			);
 			path = "imPiggie IM";
 			sourceTree = "<group>";
@@ -146,8 +153,10 @@
 		42199EA321F22C8800D4377E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				42199EA421F22CA400D4377E /* SharedData.swift */,
 				42089151289E15FB0036C790 /* Mood.swift */,
+				42D078772B1C433000FACC09 /* PostHogPen.swift */,
+				42D078742B1C425F00FACC09 /* Secrets.swift */,
+				42199EA421F22CA400D4377E /* SharedData.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -170,6 +179,9 @@
 				42199E9B21F1CA5700D4377E /* PBXTargetDependency */,
 			);
 			name = imPiggie;
+			packageProductDependencies = (
+				42D078722B1C40FE00FACC09 /* PostHog */,
+			);
 			productName = imPiggie;
 			productReference = 4201A9CC21F0763B0043E369 /* imPiggie.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 4201A9C321F0763B0043E369;
+			packageReferences = (
+				42D078712B1C40FE00FACC09 /* XCRemoteSwiftPackageReference "posthog-ios" */,
+			);
 			productRefGroup = 4201A9CD21F0763B0043E369 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D078782B1C433000FACC09 /* PostHogPen.swift in Sources */,
 				42089152289E15FB0036C790 /* Mood.swift in Sources */,
+				42D078752B1C425F00FACC09 /* Secrets.swift in Sources */,
 				42199EA521F22CA400D4377E /* SharedData.swift in Sources */,
 				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,
 				4276811F289D2D8B008FDF6C /* MessageComposingHelper.swift in Sources */,
@@ -278,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42199EA621F22CA400D4377E /* SharedData.swift in Sources */,
+				42D078762B1C425F00FACC09 /* Secrets.swift in Sources */,
 				42089153289E15FB0036C790 /* Mood.swift in Sources */,
 				42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */,
 			);
@@ -550,6 +568,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42D078712B1C40FE00FACC09 /* XCRemoteSwiftPackageReference "posthog-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PostHog/posthog-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42D078722B1C40FE00FACC09 /* PostHog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D078712B1C40FE00FACC09 /* XCRemoteSwiftPackageReference "posthog-ios" */;
+			productName = PostHog;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4201A9C421F0763B0043E369 /* Project object */;
 }

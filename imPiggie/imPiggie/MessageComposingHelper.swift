@@ -44,9 +44,11 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
         
         // Present the view controller modally.
         if MFMessageComposeViewController.canSendText() {
+            PostHogPen.trough?.capture("composing", properties: ["mood": mood.rawValue])
             vc.present(composeVC, animated: true, completion: nil)
         } else {
             print("Can't send messages.")
+            PostHogPen.trough?.capture("message composer unable to present")
         }
     }
 
@@ -59,6 +61,7 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
             "Failed" :
             "Sent"
         print(msgStr)
+        PostHogPen.trough?.capture("sent", properties: ["status": msgStr])
         // Dismiss the message compose view controller.
         controller.dismiss(animated: true, completion: nil)
     }

@@ -28,6 +28,13 @@ For various reasons, some of these samples may need to launch another app. This 
 * [imUrlDataApp](./imUrlDataApp/README.md) launches the companion app, just to show it's possible.
 * [webFromIM](./webFromIM/README.md) sole reason for this demo is to launch Safari.
 
+### Composing custom messages and sending from an app
+The samples [imUrlDataApp](./imUrlDataApp/README.md) and [imPiggie](./imPiggie/README.md) support sending from inside the app, rather than only the iMessage app extension.
+
+The button to send is enabled by checking [MFMessageComposeViewController.canSendText][cst] and so will **be disabled on simulators**.
+
+
+
 ### Planned apps
 Note the presence of an idea below is **not** a guarantee the idea is feasible or that I have time to attend to it!
 
@@ -69,3 +76,6 @@ I made it public so I could link to it from some Stack Overflow answers. In the 
 ## Disclaimer
 
 These are very simple _technical exploration_ apps. Some of the coding in them is simpler and may take minor shortcuts or lack error checking. Please don't judge me harshly by them. I'm sure there are smarter Swift idioms I could have used in some cases.
+
+
+[cst]: https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller/1614072-cansendtext

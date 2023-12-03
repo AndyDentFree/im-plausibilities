@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,23 +14,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="imPiggie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wid-ur-OhH">
-                                <rect key="frame" x="22" y="92.5" width="331" height="482.5"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wid-ur-OhH" userLabel="Overall Stack">
+                                <rect key="frame" x="22" y="206" width="386" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose moods allowed to send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQe-hs-Ro5">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="EQz-Gz-ngN">
-                                        <rect key="frame" x="86.5" y="20.5" width="158" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="EQz-Gz-ngN" userLabel="Happy Stack">
+                                        <rect key="frame" x="114" y="20.333333333333343" width="158" height="108"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zoK-UP-Eid">
-                                                <rect key="frame" x="0.0" y="38.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666657" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="onToggleHappy:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Ct-YH-aWx"/>
                                                 </connections>
@@ -45,11 +45,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mCo-JV-TeJ">
-                                        <rect key="frame" x="86.5" y="128.5" width="158" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mCo-JV-TeJ" userLabel="Quizzical Stack">
+                                        <rect key="frame" x="114" y="128.33333333333331" width="158" height="108"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3du-X3-O3t">
-                                                <rect key="frame" x="0.0" y="38.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666686" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="onToggleQuizzical:" destination="BYZ-38-t0r" eventType="valueChanged" id="l9G-tg-jgM"/>
                                                 </connections>
@@ -64,11 +64,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-iR-Ld3">
-                                        <rect key="frame" x="86.5" y="236.5" width="158" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-iR-Ld3" userLabel="Distraught Stack">
+                                        <rect key="frame" x="114" y="236.33333333333331" width="158" height="108"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-v3-bs9">
-                                                <rect key="frame" x="0.0" y="38.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666686" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="onToggleDistraught:" destination="BYZ-38-t0r" eventType="valueChanged" id="3sR-IH-bUr"/>
                                                 </connections>
@@ -83,11 +83,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ttL-BG-jj2">
-                                        <rect key="frame" x="86.5" y="344.5" width="158" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ttL-BG-jj2" userLabel="Angry Stack">
+                                        <rect key="frame" x="114" y="344.33333333333337" width="158" height="108"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG0-Fg-G9Y">
-                                                <rect key="frame" x="0.0" y="38.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666629" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="onToggleAngry:" destination="BYZ-38-t0r" eventType="valueChanged" id="rdl-8b-Yhb"/>
                                                 </connections>
@@ -102,13 +102,27 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-wh-sXT" userLabel="AppSendButton">
-                                        <rect key="frame" x="81" y="452.5" width="169" height="30"/>
-                                        <state key="normal" title="Send Message from App"/>
-                                        <connections>
-                                            <action selector="onAppSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWG-bb-M6A"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="oZ9-Fn-oF8" userLabel="Spaced Buttons">
+                                        <rect key="frame" x="87.333333333333329" y="452.33333333333337" width="211.33333333333337" height="92.666666666666629"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-wh-sXT" userLabel="AppSendButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="211.33333333333334" height="34.333333333333336"/>
+                                                <state key="normal" title="Send Message from App"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Send Message from App" buttonSize="medium"/>
+                                                <connections>
+                                                    <action selector="onAppSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWG-bb-M6A"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me8-UG-8rQ" userLabel="FlushButton">
+                                                <rect key="frame" x="10.666666666666671" y="58.333333333333258" width="190" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Flush PostHog Events" buttonSize="medium"/>
+                                                <connections>
+                                                    <action selector="onFlushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWC-bq-t5I"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VQe-hs-Ro5" firstAttribute="width" secondItem="wid-ur-OhH" secondAttribute="width" id="DDZ-Iv-zKU"/>

@@ -59,6 +59,7 @@ class ViewController: UIViewController {
             appSendButton.titleLabel?.text = "Not allowed to send texts"
         }
         tap(mood: lastTappedMood)  // just to get it highlighted
+        PostHogPen.trough?.capture("app visible")
     }
 
     func matchButtonsToToggles() {
@@ -91,6 +92,7 @@ class ViewController: UIViewController {
             // Fallback on earlier versions
         }
         lastTappedMood = mood
+        PostHogPen.trough?.capture("tapped", properties: ["mood": mood.rawValue])
     }
     
     func allOff() -> Bool {
@@ -150,8 +152,12 @@ class ViewController: UIViewController {
     
     /// see Readme and  https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller
     @IBAction func onAppSendButton(_ sender: Any) {
+        PostHogPen.trough?.capture("send pressed to display message interface")
         messager.displayMessageInterface(onVC: self, mood: lastTappedMood)
     }
 
+    @IBAction func onFlushButton(_ sender: Any) {
+        PostHogPen.trough?.flush()
+    }
 }
 

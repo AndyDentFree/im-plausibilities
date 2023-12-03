@@ -5,3 +5,33 @@ imPiggie - copied imUrlDataApp and renamed all files externally and internally.
 
 Assets.xcassets (both)
 - replaced all icons
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding PostHog to app
+2023-12-03
+
+imPiggie.xcodeProj
+- Added package PostHog to imPiggie app target alone
+
+PostHogPen
+Secrets
+- added
+
+AppDelegate
+- application(_ , didFinishLaunchingWithOptions
+  - call PostHogPen.setup()
+  
+Add PostHog capture calls to:
+- ViewController
+  - viewDidLoad   
+  - tap(mood)
+  - onAppSendButton
+- MessageComposingHelper
+  - displayMessageInterface
+  - messageComposeViewController(_, didFinishWith  
+  
+Main.storyboard
+- added extra layout, FlushButton
+- ViewController
+  - bind FlushButton to onFlushButton
+  
