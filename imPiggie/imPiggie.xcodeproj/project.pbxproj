@@ -26,6 +26,8 @@
 		42D078752B1C425F00FACC09 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078742B1C425F00FACC09 /* Secrets.swift */; };
 		42D078762B1C425F00FACC09 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078742B1C425F00FACC09 /* Secrets.swift */; };
 		42D078782B1C433000FACC09 /* PostHogPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078772B1C433000FACC09 /* PostHogPen.swift */; };
+		42D0787A2B1C8FC600FACC09 /* PostHogPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D078772B1C433000FACC09 /* PostHogPen.swift */; };
+		42D0787C2B1C8FE300FACC09 /* PostHog in Frameworks */ = {isa = PBXBuildFile; productRef = 42D0787B2B1C8FE300FACC09 /* PostHog */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42199E9021F1CA5600D4377E /* Messages.framework in Frameworks */,
+				42D0787C2B1C8FE300FACC09 /* PostHog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +202,9 @@
 			dependencies = (
 			);
 			name = "imPiggie IM";
+			packageProductDependencies = (
+				42D0787B2B1C8FE300FACC09 /* PostHog */,
+			);
 			productName = "imPiggie IM";
 			productReference = 42199E8D21F1CA5600D4377E /* imPiggie IM.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
@@ -296,6 +302,7 @@
 			files = (
 				42199EA621F22CA400D4377E /* SharedData.swift in Sources */,
 				42D078762B1C425F00FACC09 /* Secrets.swift in Sources */,
+				42D0787A2B1C8FC600FACC09 /* PostHogPen.swift in Sources */,
 				42089153289E15FB0036C790 /* Mood.swift in Sources */,
 				42199E9321F1CA5600D4377E /* MessagesViewController.swift in Sources */,
 			);
@@ -582,6 +589,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		42D078722B1C40FE00FACC09 /* PostHog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D078712B1C40FE00FACC09 /* XCRemoteSwiftPackageReference "posthog-ios" */;
+			productName = PostHog;
+		};
+		42D0787B2B1C8FE300FACC09 /* PostHog */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42D078712B1C40FE00FACC09 /* XCRemoteSwiftPackageReference "posthog-ios" */;
 			productName = PostHog;

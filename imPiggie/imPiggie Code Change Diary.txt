@@ -34,4 +34,21 @@ Main.storyboard
 - added extra layout, FlushButton
 - ViewController
   - bind FlushButton to onFlushButton
-  
+ 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Adding PostHog to iMessage extension & fix missing App Name in events
+2023-12-03 
+
+MessagesViewController
+- willBecomeActive call setup
+- send - capture & call flush
+- onLaunchApp capture
+
+imPiggie.xcodeProj
+- added PostHog to Link Binary with Libraries build phase
+
+PostHogPen
+- setup disable sending device ID
+
+App - info.plist
+- added CFBundleDisplayName so App Name populated in Posthog events.

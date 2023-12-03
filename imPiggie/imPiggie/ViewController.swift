@@ -152,7 +152,7 @@ class ViewController: UIViewController {
     
     /// see Readme and  https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller
     @IBAction func onAppSendButton(_ sender: Any) {
-        PostHogPen.trough?.capture("send pressed to display message interface")
+        PostHogPen.trough?.capture("display message interface")
         messager.displayMessageInterface(onVC: self, mood: lastTappedMood)
     }
 

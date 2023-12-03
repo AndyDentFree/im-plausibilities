@@ -20,7 +20,7 @@ struct PostHogPen {
 
         configuration.captureApplicationLifecycleEvents = false
         configuration.recordScreenViews = false
-
+        configuration.shouldSendDeviceID = false  // we are very privacy-focused
         PHGPostHog.setup(with: configuration)
         trough = PHGPostHog.shared()
     }

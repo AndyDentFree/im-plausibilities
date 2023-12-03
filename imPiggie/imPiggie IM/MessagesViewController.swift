@@ -9,6 +9,7 @@
 import UIKit
 import os
 import Messages
+import PostHog
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -69,6 +70,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Use this method to configure the extension and restore previously stored state.
         os_log("willBecomeActive")
+        PostHogPen.setup()
     }
     
     override func didBecomeActive(with conversation: MSConversation) {
@@ -159,12 +161,14 @@ class MessagesViewController: MSMessagesAppViewController {
         let message = MSMessage(session: session ?? MSSession())
         message.layout = layout
         message.url = urlComps.url
+        PostHogPen.trough?.capture("sending", properties: ["mood": mood.rawValue])
         conversation.insert(message) { (error) in
             if let error = error {
                 os_log("Error with MSConversation.insert(message)")
                 print(error)
             }
         }
+        PostHogPen.trough?.flush()  // flush every time so events logged
         dismiss()
     }
 
@@ -191,6 +195,8 @@ class MessagesViewController: MSMessagesAppViewController {
     // that was the case in XCode 10 at least
     @IBAction func onLaunchApp(_ sender: Any) {
         guard let url: URL = URL(string: "imPiggie://?arbitraryParam=nothingSpecial") else { return }
+        PostHogPen.trough?.capture("launch app")
+
         self.extensionContext?.open(url, completionHandler: { (success: Bool) in
             // nothing, we invoked the main app!
         })
