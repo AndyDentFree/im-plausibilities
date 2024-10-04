@@ -152,6 +152,13 @@ class ViewController: UIViewController {
     @IBAction func onAppSendButton(_ sender: Any) {
         messager.displayMessageInterface(onVC: self, mood: lastTappedMood)
     }
+    
+    @IBAction func onAppSendPlainButton(_ sender: Any) {
+        let mood = lastTappedMood
+        withAuthorisedCamera {
+            self.messager.displayMessageInterface(onVC: self, mood: mood, withCustomMessage: false)
+        }
+    }
 
 }
 

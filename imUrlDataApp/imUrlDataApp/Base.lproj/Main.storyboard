@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wid-ur-OhH">
-                                <rect key="frame" x="22" y="102.5" width="331" height="482.5"/>
+                                <rect key="frame" x="22" y="80.5" width="331" height="526.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose moods allowed to send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQe-hs-Ro5">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
@@ -103,10 +103,20 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-wh-sXT" userLabel="AppSendButton">
-                                        <rect key="frame" x="81" y="452.5" width="169" height="30"/>
-                                        <state key="normal" title="Send Message from App"/>
+                                        <rect key="frame" x="52.5" y="452.5" width="226" height="30"/>
+                                        <state key="normal" title="Send Custom Message from App"/>
                                         <connections>
                                             <action selector="onAppSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWG-bb-M6A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPb-Bi-tvW" userLabel="AppSendPlainButton">
+                                        <rect key="frame" x="62.5" y="482.5" width="206" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="FTn-39-YY8"/>
+                                        </constraints>
+                                        <state key="normal" title="Send Plain Message from App"/>
+                                        <connections>
+                                            <action selector="onAppSendPlainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tj9-R7-NXv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -116,6 +126,7 @@
                                     <constraint firstItem="EQz-Gz-ngN" firstAttribute="width" relation="lessThanOrEqual" secondItem="wid-ur-OhH" secondAttribute="width" constant="-80" id="Odi-kh-ff5"/>
                                     <constraint firstItem="ttL-BG-jj2" firstAttribute="width" secondItem="0yw-iR-Ld3" secondAttribute="width" id="kbz-qo-s4a"/>
                                     <constraint firstItem="0yw-iR-Ld3" firstAttribute="width" secondItem="mCo-JV-TeJ" secondAttribute="width" id="kzu-OP-bUC"/>
+                                    <constraint firstItem="JTe-wh-sXT" firstAttribute="height" secondItem="bPb-Bi-tvW" secondAttribute="height" multiplier="0.681818" id="oao-Zk-6SN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -146,7 +157,7 @@
         <!--Messages View Controller-->
         <scene sceneID="rrU-3k-wQf">
             <objects>
-                <viewController id="YS4-Rb-ges" customClass="MessagesViewController" customModule="imUrlDataApp_IM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YS4-Rb-ges" customClass="MessagesViewController" customModule="imUrlDataApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d3i-A8-krw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

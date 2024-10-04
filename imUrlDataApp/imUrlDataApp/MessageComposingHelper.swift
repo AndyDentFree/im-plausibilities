@@ -16,36 +16,45 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
         MFMessageComposeViewController.canSendText()
     }
     
-    func displayMessageInterface(onVC vc: UIViewController, mood:Mood) {
+    func displayMessageInterface(onVC vc: UIViewController, mood:Mood, withCustomMessage: Bool = true) {
         let composeVC = MFMessageComposeViewController()
         composeVC.messageComposeDelegate = self
+        composeVC.disableUserAttachments()  // has no visible effect, are already disabled
         
         // Configure the fields of the interface.
-        composeVC.recipients = ["123456"]
-        composeVC.body = "Sending a custom message"
-        let layout = MSMessageTemplateLayout()
-        layout.caption = "Sample message"
-        //
-        /*
-         According to
-         https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller/2213331-message
-         If your app has an iMessage app extension, you can display your iMessage app within the message compose view, just as you would in the Messages app. To display your iMessage app, create and assign an MSMessage object to this property.
+        // claim that setting this stops attachments composeVC.recipients = ["123456"]
+        if withCustomMessage {
+            let layout = MSMessageTemplateLayout()
+            layout.caption = "Sample message"
+            //
+            /*
+             According to
+             https://developer.apple.com/documentation/messageui/mfmessagecomposeviewcontroller/2213331-message
+             If your app has an iMessage app extension, you can display your iMessage app within the message compose view, just as you would in the Messages app. To display your iMessage app, create and assign an MSMessage object to this property.
 
-         By default, this property is set to nil.
-         */
-        if #available(iOS 10, *) {  // necessary if clause to make XCode happy to use composeVC.message
-            let message = MSMessage(session: MSSession())
-            // fake building a smiley using hardcoded stuff to match MessagesViewController.send
-            guard var urlComps = URLComponents(string:"data:,") else {
-                fatalError("Invalid base URL")
+             By default, this property is set to nil.
+             */
+            if #available(iOS 10, *) {  // necessary if clause to make XCode happy to use composeVC.message
+                let message = MSMessage(session: MSSession())
+                // fake building a smiley using hardcoded stuff to match MessagesViewController.send
+                guard var urlComps = URLComponents(string:"data:,") else {
+                    fatalError("Invalid base URL")
+                }
+                urlComps.queryItems = [URLQueryItem(name: Mood.moodKey, value:mood.rawValue)]
+                message.url = urlComps.url
+                message.layout = layout
+                composeVC.body = "Sending a custom message"
+                composeVC.message = message
             }
-            urlComps.queryItems = [URLQueryItem(name: Mood.moodKey, value:mood.rawValue)]
-            message.url = urlComps.url
-            message.layout = layout
-            composeVC.message = message
+        } else {
+            if MFMessageComposeViewController.canSendAttachments() {
+                print("Attachments should be available")
+            } else {
+                print("Can't send messages.")
+            }
         }
         
-        // Present the view controller modally.
+        // Present the view controller modally. It is designed as a pageSheet because of security constraints
         if MFMessageComposeViewController.canSendText() {
             vc.present(composeVC, animated: true, completion: nil)
         } else {
