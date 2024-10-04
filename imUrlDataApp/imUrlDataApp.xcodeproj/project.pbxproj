@@ -21,6 +21,7 @@
 		42199E9C21F1CA5700D4377E /* imUrlDataApp IM.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42199E8D21F1CA5600D4377E /* imUrlDataApp IM.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42199EA521F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
 		42199EA621F22CA400D4377E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199EA421F22CA400D4377E /* SharedData.swift */; };
+		4273767C2C1B595D00ACF1D3 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199E9221F1CA5600D4377E /* MessagesViewController.swift */; };
 		4276811F289D2D8B008FDF6C /* MessageComposingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276811E289D2D8B008FDF6C /* MessageComposingHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -265,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4273767C2C1B595D00ACF1D3 /* MessagesViewController.swift in Sources */,
 				42089152289E15FB0036C790 /* Mood.swift in Sources */,
 				42199EA521F22CA400D4377E /* SharedData.swift in Sources */,
 				4201A9D221F0763B0043E369 /* ViewController.swift in Sources */,

@@ -155,3 +155,15 @@ ViewController
   - set button isEnabled state (now we're not using them to toggle back on, should only be tappable when enabled)
 - onHappy…Angry - call tap(mood:) instead of toggle, so tapping emoji sets the one to send
 - matchButtonsToToggles - set isEnabled state
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Trying to fix appearance of sending from app 
+2024-06-13
+
+MessagesViewController.swift
+- also build in the app (was only linked to extension)
+
+Main.storyboard
+- paste in the MessagesViewController scene from MainInterface in the extension
+displayMessageInterface

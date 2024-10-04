@@ -23,6 +23,8 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
         // Configure the fields of the interface.
         composeVC.recipients = ["123456"]
         composeVC.body = "Sending a custom message"
+        let layout = MSMessageTemplateLayout()
+        layout.caption = "Sample message"
         //
         /*
          According to
@@ -39,6 +41,7 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
             }
             urlComps.queryItems = [URLQueryItem(name: Mood.moodKey, value:mood.rawValue)]
             message.url = urlComps.url
+            message.layout = layout
             composeVC.message = message
         }
         
