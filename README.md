@@ -20,6 +20,8 @@ Each sample will have its own nested readme document.
 * [webFromIM - Launching a Web URL](./webFromIM/README.md) apparently trivial demo that you **can** launch Safari with a website from inside an iMessage extension.
 * [imPiggie](./imPiggie/README.md) copy of `imUrlDataApp` with the PostHog event processing package added, to prove events can be logged from inside an extension.
 
+### Collapsing/expanding architecture
+* [imHostingVC - Pure UIKit approach handling state transitions](./imHostingVC/README.md) 
 
 ### Opening other apps from inside iMessage
 For various reasons, some of these samples may need to launch another app. This became difficult with iOS 13 so these samples were revisited.
