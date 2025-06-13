@@ -153,6 +153,10 @@ class ViewController: UIViewController {
         messager.displayMessageInterface(onVC: self, mood: lastTappedMood)
     }
     
+    @IBAction func onAppSendWithImageButton(_ sender: Any) {
+        messager.displayMessageInterface(onVC: self, mood: lastTappedMood, withImageInBubble: true)
+    }
+
     @IBAction func onAppSendPlainButton(_ sender: Any) {
         let mood = lastTappedMood
         withAuthorisedCamera {

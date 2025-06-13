@@ -43,6 +43,18 @@ What _does_ seem to happen, magically behind the scene, is that the iMessage del
 That makes absolute sense when you think about it - the app may be used to _send_ custom messages, but custom messages can _only be received in an extension._
 
 
+### Images in layout
+
+Setting `MSMessageTemplateLayout.image` makes it a lot more appealing. You still have a text entry area at bottom and an icon badges the top-left corner.
+
+In these messages, the text _Sample message_ was set in `layout.caption`.
+
+
+| No image | Image set in layout |  
+|:------:|:------:|  
+| ![Custom message](img/imUrlDataApp_sending_custom.PNG "Screenshot") | ![Custom message with image in layout](img/imUrlDataApp_sending_customMitImage.PNG "Screenshot") |
+
+
 ## Project Structure
 
 Created using XCode 10.1 as a Single View App then *added* an iMessage App Extension second target.

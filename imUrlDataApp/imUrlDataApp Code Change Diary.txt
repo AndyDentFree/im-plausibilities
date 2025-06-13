@@ -189,3 +189,24 @@ AuthCamera.swift
 
 Info.plist
 - added permissions NSPhotoLibraryUsageDescription & NSCameraUsageDescription
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Add image when sending in app, so can see how embedded transcript bubble changes
+2025-06-13
+
+MoodRenderers.swift
+- added
+
+ViewController
+- @IBAction func onAppSendWithImageButton added
+
+Main.Storyboard
+- add AppSendWithImageButton to send with image in bubble
+- put stack around buttons for better spacing
+- change button types to differentiate
+
+MessageComposingHelper
+- displayMessageInterface 
+  - add param to include image
+  - optionally add an image to the layout

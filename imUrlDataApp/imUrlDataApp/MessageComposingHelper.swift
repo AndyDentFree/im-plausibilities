@@ -16,7 +16,7 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
         MFMessageComposeViewController.canSendText()
     }
     
-    func displayMessageInterface(onVC vc: UIViewController, mood:Mood, withCustomMessage: Bool = true) {
+    func displayMessageInterface(onVC vc: UIViewController, mood:Mood, withCustomMessage: Bool = true, withImageInBubble: Bool = false) {
         let composeVC = MFMessageComposeViewController()
         composeVC.messageComposeDelegate = self
         composeVC.disableUserAttachments()  // has no visible effect, are already disabled
@@ -26,6 +26,9 @@ class MessageComposingHelper: NSObject, MFMessageComposeViewControllerDelegate {
         if withCustomMessage {
             let layout = MSMessageTemplateLayout()
             layout.caption = "Sample message"
+            if withImageInBubble {
+                layout.image = mood.image(of: CGSize(width: 200, height: 200))
+            }
             //
             /*
              According to
